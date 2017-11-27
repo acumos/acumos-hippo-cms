@@ -1,0 +1,7 @@
+/content/documents/acumoscms/solution:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: ec2cda4f-1e13-4847-98b9-e4d0f3bb3b2e
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: c050af08-7be8-4229-bc6a-e3e098bd0458
+  hippotranslation:locale: en

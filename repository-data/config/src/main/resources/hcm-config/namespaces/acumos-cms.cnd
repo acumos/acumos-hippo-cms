@@ -1,0 +1,9 @@
+<'acumoscms'='http://www.onehippo.org/acumoscms/nt/1.0'>
+<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
+<'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
+<'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
+
+[acumoscms:basedocument] > hippo:document, hippostd:publishableSummary, hippostdpubwf:document orderable
+
+[acumoscms:solutionDescription] > acumoscms:basedocument, hippostd:relaxed, hippotranslation:translated
+  orderable
