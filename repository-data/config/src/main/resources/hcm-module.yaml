@@ -1,0 +1,5 @@
+group: 
+  name: acumos-cms
+  after: hippo-cms
+project: acumos-cms
+module: acumos-cms-repository-data-config
