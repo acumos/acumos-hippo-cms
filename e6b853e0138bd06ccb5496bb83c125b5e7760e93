@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1a3a9bf_7c80a7a1",
+        "filename": "acumos-cms-docker/src/main/java/com/github/woonsanko/examples/hippoboot/springboot/Application.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "What is this package com.github.woonsanko.examples.hippoboot.springboot ?  We cannot add our license header to another FOSS project code.  PLEASE CHECK.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49e16ec7_b713712e",
+        "filename": "acumos-cms-docker/test.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Windows cmd scripts probably should not be committed to git.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2520fead_d0747a61",
+        "filename": "docs/acumos-hippo-cms.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Do we want this external file repeated in our project source tree?  Suggest documenting the original source and license.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac9798b_3737c877",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "I don\u0027t see a tutorials/ subfolder here.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12c5040d_7c933be2",
+        "filename": "docs/release-notes.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Please supply release notes.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a62094d0_f87f1d57",
+        "filename": "docs/tutorials/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Please remove this file, the child files are all missing.",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "747386ec_4a4f620c",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "This should state \"Apache 2.0\" right?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "adb65bad_54cba874",
+        "filename": "repository-data/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Is this somebody else\u0027s code?  What is its license?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "575b3633_edcbfab3",
+        "filename": "site/src/main/java/org/acumos/beans/Account.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Is this a newly developed Acumos file?  If so it is missing the license header. \n\nIs this an existing HippoCMS file? If so, what is its license?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "78fe2e38_81673ad5",
+        "filename": "site/src/main/java/org/acumos/beans/Banner.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Is this a newly developed Acumos file?  If so it is missing the license header. \n\nIs this an existing HippoCMS file? If so, what is its license?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a04c9a07_106c586e",
+        "filename": "site/src/main/java/org/acumos/beans/Blogpost.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Is this a newly developed Acumos file?  If so it is missing the license header. \n\nIs this an existing HippoCMS file? If so, what is its license?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83a933c1_fabea3bf",
+        "filename": "site/src/main/webapp/images/essentials/catalog-component-icons/banner.png",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-27T15:24:49Z",
+      "side": 1,
+      "message": "Is this image copyrighted?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
