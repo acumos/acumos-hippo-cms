@@ -1,0 +1,8 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/acumoscms/hst:workspace/hst:channel:
+      jcr:primaryType: hst:channel
+      hst:name: acumos-cms
+      hst:type: website
+      /hst:channelinfo:
+        jcr:primaryType: hst:channelinfo

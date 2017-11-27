@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <name>project-settings</name>
+    <beansFolder>site/src/main/java</beansFolder>
+    <cmsModule>cms</cmsModule>
+    <confirmParams>false</confirmParams>
+    <enterprise>false</enterprise>
+    <extraTemplates>true</extraTemplates>
+    <projectNamespace>acumoscms</projectNamespace>
+    <repositoryDataModule>repository-data</repositoryDataModule>
+    <selectedBeansPackage>org.acumos.beans</selectedBeansPackage>
+    <selectedComponentsPackage>org.acumos.components</selectedComponentsPackage>
+    <selectedProjectPackage>org.acumos</selectedProjectPackage>
+    <selectedRestPackage>org.acumos.rest</selectedRestPackage>
+    <setupDone>true</setupDone>
+    <siteModule>site</siteModule>
+    <templateLanguage>freemarker</templateLanguage>
+    <useSamples>false</useSamples>
+    <webfilesSubModule>webfiles</webfilesSubModule>
+</project>
