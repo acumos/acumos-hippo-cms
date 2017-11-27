@@ -1,0 +1,2583 @@
+/content/documents/acumoscms/global:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: f4e8505a-5b19-4b93-b709-1f46a849e9b6
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 04eaa0ce-97e0-4be8-90bd-a0c4215f57a9
+  hippotranslation:locale: en
+  /terms-condition:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: df0e9959-5ff7-4eef-a6b6-a864bda5ddd2
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: a7920629-000e-41ea-8830-85268acc2f5e
+    hippotranslation:locale: en
+    /termsandcondition:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: c1b27e2f-4222-4203-acb7-1d5cc3ea72c8
+      hippo:name: TermsAndCondition
+      /termsandcondition[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 0cc7ce7d-65a9-4d76-8ee3-322a869d3cd0
+        acumoscms:description: |-
+          <p>By using Linux Foundation websites you are agreeing to be bound by the following terms and conditions here.</p>
+
+          <p>Here’s the basic idea:</p>
+
+          <p>Don’t violate anyone’s intellectual property and post anyone else’s copyrighted or confidential material you don’t have permission to use.</p>
+
+          <p>Don’t post anything vulgar, inflammatory, pornographic, etc.</p>
+
+          <p>Don’t post spam.</p>
+
+          <p>Too many metalinks and tags are not accepted. If you try to boost your SEO, that’s an abuse of the system.</p>
+
+          <p>Don’t post just to sell something. Sure, talk up your project, but don’t mention how to buy it every single time.</p>
+
+          <p>Don’t launch into personal attacks. You’re not going to agree with everyone, but name-calling will just cause trouble and will be regarded as flaming behavior.</p>
+
+          <p>Tone down the foul language. You can say what you need to say without relying on cursing. In fact, your writing will be regarded as that much more creative.</p>
+
+          <p>The Linux Foundation and its websites provide a framework for discussion and user generated information to expand the knowledge base of Linux-related information. Please note that articles, as well as any other user content on Linuxfoundation.org (such as blogs, directory content, forums, comments, etc.), do not reflect the views or endorsements of the Linux Foundation, its staff, or its members. We recognize there may be inaccurate information reflected in this site and that users should understand that something that appears&nbsp; on Linuxfoundation.org does not mean the Linux Foundation has vetted or endorsed that content.</p>
+
+          <p>Linux Foundation reserves the right to take down anything you post on this site, for these or other reasons. If you don’t agree to these terms, don’t use this website. Violation of the terms in this document may result in the removal of the content and a warning from the site’s administrators. A second violation will result in the removal of your user account.</p>
+
+          <h3>Linux Foundation Terms of Use</h3>
+
+          <p>Revised 4 February 2016</p>
+
+          <p>Terms and Conditions of Use for the Linux Foundation’s Web Sites</p>
+
+          <p>BY ACCESSING, BROWSING OR USING THIS WEB SITE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTAND AND AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS.</p>
+
+          <p>This Web site is a service made available by the Linux Foundation. All software, documentation, information and/or other materials provided on and through this Web site (“Content”) may be used solely under the following terms and conditions (“Terms of Use”).</p>
+
+          <p>This Web site may contain other proprietary notices and copyright information, the terms of which must be observed and followed. The Content on this Web site may contain technical inaccuracies or typographical errors and may be changed or updated without notice. The Linux Foundation may also make improvements and/or changes to the Content at any time without notice.</p>
+
+          <p>The Linux Foundation and its members (“Members”) assume no responsibility regarding the accuracy of the Content and use of the Content is at the recipient’s own risk. The Linux Foundation and the Members provide no assurances that any reported problems with any Content will be resolved.</p>
+
+          <p>Intellectual Property Rights</p>
+
+          <p>Except as otherwise provided, Content on this site, including all materials posted by the The Linux Foundation, is licensed under a&nbsp;Creative Commons Attribution 3.0 License.</p>
+
+          <p>All logos and trademarks contained on this Web site are and remain the property of their respective owners. No licenses or other rights in or to such logos and/or trademarks are granted. The Linux Foundation Trademark Policy can be found&nbsp;here.</p>
+
+          <p>Except as otherwise expressly stated, by providing the Content, neither the Linux Foundation nor the Members grant any licenses to any copyrights, patents or any other intellectual property rights.</p>
+
+          <p>Users Submissions</p>
+
+          <p>Users are solely responsible for all materials, whether publicly posted or privately transmitted, that users upload, post, e-mail, transmit, or otherwise make available on our sites (“User Content”).&nbsp; Neither the Linux Foundation nor any of its Members shall be liable for any claims arising out of User Content.&nbsp; You warrant that you have all rights needed to provide the User Content in accordance with these terms and all applicable laws or regulations.<br />
+          Some Linux Foundation Workgroups or other projects that may be hosted by the Linux Foundation may have license terms or Contributor Agreements that are specific to the Workgroup or project and may require Users to sign an agreement (such as a Contributor Agreement) assigning and/or licensing rights in submissions made to such Workgroup or project. In all such cases, and to the extent there is a conflict, those license terms or agreements take precedence over these Terms of Use. With respect to any User Content not governed by other Workgroup or project specific terms or agreements, you agree that the following non-exclusive, irrevocable, royalty-free worldwide licenses shall apply:</p>
+
+          <p>Code Submissions. User Content in the form of source or object code will be governed by the&nbsp;BSD License.</p>
+
+          <p>All Other Submissions. User Content that is not in the form of source or object code, including but not limited to white papers, dissertations, articles or other literary works, power point presentations, encyclopedias, anthologies, wikis, blogs, diagrams, drawings, sketches, photos or other images, audio content, video content and audiovisual materials, will be governed by the Creative Commons Attribution 3.0.</p>
+
+          <p>The Linux Foundation and the Members do not want to receive confidential information from you through this Web site. Please note that any information or material sent to The Linux Foundation or the Members will be deemed NOT to be confidential.</p>
+
+          <p>You are prohibited from posting or transmitting to or from this Web site any unlawful, threatening, libelous, defamatory, obscene, scandalous, inflammatory, pornographic, or profane material, or any other material that could give rise to any civil or criminal liability under the law.</p>
+
+          <p>Disclaimers and Limitations of Liability</p>
+
+          <p>The Linux Foundation and the Members make no representations whatsoever about any other Web site that you may access through this Web site. When you access a non-Linux Foundation Web site, even one that may contain the organization’s name or mark, please understand that it is independent from The Linux Foundation, and that the Linux Foundation and the Members have no control over the content on such Web site. In addition, a link to a non-Linux Foundation Web site does not mean that the Linux Foundation or the Members endorse or accept any responsibility for the content, or the use, of such Web site.</p>
+
+          <p>It is up to you to take precautions to ensure that whatever you select for your use is free of such items as viruses, worms, Trojan horses and other items of a destructive nature.</p>
+
+          <p>IN NO EVENT WILL THE LINUX FOUNDATION AND/OR THE MEMBERS BE LIABLE TO YOU (AN INDIVIDUAL OR ENTITY) OR ANY OTHER INDIVIDUAL OR ENTITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL OR CONSEQUENTIAL DAMAGES RELATED TO ANY USE OF THIS WEB SITE, THE CONTENT, OR ON ANY OTHER HYPER LINKED WEB SITE, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, LOST SALES, LOST REVENUE, LOSS OF GOODWILL, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF THE LINUX FOUNDATION OR THE MEMBERS ARE EXPRESSLY ADVISED OR AWARE OF THE POSSIBILITY OF SUCH DAMAGES OR LOSSES.</p>
+
+          <p>ALL CONTENT IS PROVIDED BY THE LINUX FOUNDATION AND/OR THE MEMBERS ON AN “AS IS” BASIS ONLY. THE LINUX FOUNDATION AND THE MEMBERS PROVIDE NO REPRESENTATIONS, CONDITIONS AND/OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY AND NONINFRINGEMENT.</p>
+
+          <p>The Linux Foundation and the Members reserve the right to investigate complaints or reported violations of these Terms of Use and to take any action they deem appropriate including, without limitation, reporting any suspected unlawful activity to law enforcement officials, regulators, or other third parties and disclosing any information necessary or appropriate to such persons or entities relating to user profiles, e-mail addresses, usage history, posted materials, IP addresses and traffic information.</p>
+
+          <p>The Linux Foundation and the Members reserve the right to seek all remedies available at law and in equity for violations of these Terms of Use, including but not limited to the right to block access from a particular Internet address or account holder to this Web site.</p>
+
+          <p>Privacy</p>
+
+          <p>COPPA prohibits unfair or deceptive acts or practices in connection with the collection, use, or disclosure of personally identifiable information from and about children under 13 on the Internet. The law requires operators to notify parents and obtain their consent before collecting, using, or disclosing children’s personal information.</p>
+
+          <p>You can learn more about the Linuxfoundation.org&nbsp;privacy practices&nbsp;on the Web.</p>
+
+          <p>Digital Millennium Copyright Act</p>
+
+          <p>The Linux Foundation respects the intellectual property of others, and we ask users of our Web sites to do the same. In accordance with the Digital Millennium Copyright Act (DMCA) and other applicable law, we have adopted a policy of terminating, in appropriate circumstances and at our sole discretion, subscribers or account holders who are deemed to be repeat infringers. We may also at our sole discretion limit access to our Web site and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.</p>
+
+          <p>Notice and Procedure for Notifying Designated Agent of Claims of Copyright Infringement</p>
+
+          <p>If you believe that any material on this Web site infringes upon any copyright which you own or control, or that any link on this Web site directs users to another Web site that contains material that infringes upon any copyright which you own or control, you may file a notification of such infringement with our Designated Agent as set forth below. Notifications of claimed copyright infringement must be sent to The Linux Foundation Designated Agent for notice of claims of copyright infringement. Our Designated Agent may be reached as follows:</p>
+
+          <p>Legal Department<br />
+          The Linux Foundation<br />
+          1 Letterman Drive<br />
+          Building D, Suite D4700<br />
+          San Francisco,&nbsp; CA&nbsp; 94129<br />
+          Phone:&nbsp;4157239709<br />
+          Email:&nbsp;legal@linuxfoundation.org</p>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T00:48:56.261-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-16T01:50:25.691-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 281c0921-f7a9-438b-8461-d90129ac50a0
+        hippotranslation:locale: en
+      /termsandcondition[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: d1582855-cfd9-4965-b282-a9d2d577bc36
+        acumoscms:description: |-
+          <p>By using Linux Foundation websites you are agreeing to be bound by the following terms and conditions here.</p>
+
+          <p>Here’s the basic idea:</p>
+
+          <p>Don’t violate anyone’s intellectual property and post anyone else’s copyrighted or confidential material you don’t have permission to use.</p>
+
+          <p>Don’t post anything vulgar, inflammatory, pornographic, etc.</p>
+
+          <p>Don’t post spam.</p>
+
+          <p>Too many metalinks and tags are not accepted. If you try to boost your SEO, that’s an abuse of the system.</p>
+
+          <p>Don’t post just to sell something. Sure, talk up your project, but don’t mention how to buy it every single time.</p>
+
+          <p>Don’t launch into personal attacks. You’re not going to agree with everyone, but name-calling will just cause trouble and will be regarded as flaming behavior.</p>
+
+          <p>Tone down the foul language. You can say what you need to say without relying on cursing. In fact, your writing will be regarded as that much more creative.</p>
+
+          <p>The Linux Foundation and its websites provide a framework for discussion and user generated information to expand the knowledge base of Linux-related information. Please note that articles, as well as any other user content on Linuxfoundation.org (such as blogs, directory content, forums, comments, etc.), do not reflect the views or endorsements of the Linux Foundation, its staff, or its members. We recognize there may be inaccurate information reflected in this site and that users should understand that something that appears&nbsp; on Linuxfoundation.org does not mean the Linux Foundation has vetted or endorsed that content.</p>
+
+          <p>Linux Foundation reserves the right to take down anything you post on this site, for these or other reasons. If you don’t agree to these terms, don’t use this website. Violation of the terms in this document may result in the removal of the content and a warning from the site’s administrators. A second violation will result in the removal of your user account.</p>
+
+          <h3>Linux Foundation Terms of Use</h3>
+
+          <p>Revised 4 February 2016</p>
+
+          <p>Terms and Conditions of Use for the Linux Foundation’s Web Sites</p>
+
+          <p>BY ACCESSING, BROWSING OR USING THIS WEB SITE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTAND AND AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS.</p>
+
+          <p>This Web site is a service made available by the Linux Foundation. All software, documentation, information and/or other materials provided on and through this Web site (“Content”) may be used solely under the following terms and conditions (“Terms of Use”).</p>
+
+          <p>This Web site may contain other proprietary notices and copyright information, the terms of which must be observed and followed. The Content on this Web site may contain technical inaccuracies or typographical errors and may be changed or updated without notice. The Linux Foundation may also make improvements and/or changes to the Content at any time without notice.</p>
+
+          <p>The Linux Foundation and its members (“Members”) assume no responsibility regarding the accuracy of the Content and use of the Content is at the recipient’s own risk. The Linux Foundation and the Members provide no assurances that any reported problems with any Content will be resolved.</p>
+
+          <p>Intellectual Property Rights</p>
+
+          <p>Except as otherwise provided, Content on this site, including all materials posted by the The Linux Foundation, is licensed under a&nbsp;Creative Commons Attribution 3.0 License.</p>
+
+          <p>All logos and trademarks contained on this Web site are and remain the property of their respective owners. No licenses or other rights in or to such logos and/or trademarks are granted. The Linux Foundation Trademark Policy can be found&nbsp;here.</p>
+
+          <p>Except as otherwise expressly stated, by providing the Content, neither the Linux Foundation nor the Members grant any licenses to any copyrights, patents or any other intellectual property rights.</p>
+
+          <p>Users Submissions</p>
+
+          <p>Users are solely responsible for all materials, whether publicly posted or privately transmitted, that users upload, post, e-mail, transmit, or otherwise make available on our sites (“User Content”).&nbsp; Neither the Linux Foundation nor any of its Members shall be liable for any claims arising out of User Content.&nbsp; You warrant that you have all rights needed to provide the User Content in accordance with these terms and all applicable laws or regulations.<br />
+          Some Linux Foundation Workgroups or other projects that may be hosted by the Linux Foundation may have license terms or Contributor Agreements that are specific to the Workgroup or project and may require Users to sign an agreement (such as a Contributor Agreement) assigning and/or licensing rights in submissions made to such Workgroup or project. In all such cases, and to the extent there is a conflict, those license terms or agreements take precedence over these Terms of Use. With respect to any User Content not governed by other Workgroup or project specific terms or agreements, you agree that the following non-exclusive, irrevocable, royalty-free worldwide licenses shall apply:</p>
+
+          <p>Code Submissions. User Content in the form of source or object code will be governed by the&nbsp;BSD License.</p>
+
+          <p>All Other Submissions. User Content that is not in the form of source or object code, including but not limited to white papers, dissertations, articles or other literary works, power point presentations, encyclopedias, anthologies, wikis, blogs, diagrams, drawings, sketches, photos or other images, audio content, video content and audiovisual materials, will be governed by the Creative Commons Attribution 3.0.</p>
+
+          <p>The Linux Foundation and the Members do not want to receive confidential information from you through this Web site. Please note that any information or material sent to The Linux Foundation or the Members will be deemed NOT to be confidential.</p>
+
+          <p>You are prohibited from posting or transmitting to or from this Web site any unlawful, threatening, libelous, defamatory, obscene, scandalous, inflammatory, pornographic, or profane material, or any other material that could give rise to any civil or criminal liability under the law.</p>
+
+          <p>Disclaimers and Limitations of Liability</p>
+
+          <p>The Linux Foundation and the Members make no representations whatsoever about any other Web site that you may access through this Web site. When you access a non-Linux Foundation Web site, even one that may contain the organization’s name or mark, please understand that it is independent from The Linux Foundation, and that the Linux Foundation and the Members have no control over the content on such Web site. In addition, a link to a non-Linux Foundation Web site does not mean that the Linux Foundation or the Members endorse or accept any responsibility for the content, or the use, of such Web site.</p>
+
+          <p>It is up to you to take precautions to ensure that whatever you select for your use is free of such items as viruses, worms, Trojan horses and other items of a destructive nature.</p>
+
+          <p>IN NO EVENT WILL THE LINUX FOUNDATION AND/OR THE MEMBERS BE LIABLE TO YOU (AN INDIVIDUAL OR ENTITY) OR ANY OTHER INDIVIDUAL OR ENTITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL OR CONSEQUENTIAL DAMAGES RELATED TO ANY USE OF THIS WEB SITE, THE CONTENT, OR ON ANY OTHER HYPER LINKED WEB SITE, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, LOST SALES, LOST REVENUE, LOSS OF GOODWILL, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF THE LINUX FOUNDATION OR THE MEMBERS ARE EXPRESSLY ADVISED OR AWARE OF THE POSSIBILITY OF SUCH DAMAGES OR LOSSES.</p>
+
+          <p>ALL CONTENT IS PROVIDED BY THE LINUX FOUNDATION AND/OR THE MEMBERS ON AN “AS IS” BASIS ONLY. THE LINUX FOUNDATION AND THE MEMBERS PROVIDE NO REPRESENTATIONS, CONDITIONS AND/OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY AND NONINFRINGEMENT.</p>
+
+          <p>The Linux Foundation and the Members reserve the right to investigate complaints or reported violations of these Terms of Use and to take any action they deem appropriate including, without limitation, reporting any suspected unlawful activity to law enforcement officials, regulators, or other third parties and disclosing any information necessary or appropriate to such persons or entities relating to user profiles, e-mail addresses, usage history, posted materials, IP addresses and traffic information.</p>
+
+          <p>The Linux Foundation and the Members reserve the right to seek all remedies available at law and in equity for violations of these Terms of Use, including but not limited to the right to block access from a particular Internet address or account holder to this Web site.</p>
+
+          <p>Privacy</p>
+
+          <p>COPPA prohibits unfair or deceptive acts or practices in connection with the collection, use, or disclosure of personally identifiable information from and about children under 13 on the Internet. The law requires operators to notify parents and obtain their consent before collecting, using, or disclosing children’s personal information.</p>
+
+          <p>You can learn more about the Linuxfoundation.org&nbsp;privacy practices&nbsp;on the Web.</p>
+
+          <p>Digital Millennium Copyright Act</p>
+
+          <p>The Linux Foundation respects the intellectual property of others, and we ask users of our Web sites to do the same. In accordance with the Digital Millennium Copyright Act (DMCA) and other applicable law, we have adopted a policy of terminating, in appropriate circumstances and at our sole discretion, subscribers or account holders who are deemed to be repeat infringers. We may also at our sole discretion limit access to our Web site and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.</p>
+
+          <p>Notice and Procedure for Notifying Designated Agent of Claims of Copyright Infringement</p>
+
+          <p>If you believe that any material on this Web site infringes upon any copyright which you own or control, or that any link on this Web site directs users to another Web site that contains material that infringes upon any copyright which you own or control, you may file a notification of such infringement with our Designated Agent as set forth below. Notifications of claimed copyright infringement must be sent to The Linux Foundation Designated Agent for notice of claims of copyright infringement. Our Designated Agent may be reached as follows:</p>
+
+          <p>Legal Department<br />
+          The Linux Foundation<br />
+          1 Letterman Drive<br />
+          Building D, Suite D4700<br />
+          San Francisco,&nbsp; CA&nbsp; 94129<br />
+          Phone:&nbsp;4157239709<br />
+          Email:&nbsp;legal@linuxfoundation.org</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T00:48:56.261-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-16T01:05:09.122-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 281c0921-f7a9-438b-8461-d90129ac50a0
+        hippotranslation:locale: en
+  /modeler-resources:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: 0d5dcad0-9964-4e5f-8897-35bdb8c0e90b
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: 91e9a3e8-6c18-4487-8935-d7e97c9e1d80
+    hippotranslation:locale: en
+    /scikit-learn:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 6d56e21a-086c-438e-a7af-f79e80d3f319
+      /scikit-learn[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: c43260d6-165b-432b-848e-47b6bc7d921b
+        acumoscms:description: |-
+          <h2>Scikit-learn</h2>
+
+          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos scikit-learn Client Library</h3>
+
+          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-26T14:54:38.911Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: f2b89367-a772-4601-8a17-05985d308461
+        hippotranslation:locale: en
+      /scikit-learn[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: 0c031432-c04d-4011-8925-3b8a6ae75ccd
+        acumoscms:description: |-
+          <h2>Scikit-learn</h2>
+
+          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos scikit-learn Client Library</h3>
+
+          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-26T14:54:44.934Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: f2b89367-a772-4601-8a17-05985d308461
+        hippotranslation:locale: en
+    /tensor-flow:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 280de453-f481-4c96-aa25-328569f9eb32
+      /tensor-flow[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: c4552591-5a0b-4cc6-b8ec-47c5ecb0a229
+        acumoscms:description: |-
+          <h2>TensorFlow</h2>
+
+          <p>TensorFlow (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your TensorFlow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>
+
+          <p>The Acumos client library is required for users who want to push their TensorFlow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the Acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your TensorFlow model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-29T01:34:15.119Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 95a4682b-43c9-4826-ac7c-1c677a1b5a5e
+        hippotranslation:locale: en
+      /tensor-flow[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: dea9d80e-27c3-4b0c-9696-84d6ad55ae9e
+        acumoscms:description: |-
+          <h2>TensorFlow</h2>
+
+          <p>TensorFlow (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your TensorFlow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>
+
+          <p>The Acumos client library is required for users who want to push their TensorFlow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the Acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your TensorFlow model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-29T01:34:15.073Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 95a4682b-43c9-4826-ac7c-1c677a1b5a5e
+        hippotranslation:locale: en
+    /h2o:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: c94ba850-7289-44ed-81ee-b1d7fde2ecf2
+      hippo:name: H2O
+      /h2o[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 4484b69a-8e2b-4573-83a2-5fce8847c6be
+        acumoscms:description: |-
+          <h2>H2o</h2>
+
+          <p>This toolkit generates everything to create an executable Acumos microservice around H2o models. &nbsp;</p>
+
+          <h3>Getting Started</h3>
+
+          <p>The H2o model is exported in the MOJO model format (.zip file) using any interface (eg.Python, Flow, R) provided by H2o. &nbsp; To on-board your model, you need to download the h2o-genmodel.jar file using any interface (eg.Python, Flow, R) provided by H2o. At present, the common data format conversion is done in the modeler’s local enviornment, so the protoc application is also required.</p>
+
+          <h3>Before you begin</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;We assume you have H2o 3.14.0.2 installed on your machine. If not please take a look at&nbsp;https://www.h2o.ai/download/<br />
+          -&nbsp;&nbsp; &nbsp;You must have protobuf 3 installed. Please visit the protobuf repository for more information on how to install protoc. Install version 3 (version 2 will not work).<br />
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ&nbsp;</p>
+
+          <h3><br />
+          Installation</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;install protoc&nbsp;<br />
+          -&nbsp;&nbsp; &nbsp;get client libraries<br />
+          -&nbsp;&nbsp; &nbsp;Package Model and Push to acumos</p>
+
+          <h3>Usage</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;Iris example and screen shots</p>
+
+          <h3><br />
+          Testing</h3>
+
+          <h3>Creating a model in H2o:</h3>
+
+          <p>&nbsp;</p>
+
+          <p>H2o provides different interfaces to create models and use H2o. As an example, below we show how to create a model using the Python innterface of H2o and also using the H2o Flow GUI. You can use the other interfaces too which have comparable functions to train a model and download the model in a MOJO format.</p>
+
+          <p>#### Here is a sample H2o iris example program that shows how a model can be created and downloaded as a MOJO using the Python Interface</p>
+
+          <pre>
+          import h2o
+          import pandas as pd
+          import numpy as np
+          import matplotlib.pyplot as plt
+          import seaborn as sns
+
+          # for jupyter notebook plotting,
+          %matplotlib inline
+          sns.set_context("notebook")
+
+          h2o.init()
+
+          # Load data from CSV
+          iris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')
+
+          Iris data set description
+          -------------------------
+          1. sepal length in cm
+          2. sepal width in cm
+          3. petal length in cm
+          4. petal width in cm
+          5. class:
+              Iris Setosa
+              Iris Versicolour
+              Iris Virginica
+
+
+          iris.head()
+          iris.describe()
+          # training parameters
+          training_columns = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']
+          #  response parameter
+          response_column = 'class'
+
+          # Split data into train and testing
+          train, test = iris.split_frame(ratios=[0.8])
+          train.describe()
+          test.describe()
+
+          from h2o.estimators import H2ORandomForestEstimator
+          model = H2ORandomForestEstimator(ntrees=50, max_depth=20, nfolds=10)
+
+          # Train model
+          model.train(x=training_columns, y=response_column, training_frame=train)
+
+          print (model)
+
+          # Model performance
+          performance = model.model_performance(test_data=test)
+          print (performance)
+
+          # Download the model in MOJO format. Also download the h2o-genmodel.jar file
+          modelfile = model.download_mojo(path="/home/deven/Desktop/", get_genmodel_jar=True)
+
+          predictions=model.predict(test)
+          predictions</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:43:24.735-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T21:33:31.313Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 679a0aed-ac65-48cd-89cc-c25bbe8968b2
+        hippotranslation:locale: en
+      /h2o[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: a5b8e84b-5c8e-440f-9553-4c86c669715b
+        acumoscms:description: |-
+          <h2>H2o</h2>
+
+          <p>This toolkit generates everything to create an executable Acumos microservice around H2o models. &nbsp;</p>
+
+          <h3>Getting Started</h3>
+
+          <p>The H2o model is exported in the MOJO model format (.zip file) using any interface (eg.Python, Flow, R) provided by H2o. &nbsp; To on-board your model, you need to download the h2o-genmodel.jar file using any interface (eg.Python, Flow, R) provided by H2o. At present, the common data format conversion is done in the modeler’s local enviornment, so the protoc application is also required.</p>
+
+          <h3>Before you begin</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;We assume you have H2o 3.14.0.2 installed on your machine. If not please take a look at&nbsp;https://www.h2o.ai/download/<br />
+          -&nbsp;&nbsp; &nbsp;You must have protobuf 3 installed. Please visit the protobuf repository for more information on how to install protoc. Install version 3 (version 2 will not work).<br />
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ&nbsp;</p>
+
+          <h3><br />
+          Installation</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;install protoc&nbsp;<br />
+          -&nbsp;&nbsp; &nbsp;get client libraries<br />
+          -&nbsp;&nbsp; &nbsp;Package Model and Push to acumos</p>
+
+          <h3>Usage</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;Iris example and screen shots</p>
+
+          <h3><br />
+          Testing</h3>
+
+          <h3>Creating a model in H2o:</h3>
+
+          <p>&nbsp;</p>
+
+          <p>H2o provides different interfaces to create models and use H2o. As an example, below we show how to create a model using the Python innterface of H2o and also using the H2o Flow GUI. You can use the other interfaces too which have comparable functions to train a model and download the model in a MOJO format.</p>
+
+          <p>#### Here is a sample H2o iris example program that shows how a model can be created and downloaded as a MOJO using the Python Interface</p>
+
+          <pre>
+          import h2o
+          import pandas as pd
+          import numpy as np
+          import matplotlib.pyplot as plt
+          import seaborn as sns
+
+          # for jupyter notebook plotting,
+          %matplotlib inline
+          sns.set_context("notebook")
+
+          h2o.init()
+
+          # Load data from CSV
+          iris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')
+
+          Iris data set description
+          -------------------------
+          1. sepal length in cm
+          2. sepal width in cm
+          3. petal length in cm
+          4. petal width in cm
+          5. class:
+              Iris Setosa
+              Iris Versicolour
+              Iris Virginica
+
+
+          iris.head()
+          iris.describe()
+          # training parameters
+          training_columns = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']
+          #  response parameter
+          response_column = 'class'
+
+          # Split data into train and testing
+          train, test = iris.split_frame(ratios=[0.8])
+          train.describe()
+          test.describe()
+
+          from h2o.estimators import H2ORandomForestEstimator
+          model = H2ORandomForestEstimator(ntrees=50, max_depth=20, nfolds=10)
+
+          # Train model
+          model.train(x=training_columns, y=response_column, training_frame=train)
+
+          print (model)
+
+          # Model performance
+          performance = model.model_performance(test_data=test)
+          print (performance)
+
+          # Download the model in MOJO format. Also download the h2o-genmodel.jar file
+          modelfile = model.download_mojo(path="/home/deven/Desktop/", get_genmodel_jar=True)
+
+          predictions=model.predict(test)
+          predictions</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:43:24.735-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T14:51:57.298Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 679a0aed-ac65-48cd-89cc-c25bbe8968b2
+        hippotranslation:locale: en
+    /rcloud:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 7e26708f-0ec7-47d2-bbc4-de06a9f75199
+      hippo:name: RCloud
+      /rcloud[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 68a06032-d071-4e94-b3fd-e8ccb6f9a4f4
+        acumoscms:description: |-
+          <h6>RCloud</h6>
+
+          <p>Your Text Goes Here...</p>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:51:09.365-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-17T00:56:33.825-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: e6e3c249-b365-4697-b5da-2b7f126a3fbd
+        hippotranslation:locale: en
+      /rcloud[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: 8c3db481-a67f-4ee5-a05b-d4dda884dea1
+        acumoscms:description: |-
+          <h6>RCloud</h6>
+
+          <p>Your Text Goes Here...</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:51:09.365-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-17T00:56:43.139-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: e6e3c249-b365-4697-b5da-2b7f126a3fbd
+        hippotranslation:locale: en
+    /r:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 53da892f-d88f-4b92-a1bf-f426e399c42d
+      hippo:name: R
+      /r[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: b12d2c74-9f4a-4f34-a0b2-0003a0e74eb9
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
+          \ programming that is a popular choice for machine learning applications.\
+          \ It provides a wide variety of data analytic tools and models. Due to its\
+          \ vectorized nature, it is also very efficient at dealing with moderately\
+          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
+          \ must have protobuf 3 installed. Please visit the protobuf repository for\
+          \ more information on how to install protoc. Install version 3 (version\
+          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
+          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
+          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
+          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
+          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
+          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
+          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
+          \ deployment component, use acumos::compose() with the functions to expose.\
+          \ If type specs are not defined, they default to c(x=\"character\").<br\
+          \ />\nThe component consists of component.json defining the component and\
+          \ its metadata, component.bin the binary payload and component.proto with\
+          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
+          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
+          \ have to create a runtime.json file with at least {\"input_port\":8100}\
+          \ or similar to define which port the component should listen to. If there\
+          \ are output components there should also be a \"output_url\" entry to specify\
+          \ where to send the result to. It can be either a single entry or a list\
+          \ if the results are to be sent to multiple components. Example:<br />\n\
+          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
+          \ configured to set the component directory and/or locations of the component\
+          \ files if needed. If you don't want to create a file, the runtime parameter\
+          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
+          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
+          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T14:45:52.192Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 2128e907-741f-4a82-ad9f-cad462146be2
+        hippotranslation:locale: en
+      /r[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: 6a0af2cc-94d5-423e-beb1-f8f77afeadf3
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
+          \ programming that is a popular choice for machine learning applications.\
+          \ It provides a wide variety of data analytic tools and models. Due to its\
+          \ vectorized nature, it is also very efficient at dealing with moderately\
+          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
+          \ must have protobuf 3 installed. Please visit the protobuf repository for\
+          \ more information on how to install protoc. Install version 3 (version\
+          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
+          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
+          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
+          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
+          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
+          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
+          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
+          \ deployment component, use acumos::compose() with the functions to expose.\
+          \ If type specs are not defined, they default to c(x=\"character\").<br\
+          \ />\nThe component consists of component.json defining the component and\
+          \ its metadata, component.bin the binary payload and component.proto with\
+          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
+          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
+          \ have to create a runtime.json file with at least {\"input_port\":8100}\
+          \ or similar to define which port the component should listen to. If there\
+          \ are output components there should also be a \"output_url\" entry to specify\
+          \ where to send the result to. It can be either a single entry or a list\
+          \ if the results are to be sent to multiple components. Example:<br />\n\
+          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
+          \ configured to set the component directory and/or locations of the component\
+          \ files if needed. If you don't want to create a file, the runtime parameter\
+          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
+          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
+          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T14:45:52.133Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 2128e907-741f-4a82-ad9f-cad462146be2
+        hippotranslation:locale: en
+    /java:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 6e5dbd4d-9701-41d5-9e1f-687ec3a20893
+      hippo:name: Java
+      /java[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 9658ec70-f1ac-4a01-ac1c-3d8404088ca4
+        acumoscms:description: "<h2>Generic Java Models</h2>\n\n<p>These instruction\
+          \ show how to use H2o.ai and Generic Java in the Acumos Platform.</p>\n\n\
+          <h3>Getting Started</h3>\n\n<p>The &nbsp;tools you will need are the Onboarding\
+          \ client library and the Model Runner.</p>\n\n<h4>Onboarding client Library\
+          \ (https://bitbucket.org/acumos_dev/acumos-java-client):</h4>\n\n<p>Allows\
+          \ the H2o or Generic Java model and other artifacts to become avaiable in\
+          \ the onbarding server for the H2o Model runner to be able use them</p>\n\
+          \n<p>The Modeller/Onboarder/ ML expert creates his model in H2o and exports\
+          \ it in the MOJO model format (.zip file) using any interface (eg.Python,\
+          \ Flow, R) provided by H2o</p>\n\n<p>For Generic Java, the Modeller/Onboarder/\
+          \ ML expert creates his model in&nbsp;<strong><em>_</em></strong>_ and exports\
+          \ it in&nbsp;<strong><em>_</em></strong>___ format.</p>\n\n<p>He runs the\
+          \ Javaclient jar, which (TODO: creates a Protobuf file for the Model), creates\
+          \ the required metadata.json file and onboards the model onto the onboarding\
+          \ server.</p>\n\n<h4>Model Runner (https://bitbucket.org/acumos_dev/generic-model-runner):</h4>\n\
+          \n<p>Allows the onboarded Model to be run as containerised microservice\
+          \ and allows other applications to use the onboarded Model for predictions.</p>\n\
+          \n<p>Essentially provides a wrapper around the ML model, packages it as\
+          \ a containerised microservice and exposes a transform/predict method as\
+          \ a rest endpoint.</p>\n\n<p>This method can be called by other external\
+          \ applications to request predictions off of the model</p>\n\n<h4>How to\
+          \ get them:</h4>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\n\
+          <p>You will just need the following zips / jars from the above 2 projects:</p>\n\
+          \n<p>The zips contain a prebuilt model runner bundled with&nbsp;<strong><em>_</em></strong>_\
+          \ .</p>\n\n<p>Alternatively, you can clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project which has these zips in the folders.</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<h4>For the Developer:</h4>\n\n<p>The Modeller/ Onboarder/ ML\
+          \ expert does not have to know how to build these jars, zips. He only uses\
+          \ them. But the zips and jars mentioned above are the result of the compilation\
+          \ of the below 2 projects.</p>\n\n<p>To clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project:</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<p>To run the client project,you will need the following installed\
+          \ on your machine.</p>\n\n<p>Java (jdk) 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\
+          \n<p>Maven</p>\n\n<p>Protobuf Java runtime 3.4.0 To build the project, you\
+          \ can use:</p>\n\n<pre>\nmvn clean install\n</pre>\n\n<p>To clone the model\
+          \ runner (https://bitbucket.org/acumos_dev/generic-model-runner) project:</p>\n\
+          \n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/generic-model-runner.git\
+          \ \ngit clone devenpanchal@bitbucket.org:acumos_dev/generic-model-runner.git\n\
+          </pre>\n\n<p>To run the model runner project, refer to instructions on&nbsp;https://bitbucket.org/acumos_dev/generic-model-runner.</p>\n\
+          \n<h4>Required Installations:</h4>\n\n<p>You must have the following installed\
+          \ on your machine-</p>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\
+          \n<p>Java 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\n<h4>Preparing to Onboard\
+          \ your Model:</h4>\n\n<p>a. You can download the zips located at and place\
+          \ them in a folder lets say&nbsp;<strong>_</strong>_</p>\n\n<p>b. Additionally\
+          \ place the model service files H2OModel.zip (GenericModel.jar in case of\
+          \ Generic Java) in a separate folder&nbsp;<strong>_</strong>_.</p>\n\n<p>c.\
+          \ Currently, we require the modeller to also create a .proto file for the\
+          \ model in the following format. He needs to appropriately replace the data\
+          \ and datatypes under DataFrameRow according to his model. (This will not\
+          \ be needed to be done in the future as we will autogenerate .proto files.)</p>\n\
+          \n<pre>\nsyntax = \"proto3\";\noption java_package = \"com.google.protobuf\"\
+          ;\noption java_outer_classname = \"DatasetProto\";\n\nmessage DataFrameRow\
+          \ {\nstring sepal_len = 1;\nstring sepal_wid = 2;\nstring petal_len = 3;\n\
+          string petal_wid = 4;\n}\nmessage DataFrame {\n    repeated DataFrameRow\
+          \ rows = 1;\n}\nmessage Prediction {\n    repeated string prediction= 1;\n\
+          }\n\nservice Model {\n  rpc transform (DataFrame) returns (Prediction);\n\
+          }\n</pre>\n\n<p>d. Place the generated .proto file in the same folder as\
+          \ the model service files.</p>\n\n<h3>Onboarding your model</h3>\n\n<p>Refering\
+          \ to the java_client folder:</p>\n\n<p>JavaClient.jar is the executable\
+          \ client jar file. The parameters to run the client jar are: 1. Onboarding\
+          \ url / Folder path 2. Model Type - either H for H2o or J for Generic Java\
+          \ 3. Folder path having .proto and the respective model package file (ex.\
+          \ H2OModel.zip or GenericModel.jar) 4. Name of the model</p>\n\n<pre>\n\
+          java -jar java_client-0.0.1.jar http://acumos-dev1-vm01-core.eastus.cloudapp.azure.com:8090/onboarding-app/v2/models\
+          \ H D:\\js00353493\\ATT\\acumos\\4ADemo_supporting H2OModel \n</pre>\n\n\
+          <p>(Note : while running the client jar make sure the respective modelservice\
+          \ jar is also at the same folder)</p>\n\n<p>There are two ways a modeler\
+          \ can onboard a model</p>\n\n<p>Throught the client - In this case modeler\
+          \ can pass the onboarding url in the first argument.</p>\n\n<p>Through web\
+          \ based onboarding - In this case the modeler can pass the folder path in\
+          \ which he is expecting the final modelpackage.zip file to onboard. The\
+          \ folder path can be passed in first argument.</p>\n\n<h4>What happens after\
+          \ onboarding?</h4>\n\n<p>You will &nbsp;get a success message if your model\
+          \ was onboarded successfully.</p>\n\n<p>You&nbsp;can now see, collaborate\
+          \ on your model in the Acumos marketplace.</p>\n\n<p>When requested by a\
+          \ user, your model runs as a containerised microservice and exposes a transform/predict\
+          \ method as a rest endpoint.</p>\n\n<p>This method can be called by other\
+          \ external applications to request predictions off of your model.</p>\n\n\
+          <h3>&nbsp;</h3>"
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:55:43.668-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T14:49:32.128Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: b00ed304-7a49-4ce7-97b1-7500f8471764
+        hippotranslation:locale: en
+      /java[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: 083ed539-87d6-4e22-ab82-d0f089266256
+        acumoscms:description: "<h2>Generic Java Models</h2>\n\n<p>These instruction\
+          \ show how to use H2o.ai and Generic Java in the Acumos Platform.</p>\n\n\
+          <h3>Getting Started</h3>\n\n<p>The &nbsp;tools you will need are the Onboarding\
+          \ client library and the Model Runner.</p>\n\n<h4>Onboarding client Library\
+          \ (https://bitbucket.org/acumos_dev/acumos-java-client):</h4>\n\n<p>Allows\
+          \ the H2o or Generic Java model and other artifacts to become avaiable in\
+          \ the onbarding server for the H2o Model runner to be able use them</p>\n\
+          \n<p>The Modeller/Onboarder/ ML expert creates his model in H2o and exports\
+          \ it in the MOJO model format (.zip file) using any interface (eg.Python,\
+          \ Flow, R) provided by H2o</p>\n\n<p>For Generic Java, the Modeller/Onboarder/\
+          \ ML expert creates his model in&nbsp;<strong><em>_</em></strong>_ and exports\
+          \ it in&nbsp;<strong><em>_</em></strong>___ format.</p>\n\n<p>He runs the\
+          \ Javaclient jar, which (TODO: creates a Protobuf file for the Model), creates\
+          \ the required metadata.json file and onboards the model onto the onboarding\
+          \ server.</p>\n\n<h3>Model Runner (https://bitbucket.org/acumos_dev/generic-model-runner):</h3>\n\
+          \n<p>Allows the onboarded Model to be run as containerised microservice\
+          \ and allows other applications to use the onboarded Model for predictions.</p>\n\
+          \n<p>Essentially provides a wrapper around the ML model, packages it as\
+          \ a containerised microservice and exposes a transform/predict method as\
+          \ a rest endpoint.</p>\n\n<p>This method can be called by other external\
+          \ applications to request predictions off of the model</p>\n\n<h3>How to\
+          \ get them:</h3>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\n\
+          <p>You will just need the following zips / jars from the above 2 projects:</p>\n\
+          \n<p>The zips contain a prebuilt model runner bundled with&nbsp;<strong><em>_</em></strong>_\
+          \ .</p>\n\n<p>Alternatively, you can clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project which has these zips in the folders.</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<h4>For the Developer:</h4>\n\n<p>The Modeller/ Onboarder/ ML\
+          \ expert does not have to know how to build these jars, zips. He only uses\
+          \ them. But the zips and jars mentioned above are the result of the compilation\
+          \ of the below 2 projects.</p>\n\n<p>To clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project:</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<p>To run the client project,you will need the following installed\
+          \ on your machine.</p>\n\n<p>Java (jdk) 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\
+          \n<p>Maven</p>\n\n<p>Protobuf Java runtime 3.4.0 To build the project, you\
+          \ can use:</p>\n\n<pre>\nmvn clean install\n</pre>\n\n<p>To clone the model\
+          \ runner (https://bitbucket.org/acumos_dev/generic-model-runner) project:</p>\n\
+          \n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/generic-model-runner.git\
+          \ \ngit clone devenpanchal@bitbucket.org:acumos_dev/generic-model-runner.git\n\
+          </pre>\n\n<p>To run the model runner project, refer to instructions on&nbsp;https://bitbucket.org/acumos_dev/generic-model-runner.</p>\n\
+          \n<h3>Required Installations:</h3>\n\n<p>You must have the following installed\
+          \ on your machine-</p>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\
+          \n<p>Java 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\n<h3>Preparing to Onboard\
+          \ your Model:</h3>\n\n<p>a. You can download the zips located at and place\
+          \ them in a folder lets say&nbsp;<strong>_</strong>_</p>\n\n<p>b. Additionally\
+          \ place the model service files H2OModel.zip (GenericModel.jar in case of\
+          \ Generic Java) in a separate folder&nbsp;<strong>_</strong>_.</p>\n\n<p>c.\
+          \ Currently, we require the modeller to also create a .proto file for the\
+          \ model in the following format. He needs to appropriately replace the data\
+          \ and datatypes under DataFrameRow according to his model. (This will not\
+          \ be needed to be done in the future as we will autogenerate .proto files.)</p>\n\
+          \n<pre>\nsyntax = \"proto3\";\noption java_package = \"com.google.protobuf\"\
+          ;\noption java_outer_classname = \"DatasetProto\";\n\nmessage DataFrameRow\
+          \ {\nstring sepal_len = 1;\nstring sepal_wid = 2;\nstring petal_len = 3;\n\
+          string petal_wid = 4;\n}\nmessage DataFrame {\n    repeated DataFrameRow\
+          \ rows = 1;\n}\nmessage Prediction {\n    repeated string prediction= 1;\n\
+          }\n\nservice Model {\n  rpc transform (DataFrame) returns (Prediction);\n\
+          }\n</pre>\n\n<p>d. Place the generated .proto file in the same folder as\
+          \ the model service files.</p>\n\n<h3>Onboarding your model</h3>\n\n<p>Refering\
+          \ to the java_client folder:</p>\n\n<p>JavaClient.jar is the executable\
+          \ client jar file. The parameters to run the client jar are: 1. Onboarding\
+          \ url / Folder path 2. Model Type - either H for H2o or J for Generic Java\
+          \ 3. Folder path having .proto and the respective model package file (ex.\
+          \ H2OModel.zip or GenericModel.jar) 4. Name of the model</p>\n\n<pre>\n\
+          java -jar java_client-0.0.1.jar http://acumos-dev1-vm01-core.eastus.cloudapp.azure.com:8090/onboarding-app/v2/models\
+          \ H D:\\js00353493\\ATT\\acumos\\4ADemo_supporting H2OModel \n</pre>\n\n\
+          <p>(Note : while running the client jar make sure the respective modelservice\
+          \ jar is also at the same folder)</p>\n\n<p>There are two ways a modeler\
+          \ can onboard a model</p>\n\n<p>Throught the client - In this case modeler\
+          \ can pass the onboarding url in the first argument.</p>\n\n<p>Through web\
+          \ based onboarding - In this case the modeler can pass the folder path in\
+          \ which he is expecting the final modelpackage.zip file to onboard. The\
+          \ folder path can be passed in first argument.</p>\n\n<h3>What happens after\
+          \ onboarding?</h3>\n\n<p>You will be able to get a success message if your\
+          \ model was onboarded successfully.</p>\n\n<p>You and your teammates can\
+          \ now see, collaborate on your model in the Sumos marketplace.</p>\n\n<p>When\
+          \ requested by a user, your model runs as a containerised microservice and\
+          \ exposes a transform/predict method as a rest endpoint.</p>\n\n<p>This\
+          \ method can be called by other external applications to request predictions\
+          \ off of your model.</p>\n\n<h3>Addendum : Creating a model in H2o:</h3>\n\
+          \n<p>We assume you have H2o 3.14.0.2 installed on your machine. If not please\
+          \ take a look at&nbsp;https://www.h2o.ai/download/</p>\n\n<p>H2o provides\
+          \ different interfaces to create models and use H2o. As an example, below\
+          \ we show how to create a model using the Python innterface of H2o and also\
+          \ using the H2o Flow GUI. You can use the other interfaces too which have\
+          \ comparable functions to train a model and download the model in a MOJO\
+          \ format.</p>\n\n<p>#### Here is a sample H2o iris example program that\
+          \ shows how a model can be created and downloaded as a MOJO using the Python\
+          \ Interface</p>\n\n<pre>\nimport h2o\nimport pandas as pd\nimport numpy\
+          \ as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# for\
+          \ jupyter notebook plotting,\n%matplotlib inline\nsns.set_context(\"notebook\"\
+          )\n\nh2o.init()\n\n# Load data from CSV\niris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')\n\
+          \nIris data set description\n-------------------------\n1. sepal length\
+          \ in cm\n2. sepal width in cm\n3. petal length in cm\n4. petal width in\
+          \ cm\n5. class:\n    Iris Setosa\n    Iris Versicolour\n    Iris Virginica\n\
+          \n\niris.head()\niris.describe()\n# training parameters\ntraining_columns\
+          \ = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']\n#  response parameter\n\
+          response_column = 'class'\n\n# Split data into train and testing\ntrain,\
+          \ test = iris.split_frame(ratios=[0.8])\ntrain.describe()\ntest.describe()\n\
+          \nfrom h2o.estimators import H2ORandomForestEstimator\nmodel = H2ORandomForestEstimator(ntrees=50,\
+          \ max_depth=20, nfolds=10)\n\n# Train model\nmodel.train(x=training_columns,\
+          \ y=response_column, training_frame=train)\n\nprint (model)\n\n# Model performance\n\
+          performance = model.model_performance(test_data=test)\nprint (performance)\n\
+          \n# Download the model in MOJO format. Also download the h2o-genmodel.jar\
+          \ file\nmodelfile = model.download_mojo(path=\"/home/deven/Desktop/\", get_genmodel_jar=True)\n\
+          \npredictions=model.predict(test)\npredictions\n</pre>"
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:55:43.668-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-19T14:49:32.080Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: b00ed304-7a49-4ce7-97b1-7500f8471764
+        hippotranslation:locale: en
+  /home-screen:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: 41e44fa4-a899-4fd7-9759-a89d6f581e59
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: 28e3ef02-a544-4121-83a5-c33740075385
+    hippotranslation:locale: en
+    /discover-acumos:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+      jcr:uuid: b7f06c8e-b7ad-404d-ac9b-cc974f02b74e
+      hippostd:foldertype: [new-translated-folder, new-document]
+      hippotranslation:id: f7704e0b-1338-4f7f-8162-eaed6e5910ae
+      hippotranslation:locale: en
+      /team-up:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 25a227aa-cf6c-47e5-be77-688aac7c3b4c
+        /team-up[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 2b594df6-0480-4b72-bc89-4c49b1603491
+          acumoscms:description: |-
+            <h5>Team Up!</h5>
+
+            <p>Share, experiment &amp; collaborate in an open source ecosystem of people, solutions and ideas.</p>
+          hippo:availability: []
+          hippostd:holder: admin
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:06:35.849-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:08:33.767Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 6cdf9283-2621-4f08-8541-c7429926576e
+          hippotranslation:locale: en
+        /team-up[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 61b8190c-0dbe-45c0-9563-83d6a5e5d134
+          acumoscms:description: |-
+            <h5>Team Up!</h5>
+
+            <p>Share, experiment &amp; collaborate in an open source ecosystem of people, solutions and ideas.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:06:35.849-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:08:33.722Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 6cdf9283-2621-4f08-8541-c7429926576e
+          hippotranslation:locale: en
+      /marketplace:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: e22bc9bf-c52c-4768-b50b-d8eb60a3cf73
+        /marketplace[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 27d699c6-67a8-4ee5-809e-e9fa38f7eb20
+          acumoscms:description: |-
+            <h5>Marketplace</h5>
+
+            <p>Acumos is the go-to site for data-powered decision making. With an intuitive easy-to-use Marketplace and Design Studio, Acumos brings Al into the mainstream.</p>
+          hippo:availability: []
+          hippostd:holder: admin
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:15:57.737-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:14:08.289Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 4c986024-ed66-4676-bf07-0fe4f99e24d0
+          hippotranslation:locale: en
+        /marketplace[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 73ae6c74-05f7-47fe-aa00-d467984bbc5b
+          acumoscms:description: |-
+            <h5>Marketplace</h5>
+
+            <p>Acumos is the go-to site for data-powered decision making. With an intuitive easy-to-use Marketplace and Design Studio, Acumos brings Al into the mainstream.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:15:57.737-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:14:04.693Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 4c986024-ed66-4676-bf07-0fe4f99e24d0
+          hippotranslation:locale: en
+      /design-studio:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 1da6c2e5-53bb-4896-a018-7be383bf81ac
+        /design-studio[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 585d1933-5f74-46b3-82de-57ce7307371c
+          acumoscms:description: |-
+            <h5>Design Studio</h5>
+
+            <p>Because Acumos converts models to microservices, you can apply them to different problems and data sources.</p>
+          hippo:availability: []
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:17:29.011-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:23:48.915Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: e9680b57-030a-42e3-89c9-5eb55a637892
+          hippotranslation:locale: en
+        /design-studio[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 1b5aaa87-e53d-4465-a20b-8ff365400c84
+          acumoscms:description: |-
+            <h5>Design Studio</h5>
+
+            <p>Because Acumos converts models to microservices, you can apply them to different problems and data sources.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:17:29.011-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-27T19:23:48.862Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: e9680b57-030a-42e3-89c9-5eb55a637892
+          hippotranslation:locale: en
+      /sdn--onap:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 06cd0a9f-6d73-4580-812a-fb5de3341765
+        hippo:name: SDN & ONAP
+        /sdn--onap[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: abf4849e-398b-44d4-bfde-10bfa426be68
+          acumoscms:description: |-
+            <h5>SDN &amp; ONAP</h5>
+
+            <p>Many Marketplace solutions originated in the ONAP SDN community and are configured to be directly deployed to SDC.</p>
+          hippo:availability: []
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:18:56.985-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T12:18:56.985-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 6fb3b400-946a-4a89-bc36-c81ef0eff2dc
+          hippotranslation:locale: en
+        /sdn--onap[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 9fcb04c9-1bc6-4657-95f6-657d5774c456
+          acumoscms:description: |-
+            <h5>SDN &amp; ONAP</h5>
+
+            <p>Many Marketplace solutions originated in the ONAP SDN community and are configured to be directly deployed to SDC.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:18:56.985-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T12:19:41.752-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 6fb3b400-946a-4a89-bc36-c81ef0eff2dc
+          hippotranslation:locale: en
+      /onboarding-with-toolkit:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: fc3a1b8e-a410-4b71-aacb-dd18a3fb1222
+        /onboarding-with-toolkit[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: db2b541e-9fcf-4b29-8319-c9d4869ef1f6
+          acumoscms:description: |-
+            <h5>Onboard with your Preferred Toolkit</h5>
+
+            <p>With a focus on interoperability, Acumos supports diverse Al toolkits. Onboarding tools are available for TensorFlow, SciKitLearn, RCloud,&nbsp; H2O and generic java.</p>
+          hippo:availability: []
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:21:15.087-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T14:04:57.003-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 4c84ed8a-4fb5-4786-aaa5-57ab277b4cab
+          hippotranslation:locale: en
+        /onboarding-with-toolkit[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 7411aa4e-3f09-4419-a897-1c7ac8ba9458
+          acumoscms:description: |-
+            <h5>Onboard with your Preferred Toolkit</h5>
+
+            <p>With a focus on interoperability, Acumos supports diverse Al toolkits. Onboarding tools are available for TensorFlow, SciKitLearn, RCloud,&nbsp; H2O and generic java.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:21:15.087-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T13:58:33.301-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 4c84ed8a-4fb5-4786-aaa5-57ab277b4cab
+          hippotranslation:locale: en
+        /onboarding-with-toolkit[3]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 38e49dae-95c6-4332-b7fc-b5f7d8a4493f
+          acumoscms:description: |-
+            <h5>Onboard with your Preferred Toolkit</h5>
+
+            <p>With a focus on interoperability, Acumos supports diverse Al toolkits. Onboarding tools are available for TensorFlow, SciKitLearn, RCloud,&nbsp; H2O and generic java.</p>
+          hippo:availability: []
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T12:21:15.087-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T13:58:33.301-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2017-10-20T14:02:47.591-05:00
+          hippotranslation:id: 4c84ed8a-4fb5-4786-aaa5-57ab277b4cab
+          hippotranslation:locale: en
+    /carousel:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+      jcr:uuid: 7b376490-3f59-4aa0-90a2-8f8d6d898f7a
+      hippostd:foldertype: [new-translated-folder, new-document]
+      hippotranslation:id: eaaa7248-3c07-412a-be51-e05fa710c76a
+      hippotranslation:locale: en
+      /slide1:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 3e39964e-e9c2-48d9-a447-811594811b75
+        /slide1[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 958e9100-1905-4c51-9cd4-906277040040
+          acumoscms:description: |-
+            <h4>Powering Data-driven Solutions</h4>
+
+            <p>Acumos is the marketplace and collaboration space for AI.</p>
+          hippo:availability: []
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T15:10:32.518-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T15:10:32.518-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 83a5a5f7-6834-4787-88d2-c334552a430a
+          hippotranslation:locale: en
+        /slide1[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 54fb50db-34c0-44ff-9308-0d0a447e3ef2
+          acumoscms:description: |-
+            <h4>Powering Data-driven Solutions</h4>
+
+            <p>Acumos is the marketplace and collaboration space for AI.</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-20T15:10:32.518-05:00
+          hippostdpubwf:lastModificationDate: 2017-10-20T15:11:09.059-05:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 83a5a5f7-6834-4787-88d2-c334552a430a
+          hippotranslation:locale: en
+    /hackathon:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: fa639abd-a13b-4c2e-b28c-d48fd338f98a
+      /hackathon[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 1259f00f-7825-47f0-a63d-a552b4202f94
+        acumoscms:description: |-
+          <h3>Hackathon</h3>
+
+          <p>An Acumos Hackathon is coming soon! &nbsp;Meet new colleagues and expand your Acumos skills.</p>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-24T05:51:16.851Z
+        hippostdpubwf:lastModificationDate: 2017-10-24T05:51:16.851Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 4e8b2b94-3fab-43e0-8a04-80ed399a2da4
+        hippotranslation:locale: en
+      /hackathon[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: e6c83e19-4810-4155-b369-e0abe2b31289
+        acumoscms:description: |-
+          <h3>Hackathon</h3>
+
+          <p>An Acumos Hackathon is coming soon! &nbsp;Meet new colleagues and expand your Acumos skills.</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-24T05:51:16.851Z
+        hippostdpubwf:lastModificationDate: 2017-10-24T05:51:34.584Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 4e8b2b94-3fab-43e0-8a04-80ed399a2da4
+        hippotranslation:locale: en
+    /success-stories:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+      jcr:uuid: 0f3685c6-94c1-4f02-99aa-dde1bcac0c1c
+      hippostd:foldertype: [new-translated-folder, new-document]
+      hippotranslation:id: ac000392-0af3-4989-a1b3-2649779161b3
+      hippotranslation:locale: en
+      /attexec:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 8ff1904c-f63e-4a52-892a-c6f52d59eb28
+        /attexec[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: c3cda15f-3eaf-4bad-827e-01fa43ad6b3d
+          acumoscms:description: |-
+            <p>I needed to better position&nbsp;my ads in streaming video services. I used the &nbsp;Acumos Design Studio test out my data sets with working models. &nbsp;So easy!</p>
+
+            <p>AT&amp;T Entertainment Executive</p>
+          hippo:availability: []
+          hippostd:holder: admin
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-24T05:52:49.928Z
+          hippostdpubwf:lastModificationDate: 2017-10-27T18:57:58.886Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: eb01c719-8511-4eea-a384-efb8264f8b5a
+          hippotranslation:locale: en
+        /attexec[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 27b86b90-c5fa-4348-9f22-25f0d2b9673b
+          acumoscms:description: |-
+            <p>I needed to better position&nbsp;my ads in streaming video services. I used the &nbsp;Acumos Design Studio test out my data sets with working models. &nbsp;So easy!</p>
+
+            <p>AT&amp;T Entertainment Executive</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-24T05:52:49.928Z
+          hippostdpubwf:lastModificationDate: 2017-10-27T18:57:55.192Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: eb01c719-8511-4eea-a384-efb8264f8b5a
+          hippotranslation:locale: en
+      /attsitemanager:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 4bfc0607-6ff4-499c-b98f-1ac59f40b87f
+        /attsitemanager[1]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 35f3bfdb-3d2d-4545-bce5-0ca739439a8f
+          acumoscms:description: |-
+            <p>I used the Threat Analytics model in Acumos. &nbsp;I replaced the alerting component with one that let me immediately shut down servers if the threat prediction exceeded my threshold.&nbsp;</p>
+
+            <p>AT&amp;T Site Manager</p>
+          hippo:availability: []
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-24T05:53:25.458Z
+          hippostdpubwf:lastModificationDate: 2017-10-24T13:27:48.026Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 87842119-e26c-4943-9810-f1848b0c7750
+          hippotranslation:locale: en
+        /attsitemanager[2]:
+          jcr:primaryType: acumoscms:solutionDescription
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 39370deb-bf69-4a1a-8205-4f49af4dbe69
+          acumoscms:description: |-
+            <p>I used the Threat Analytics model in Acumos. &nbsp;I replaced the alerting component with one that let me immediately shut down servers if the threat prediction exceeded my threshold.&nbsp;</p>
+
+            <p>AT&amp;T Site Manager</p>
+          hippo:availability: [preview]
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2017-10-24T05:53:25.458Z
+          hippostdpubwf:lastModificationDate: 2017-10-24T13:27:54.872Z
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: 87842119-e26c-4943-9810-f1848b0c7750
+          hippotranslation:locale: en
+  /web-model-resource:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: 0776ba3a-10be-49ca-b797-079844045e33
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: 852b577d-bc0c-4f63-ba41-6a6f5795f32f
+    hippotranslation:locale: en
+    /scikit-learn:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 13009661-696f-4173-bc9e-f4021211a1fd
+      hippo:name: scikit-learn
+      /scikit-learn[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 6612e136-516f-48fa-84ca-1529e3ee1cae
+        acumoscms:description: |-
+          <h2>Scikit-learn</h2>
+
+          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos scikit-learn Client Library</h3>
+
+          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:04:57.934-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 7630ab95-4d9c-42dd-9c22-dc3d61d3e2e2
+        hippotranslation:locale: en
+      /scikit-learn[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: f550a7c7-99b8-4167-bf38-ff52d5575498
+        acumoscms:description: |-
+          <h2>Scikit-learn</h2>
+
+          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos scikit-learn Client Library</h3>
+
+          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:04:52.618-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 7630ab95-4d9c-42dd-9c22-dc3d61d3e2e2
+        hippotranslation:locale: en
+    /tensor-flow:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 6449bc2b-8f5e-4ddf-9063-2b6f97438cf8
+      hippo:name: tensor-flow
+      /tensor-flow[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 95993c07-15ad-43cf-b0d0-05411573ffe9
+        acumoscms:description: |-
+          <h2>Tensor Flow</h2>
+
+          <p>Scikit-learn (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Tensor Flow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos&nbsp;Tensor Flow Client Library</h3>
+
+          <p>The Acumos client library is required for users who want to push their Tensor Flow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the Acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:27.086-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: b84e19ff-4443-4c82-a2c2-3d0e79608925
+        hippotranslation:locale: en
+      /tensor-flow[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: d4b1f436-d37b-407d-b184-50d15f46a1bb
+        acumoscms:description: |-
+          <h2>Tensor Flow</h2>
+
+          <p>Scikit-learn (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
+
+          <h3>Getting Started</h3>
+
+          <p>There are only a few simple steps to upload your model from your Tensor Flow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
+
+          <h3>Get the Acumos&nbsp;Tensor Flow Client Library</h3>
+
+          <p>The Acumos client library is required for users who want to push their Tensor Flow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
+
+          <h4>Steps to follow</h4>
+
+          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
+
+          <pre>
+          get clone
+          pip install ./acumos-python-client</pre>
+
+          <p>2 Where the acumos-python-client repo url has the form</p>
+
+          <pre>
+          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
+
+          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
+
+          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
+
+          <pre>
+          def push_skleran_model(model, dataset, extra_deps=None,
+          api="http://localhost:8888/v1/models"):
+          =
+          Pushes a model to the Acumos server
+
+          Parameters
+          --------
+          model : sklearn estimator
+          An estimator which has already been fit.
+          dataset : numpy ndarray or pandas DataFrame
+          The features or X that 'model' was fit on.
+          extra_deps : sequence
+          A sequence of additional Python modules that the model
+          needs to run. Sequence items can either be a
+          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
+          api : string
+          Model upload URI
+          =</pre>
+
+          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
+
+          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
+
+          <p>6&nbsp;See your model in Acumos</p>
+
+          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
+
+          <h3>Example</h3>
+
+          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
+
+          <pre>
+          from sklearn.datasets import load_iris
+          from sklearn.ensemble import RandomForestClassifier
+
+          from acumos_client.push import push_sklearn_model
+
+          dataset = local_iris()
+          X = dataset.data
+          y = dataset.target
+          model = RandomForestClassifier(random_state=0)
+          model.fit(X,y)
+
+          push_sklearn_model(model, X)</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:21.790-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: b84e19ff-4443-4c82-a2c2-3d0e79608925
+        hippotranslation:locale: en
+    /h2o:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 1413294c-ce3c-4ac8-a363-163fd777ff98
+      hippo:name: H2O
+      /h2o[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 1d66a7fb-9266-47aa-92df-129d71d47963
+        acumoscms:description: |-
+          <h2>H2o</h2>
+
+          <p>This toolkit generates everything to create an executable Acumos microservice around H2o models. &nbsp;</p>
+
+          <h3>Getting Started</h3>
+
+          <p>The H2o model is exported in the MOJO model format (.zip file) using any interface (eg.Python, Flow, R) provided by H2o. &nbsp; To on-board your model, you need to download the h2o-genmodel.jar file using any interface (eg.Python, Flow, R) provided by H2o. At present, the common data format conversion is done in the modeler’s local enviornment, so the protoc application is also required.</p>
+
+          <h3>Before you begin</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;We assume you have H2o 3.14.0.2 installed on your machine. If not please take a look at&nbsp;https://www.h2o.ai/download/<br />
+          -&nbsp;&nbsp; &nbsp;You must have protobuf 3 installed. Please visit the protobuf repository for more information on how to install protoc. Install version 3 (version 2 will not work).<br />
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ&nbsp;</p>
+
+          <h3><br />
+          Installation</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;install protoc&nbsp;<br />
+          -&nbsp;&nbsp; &nbsp;get client libraries<br />
+          -&nbsp;&nbsp; &nbsp;Package Model and Push to acumos</p>
+
+          <h3>Usage</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;Iris example and screen shots</p>
+
+          <h3><br />
+          Testing</h3>
+
+          <h3>Creating a model in H2o:</h3>
+
+          <p>&nbsp;</p>
+
+          <p>H2o provides different interfaces to create models and use H2o. As an example, below we show how to create a model using the Python innterface of H2o and also using the H2o Flow GUI. You can use the other interfaces too which have comparable functions to train a model and download the model in a MOJO format.</p>
+
+          <p>#### Here is a sample H2o iris example program that shows how a model can be created and downloaded as a MOJO using the Python Interface</p>
+
+          <pre>
+          import h2o
+          import pandas as pd
+          import numpy as np
+          import matplotlib.pyplot as plt
+          import seaborn as sns
+
+          # for jupyter notebook plotting,
+          %matplotlib inline
+          sns.set_context("notebook")
+
+          h2o.init()
+
+          # Load data from CSV
+          iris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')
+
+          Iris data set description
+          -------------------------
+          1. sepal length in cm
+          2. sepal width in cm
+          3. petal length in cm
+          4. petal width in cm
+          5. class:
+              Iris Setosa
+              Iris Versicolour
+              Iris Virginica
+
+
+          iris.head()
+          iris.describe()
+          # training parameters
+          training_columns = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']
+          #  response parameter
+          response_column = 'class'
+
+          # Split data into train and testing
+          train, test = iris.split_frame(ratios=[0.8])
+          train.describe()
+          test.describe()
+
+          from h2o.estimators import H2ORandomForestEstimator
+          model = H2ORandomForestEstimator(ntrees=50, max_depth=20, nfolds=10)
+
+          # Train model
+          model.train(x=training_columns, y=response_column, training_frame=train)
+
+          print (model)
+
+          # Model performance
+          performance = model.model_performance(test_data=test)
+          print (performance)
+
+          # Download the model in MOJO format. Also download the h2o-genmodel.jar file
+          modelfile = model.download_mojo(path="/home/deven/Desktop/", get_genmodel_jar=True)
+
+          predictions=model.predict(test)
+          predictions</pre>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:43:24.735-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:34.979-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 7e204e8b-3778-4331-bc66-030016863c21
+        hippotranslation:locale: en
+      /h2o[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 5c14f827-a5f0-44e0-94a6-d10ce05bbe07
+        acumoscms:description: |-
+          <h2>H2o</h2>
+
+          <p>This toolkit generates everything to create an executable Acumos microservice around H2o models. &nbsp;</p>
+
+          <h3>Getting Started</h3>
+
+          <p>The H2o model is exported in the MOJO model format (.zip file) using any interface (eg.Python, Flow, R) provided by H2o. &nbsp; To on-board your model, you need to download the h2o-genmodel.jar file using any interface (eg.Python, Flow, R) provided by H2o. At present, the common data format conversion is done in the modeler’s local enviornment, so the protoc application is also required.</p>
+
+          <h3>Before you begin</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;We assume you have H2o 3.14.0.2 installed on your machine. If not please take a look at&nbsp;https://www.h2o.ai/download/<br />
+          -&nbsp;&nbsp; &nbsp;You must have protobuf 3 installed. Please visit the protobuf repository for more information on how to install protoc. Install version 3 (version 2 will not work).<br />
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ&nbsp;</p>
+
+          <h3><br />
+          Installation</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;install protoc&nbsp;<br />
+          -&nbsp;&nbsp; &nbsp;get client libraries<br />
+          -&nbsp;&nbsp; &nbsp;Package Model and Push to acumos</p>
+
+          <h3>Usage</h3>
+
+          <p><br />
+          -&nbsp;&nbsp; &nbsp;Iris example and screen shots</p>
+
+          <h3><br />
+          Testing</h3>
+
+          <h3>Creating a model in H2o:</h3>
+
+          <p>&nbsp;</p>
+
+          <p>H2o provides different interfaces to create models and use H2o. As an example, below we show how to create a model using the Python innterface of H2o and also using the H2o Flow GUI. You can use the other interfaces too which have comparable functions to train a model and download the model in a MOJO format.</p>
+
+          <p>#### Here is a sample H2o iris example program that shows how a model can be created and downloaded as a MOJO using the Python Interface</p>
+
+          <pre>
+          import h2o
+          import pandas as pd
+          import numpy as np
+          import matplotlib.pyplot as plt
+          import seaborn as sns
+
+          # for jupyter notebook plotting,
+          %matplotlib inline
+          sns.set_context("notebook")
+
+          h2o.init()
+
+          # Load data from CSV
+          iris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')
+
+          Iris data set description
+          -------------------------
+          1. sepal length in cm
+          2. sepal width in cm
+          3. petal length in cm
+          4. petal width in cm
+          5. class:
+              Iris Setosa
+              Iris Versicolour
+              Iris Virginica
+
+
+          iris.head()
+          iris.describe()
+          # training parameters
+          training_columns = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']
+          #  response parameter
+          response_column = 'class'
+
+          # Split data into train and testing
+          train, test = iris.split_frame(ratios=[0.8])
+          train.describe()
+          test.describe()
+
+          from h2o.estimators import H2ORandomForestEstimator
+          model = H2ORandomForestEstimator(ntrees=50, max_depth=20, nfolds=10)
+
+          # Train model
+          model.train(x=training_columns, y=response_column, training_frame=train)
+
+          print (model)
+
+          # Model performance
+          performance = model.model_performance(test_data=test)
+          print (performance)
+
+          # Download the model in MOJO format. Also download the h2o-genmodel.jar file
+          modelfile = model.download_mojo(path="/home/deven/Desktop/", get_genmodel_jar=True)
+
+          predictions=model.predict(test)
+          predictions</pre>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:43:24.735-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:30.478-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 7e204e8b-3778-4331-bc66-030016863c21
+        hippotranslation:locale: en
+    /rcloud:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: d123abd1-e28f-4c2a-84d2-bb4639da9749
+      hippo:name: RCloud
+      /rcloud-copy:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 9169efca-ff19-47ef-bbb0-7dc7ec26767b
+        acumoscms:description: |-
+          <h6>RCloud Copy</h6>
+
+          <p>Your Text Goes Here...</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:51:09.365-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T10:45:07.092-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 2d8e5ac3-af17-4173-b641-cbea0be9f5d9
+        hippotranslation:locale: en
+      /rcloud[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 36c44b77-9e4b-4207-8f9f-0aba0be3cbfc
+        acumoscms:description: |-
+          <h6>RCloud</h6>
+
+          <p>Your Text Goes Here...</p>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:51:09.365-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:41.567-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 2d8e5ac3-af17-4173-b641-cbea0be9f5d9
+        hippotranslation:locale: en
+      /rcloud[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: d188fa05-719e-4587-a9b9-bb4e444e5eca
+        acumoscms:description: |-
+          <h6>RCloud</h6>
+
+          <p>Your Text Goes Here...</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:51:09.365-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:46.452-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 2d8e5ac3-af17-4173-b641-cbea0be9f5d9
+        hippotranslation:locale: en
+    /r:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: 98137f79-68dd-4a05-bbba-b6910d9210ab
+      hippo:name: R
+      /r[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 98a53e1d-4f76-4d66-bbf9-d80480297b39
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
+          \ programming that is a popular choice for machine learning applications.\
+          \ It provides a wide variety of data analytic tools and models. Due to its\
+          \ vectorized nature, it is also very efficient at dealing with moderately\
+          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
+          \ must have protobuf 3 installed. Please visit the protobuf repository for\
+          \ more information on how to install protoc. Install version 3 (version\
+          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
+          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
+          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
+          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
+          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
+          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
+          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
+          \ deployment component, use acumos::compose() with the functions to expose.\
+          \ If type specs are not defined, they default to c(x=\"character\").<br\
+          \ />\nThe component consists of component.json defining the component and\
+          \ its metadata, component.bin the binary payload and component.proto with\
+          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
+          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
+          \ have to create a runtime.json file with at least {\"input_port\":8100}\
+          \ or similar to define which port the component should listen to. If there\
+          \ are output components there should also be a \"output_url\" entry to specify\
+          \ where to send the result to. It can be either a single entry or a list\
+          \ if the results are to be sent to multiple components. Example:<br />\n\
+          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
+          \ configured to set the component directory and/or locations of the component\
+          \ files if needed. If you don't want to create a file, the runtime parameter\
+          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
+          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
+          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:55.648-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 40c1484c-3427-4476-a0d9-4fc05e38a574
+        hippotranslation:locale: en
+      /r[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 5878e3e8-7d07-43d2-b697-7e50da073ab2
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
+          \ programming that is a popular choice for machine learning applications.\
+          \ It provides a wide variety of data analytic tools and models. Due to its\
+          \ vectorized nature, it is also very efficient at dealing with moderately\
+          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
+          \ must have protobuf 3 installed. Please visit the protobuf repository for\
+          \ more information on how to install protoc. Install version 3 (version\
+          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
+          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
+          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
+          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
+          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
+          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
+          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
+          \ deployment component, use acumos::compose() with the functions to expose.\
+          \ If type specs are not defined, they default to c(x=\"character\").<br\
+          \ />\nThe component consists of component.json defining the component and\
+          \ its metadata, component.bin the binary payload and component.proto with\
+          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
+          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
+          \ have to create a runtime.json file with at least {\"input_port\":8100}\
+          \ or similar to define which port the component should listen to. If there\
+          \ are output components there should also be a \"output_url\" entry to specify\
+          \ where to send the result to. It can be either a single entry or a list\
+          \ if the results are to be sent to multiple components. Example:<br />\n\
+          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
+          \ configured to set the component directory and/or locations of the component\
+          \ files if needed. If you don't want to create a file, the runtime parameter\
+          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
+          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
+          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:49.961-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 40c1484c-3427-4476-a0d9-4fc05e38a574
+        hippotranslation:locale: en
+    /java:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+      jcr:uuid: ccf9bb22-1e29-4a3c-84d2-3afdc549b686
+      hippo:name: Java
+      /java[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:versionable']
+        jcr:uuid: 2f2f4967-4d57-4cf3-a9fc-3d0c1ecce9f7
+        acumoscms:description: "<h2>Generic Java Models</h2>\n\n<p>These instruction\
+          \ show how to use H2o.ai and Generic Java in the Acumos Platform.</p>\n\n\
+          <h3>Getting Started</h3>\n\n<p>The &nbsp;tools you will need are the Onboarding\
+          \ client library and the Model Runner.</p>\n\n<h4>Onboarding client Library\
+          \ (https://bitbucket.org/acumos_dev/acumos-java-client):</h4>\n\n<p>Allows\
+          \ the H2o or Generic Java model and other artifacts to become avaiable in\
+          \ the onbarding server for the H2o Model runner to be able use them</p>\n\
+          \n<p>The Modeller/Onboarder/ ML expert creates his model in H2o and exports\
+          \ it in the MOJO model format (.zip file) using any interface (eg.Python,\
+          \ Flow, R) provided by H2o</p>\n\n<p>For Generic Java, the Modeller/Onboarder/\
+          \ ML expert creates his model in&nbsp;<strong><em>_</em></strong>_ and exports\
+          \ it in&nbsp;<strong><em>_</em></strong>___ format.</p>\n\n<p>He runs the\
+          \ Javaclient jar, which (TODO: creates a Protobuf file for the Model), creates\
+          \ the required metadata.json file and onboards the model onto the onboarding\
+          \ server.</p>\n\n<h3>Model Runner (https://bitbucket.org/acumos_dev/generic-model-runner):</h3>\n\
+          \n<p>Allows the onboarded Model to be run as containerised microservice\
+          \ and allows other applications to use the onboarded Model for predictions.</p>\n\
+          \n<p>Essentially provides a wrapper around the ML model, packages it as\
+          \ a containerised microservice and exposes a transform/predict method as\
+          \ a rest endpoint.</p>\n\n<p>This method can be called by other external\
+          \ applications to request predictions off of the model</p>\n\n<h3>How to\
+          \ get them:</h3>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\n\
+          <p>You will just need the following zips / jars from the above 2 projects:</p>\n\
+          \n<p>The zips contain a prebuilt model runner bundled with&nbsp;<strong><em>_</em></strong>_\
+          \ .</p>\n\n<p>Alternatively, you can clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project which has these zips in the folders.</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<h4>For the Developer:</h4>\n\n<p>The Modeller/ Onboarder/ ML\
+          \ expert does not have to know how to build these jars, zips. He only uses\
+          \ them. But the zips and jars mentioned above are the result of the compilation\
+          \ of the below 2 projects.</p>\n\n<p>To clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project:</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<p>To run the client project,you will need the following installed\
+          \ on your machine.</p>\n\n<p>Java (jdk) 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\
+          \n<p>Maven</p>\n\n<p>Protobuf Java runtime 3.4.0 To build the project, you\
+          \ can use:</p>\n\n<pre>\nmvn clean install\n</pre>\n\n<p>To clone the model\
+          \ runner (https://bitbucket.org/acumos_dev/generic-model-runner) project:</p>\n\
+          \n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/generic-model-runner.git\
+          \ \ngit clone devenpanchal@bitbucket.org:acumos_dev/generic-model-runner.git\n\
+          </pre>\n\n<p>To run the model runner project, refer to instructions on&nbsp;https://bitbucket.org/acumos_dev/generic-model-runner.</p>\n\
+          \n<h3>Required Installations:</h3>\n\n<p>You must have the following installed\
+          \ on your machine-</p>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\
+          \n<p>Java 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\n<h3>Preparing to Onboard\
+          \ your Model:</h3>\n\n<p>a. You can download the zips located at and place\
+          \ them in a folder lets say&nbsp;<strong>_</strong>_</p>\n\n<p>b. Additionally\
+          \ place the model service files H2OModel.zip (GenericModel.jar in case of\
+          \ Generic Java) in a separate folder&nbsp;<strong>_</strong>_.</p>\n\n<p>c.\
+          \ Currently, we require the modeller to also create a .proto file for the\
+          \ model in the following format. He needs to appropriately replace the data\
+          \ and datatypes under DataFrameRow according to his model. (This will not\
+          \ be needed to be done in the future as we will autogenerate .proto files.)</p>\n\
+          \n<pre>\nsyntax = \"proto3\";\noption java_package = \"com.google.protobuf\"\
+          ;\noption java_outer_classname = \"DatasetProto\";\n\nmessage DataFrameRow\
+          \ {\nstring sepal_len = 1;\nstring sepal_wid = 2;\nstring petal_len = 3;\n\
+          string petal_wid = 4;\n}\nmessage DataFrame {\n    repeated DataFrameRow\
+          \ rows = 1;\n}\nmessage Prediction {\n    repeated string prediction= 1;\n\
+          }\n\nservice Model {\n  rpc transform (DataFrame) returns (Prediction);\n\
+          }\n</pre>\n\n<p>d. Place the generated .proto file in the same folder as\
+          \ the model service files.</p>\n\n<h3>Onboarding your model</h3>\n\n<p>Refering\
+          \ to the java_client folder:</p>\n\n<p>JavaClient.jar is the executable\
+          \ client jar file. The parameters to run the client jar are: 1. Onboarding\
+          \ url / Folder path 2. Model Type - either H for H2o or J for Generic Java\
+          \ 3. Folder path having .proto and the respective model package file (ex.\
+          \ H2OModel.zip or GenericModel.jar) 4. Name of the model</p>\n\n<pre>\n\
+          java -jar java_client-0.0.1.jar http://acumos-dev1-vm01-core.eastus.cloudapp.azure.com:8090/onboarding-app/v2/models\
+          \ H D:\\js00353493\\ATT\\acumos\\4ADemo_supporting H2OModel \n</pre>\n\n\
+          <p>(Note : while running the client jar make sure the respective modelservice\
+          \ jar is also at the same folder)</p>\n\n<p>There are two ways a modeler\
+          \ can onboard a model</p>\n\n<p>Throught the client - In this case modeler\
+          \ can pass the onboarding url in the first argument.</p>\n\n<p>Through web\
+          \ based onboarding - In this case the modeler can pass the folder path in\
+          \ which he is expecting the final modelpackage.zip file to onboard. The\
+          \ folder path can be passed in first argument.</p>\n\n<h3>What happens after\
+          \ onboarding?</h3>\n\n<p>You will be able to get a success message if your\
+          \ model was onboarded successfully.</p>\n\n<p>You and your teammates can\
+          \ now see, collaborate on your model in the Sumos marketplace.</p>\n\n<p>When\
+          \ requested by a user, your model runs as a containerised microservice and\
+          \ exposes a transform/predict method as a rest endpoint.</p>\n\n<p>This\
+          \ method can be called by other external applications to request predictions\
+          \ off of your model.</p>\n\n<h3>Addendum : Creating a model in H2o:</h3>\n\
+          \n<p>We assume you have H2o 3.14.0.2 installed on your machine. If not please\
+          \ take a look at&nbsp;https://www.h2o.ai/download/</p>\n\n<p>H2o provides\
+          \ different interfaces to create models and use H2o. As an example, below\
+          \ we show how to create a model using the Python innterface of H2o and also\
+          \ using the H2o Flow GUI. You can use the other interfaces too which have\
+          \ comparable functions to train a model and download the model in a MOJO\
+          \ format.</p>\n\n<p>#### Here is a sample H2o iris example program that\
+          \ shows how a model can be created and downloaded as a MOJO using the Python\
+          \ Interface</p>\n\n<pre>\nimport h2o\nimport pandas as pd\nimport numpy\
+          \ as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# for\
+          \ jupyter notebook plotting,\n%matplotlib inline\nsns.set_context(\"notebook\"\
+          )\n\nh2o.init()\n\n# Load data from CSV\niris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')\n\
+          \nIris data set description\n-------------------------\n1. sepal length\
+          \ in cm\n2. sepal width in cm\n3. petal length in cm\n4. petal width in\
+          \ cm\n5. class:\n    Iris Setosa\n    Iris Versicolour\n    Iris Virginica\n\
+          \n\niris.head()\niris.describe()\n# training parameters\ntraining_columns\
+          \ = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']\n#  response parameter\n\
+          response_column = 'class'\n\n# Split data into train and testing\ntrain,\
+          \ test = iris.split_frame(ratios=[0.8])\ntrain.describe()\ntest.describe()\n\
+          \nfrom h2o.estimators import H2ORandomForestEstimator\nmodel = H2ORandomForestEstimator(ntrees=50,\
+          \ max_depth=20, nfolds=10)\n\n# Train model\nmodel.train(x=training_columns,\
+          \ y=response_column, training_frame=train)\n\nprint (model)\n\n# Model performance\n\
+          performance = model.model_performance(test_data=test)\nprint (performance)\n\
+          \n# Download the model in MOJO format. Also download the h2o-genmodel.jar\
+          \ file\nmodelfile = model.download_mojo(path=\"/home/deven/Desktop/\", get_genmodel_jar=True)\n\
+          \npredictions=model.predict(test)\npredictions\n</pre>"
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:55:43.668-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:06:05.398-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: f83d54da-b31b-411f-89e3-ea36359e1be9
+        hippotranslation:locale: en
+      /java[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: be383e89-a406-4cf6-9a89-f34ddea9594c
+        acumoscms:description: "<h2>Generic Java Models</h2>\n\n<p>These instruction\
+          \ show how to use H2o.ai and Generic Java in the Acumos Platform.</p>\n\n\
+          <h3>Getting Started</h3>\n\n<p>The &nbsp;tools you will need are the Onboarding\
+          \ client library and the Model Runner.</p>\n\n<h4>Onboarding client Library\
+          \ (https://bitbucket.org/acumos_dev/acumos-java-client):</h4>\n\n<p>Allows\
+          \ the H2o or Generic Java model and other artifacts to become avaiable in\
+          \ the onbarding server for the H2o Model runner to be able use them</p>\n\
+          \n<p>The Modeller/Onboarder/ ML expert creates his model in H2o and exports\
+          \ it in the MOJO model format (.zip file) using any interface (eg.Python,\
+          \ Flow, R) provided by H2o</p>\n\n<p>For Generic Java, the Modeller/Onboarder/\
+          \ ML expert creates his model in&nbsp;<strong><em>_</em></strong>_ and exports\
+          \ it in&nbsp;<strong><em>_</em></strong>___ format.</p>\n\n<p>He runs the\
+          \ Javaclient jar, which (TODO: creates a Protobuf file for the Model), creates\
+          \ the required metadata.json file and onboards the model onto the onboarding\
+          \ server.</p>\n\n<h3>Model Runner (https://bitbucket.org/acumos_dev/generic-model-runner):</h3>\n\
+          \n<p>Allows the onboarded Model to be run as containerised microservice\
+          \ and allows other applications to use the onboarded Model for predictions.</p>\n\
+          \n<p>Essentially provides a wrapper around the ML model, packages it as\
+          \ a containerised microservice and exposes a transform/predict method as\
+          \ a rest endpoint.</p>\n\n<p>This method can be called by other external\
+          \ applications to request predictions off of the model</p>\n\n<h3>How to\
+          \ get them:</h3>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\n\
+          <p>You will just need the following zips / jars from the above 2 projects:</p>\n\
+          \n<p>The zips contain a prebuilt model runner bundled with&nbsp;<strong><em>_</em></strong>_\
+          \ .</p>\n\n<p>Alternatively, you can clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project which has these zips in the folders.</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<h4>For the Developer:</h4>\n\n<p>The Modeller/ Onboarder/ ML\
+          \ expert does not have to know how to build these jars, zips. He only uses\
+          \ them. But the zips and jars mentioned above are the result of the compilation\
+          \ of the below 2 projects.</p>\n\n<p>To clone the client library (https://bitbucket.org/acumos_dev/acumos-java-client)\
+          \ project:</p>\n\n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/acumos-java-client.git\n\
+          git clone devenpanchal@bitbucket.org:acumos_dev/acumos-java-client.git\n\
+          </pre>\n\n<p>To run the client project,you will need the following installed\
+          \ on your machine.</p>\n\n<p>Java (jdk) 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\
+          \n<p>Maven</p>\n\n<p>Protobuf Java runtime 3.4.0 To build the project, you\
+          \ can use:</p>\n\n<pre>\nmvn clean install\n</pre>\n\n<p>To clone the model\
+          \ runner (https://bitbucket.org/acumos_dev/generic-model-runner) project:</p>\n\
+          \n<pre>\ngit clone https://devenpanchal@bitbucket.org/acumos_dev/generic-model-runner.git\
+          \ \ngit clone devenpanchal@bitbucket.org:acumos_dev/generic-model-runner.git\n\
+          </pre>\n\n<p>To run the model runner project, refer to instructions on&nbsp;https://bitbucket.org/acumos_dev/generic-model-runner.</p>\n\
+          \n<h3>Required Installations:</h3>\n\n<p>You must have the following installed\
+          \ on your machine-</p>\n\n<h4>For the Modeller/Onboarder/ ML expert:</h4>\n\
+          \n<p>Java 1.8</p>\n\n<p>Protoc compiler 3.4.0</p>\n\n<h3>Preparing to Onboard\
+          \ your Model:</h3>\n\n<p>a. You can download the zips located at and place\
+          \ them in a folder lets say&nbsp;<strong>_</strong>_</p>\n\n<p>b. Additionally\
+          \ place the model service files H2OModel.zip (GenericModel.jar in case of\
+          \ Generic Java) in a separate folder&nbsp;<strong>_</strong>_.</p>\n\n<p>c.\
+          \ Currently, we require the modeller to also create a .proto file for the\
+          \ model in the following format. He needs to appropriately replace the data\
+          \ and datatypes under DataFrameRow according to his model. (This will not\
+          \ be needed to be done in the future as we will autogenerate .proto files.)</p>\n\
+          \n<pre>\nsyntax = \"proto3\";\noption java_package = \"com.google.protobuf\"\
+          ;\noption java_outer_classname = \"DatasetProto\";\n\nmessage DataFrameRow\
+          \ {\nstring sepal_len = 1;\nstring sepal_wid = 2;\nstring petal_len = 3;\n\
+          string petal_wid = 4;\n}\nmessage DataFrame {\n    repeated DataFrameRow\
+          \ rows = 1;\n}\nmessage Prediction {\n    repeated string prediction= 1;\n\
+          }\n\nservice Model {\n  rpc transform (DataFrame) returns (Prediction);\n\
+          }\n</pre>\n\n<p>d. Place the generated .proto file in the same folder as\
+          \ the model service files.</p>\n\n<h3>Onboarding your model</h3>\n\n<p>Refering\
+          \ to the java_client folder:</p>\n\n<p>JavaClient.jar is the executable\
+          \ client jar file. The parameters to run the client jar are: 1. Onboarding\
+          \ url / Folder path 2. Model Type - either H for H2o or J for Generic Java\
+          \ 3. Folder path having .proto and the respective model package file (ex.\
+          \ H2OModel.zip or GenericModel.jar) 4. Name of the model</p>\n\n<pre>\n\
+          java -jar java_client-0.0.1.jar http://acumos-dev1-vm01-core.eastus.cloudapp.azure.com:8090/onboarding-app/v2/models\
+          \ H D:\\js00353493\\ATT\\acumos\\4ADemo_supporting H2OModel \n</pre>\n\n\
+          <p>(Note : while running the client jar make sure the respective modelservice\
+          \ jar is also at the same folder)</p>\n\n<p>There are two ways a modeler\
+          \ can onboard a model</p>\n\n<p>Throught the client - In this case modeler\
+          \ can pass the onboarding url in the first argument.</p>\n\n<p>Through web\
+          \ based onboarding - In this case the modeler can pass the folder path in\
+          \ which he is expecting the final modelpackage.zip file to onboard. The\
+          \ folder path can be passed in first argument.</p>\n\n<h3>What happens after\
+          \ onboarding?</h3>\n\n<p>You will be able to get a success message if your\
+          \ model was onboarded successfully.</p>\n\n<p>You and your teammates can\
+          \ now see, collaborate on your model in the Sumos marketplace.</p>\n\n<p>When\
+          \ requested by a user, your model runs as a containerised microservice and\
+          \ exposes a transform/predict method as a rest endpoint.</p>\n\n<p>This\
+          \ method can be called by other external applications to request predictions\
+          \ off of your model.</p>\n\n<h3>Addendum : Creating a model in H2o:</h3>\n\
+          \n<p>We assume you have H2o 3.14.0.2 installed on your machine. If not please\
+          \ take a look at&nbsp;https://www.h2o.ai/download/</p>\n\n<p>H2o provides\
+          \ different interfaces to create models and use H2o. As an example, below\
+          \ we show how to create a model using the Python innterface of H2o and also\
+          \ using the H2o Flow GUI. You can use the other interfaces too which have\
+          \ comparable functions to train a model and download the model in a MOJO\
+          \ format.</p>\n\n<p>#### Here is a sample H2o iris example program that\
+          \ shows how a model can be created and downloaded as a MOJO using the Python\
+          \ Interface</p>\n\n<pre>\nimport h2o\nimport pandas as pd\nimport numpy\
+          \ as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# for\
+          \ jupyter notebook plotting,\n%matplotlib inline\nsns.set_context(\"notebook\"\
+          )\n\nh2o.init()\n\n# Load data from CSV\niris = h2o.import_file('https://raw.githubusercontent.com/h2oai/h2o-3/master/h2o-r/h2o-package/inst/extdata/iris_wheader.csv')\n\
+          \nIris data set description\n-------------------------\n1. sepal length\
+          \ in cm\n2. sepal width in cm\n3. petal length in cm\n4. petal width in\
+          \ cm\n5. class:\n    Iris Setosa\n    Iris Versicolour\n    Iris Virginica\n\
+          \n\niris.head()\niris.describe()\n# training parameters\ntraining_columns\
+          \ = ['sepal_len', 'sepal_wid', 'petal_len', 'petal_wid']\n#  response parameter\n\
+          response_column = 'class'\n\n# Split data into train and testing\ntrain,\
+          \ test = iris.split_frame(ratios=[0.8])\ntrain.describe()\ntest.describe()\n\
+          \nfrom h2o.estimators import H2ORandomForestEstimator\nmodel = H2ORandomForestEstimator(ntrees=50,\
+          \ max_depth=20, nfolds=10)\n\n# Train model\nmodel.train(x=training_columns,\
+          \ y=response_column, training_frame=train)\n\nprint (model)\n\n# Model performance\n\
+          performance = model.model_performance(test_data=test)\nprint (performance)\n\
+          \n# Download the model in MOJO format. Also download the h2o-genmodel.jar\
+          \ file\nmodelfile = model.download_mojo(path=\"/home/deven/Desktop/\", get_genmodel_jar=True)\n\
+          \npredictions=model.predict(test)\npredictions\n</pre>"
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-17T00:55:43.668-05:00
+        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:59.632-05:00
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: f83d54da-b31b-411f-89e3-ea36359e1be9
+        hippotranslation:locale: en
+  /onboarding-model-screen:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+    jcr:uuid: c9398528-4116-4e01-a483-a2d8bb493228
+    hippostd:foldertype: [new-translated-folder, new-document]
+    hippotranslation:id: a24334a1-ff69-4de8-b205-77e333055c2f
+    hippotranslation:locale: en
+    /overview:
+      jcr:primaryType: hippo:handle
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 655ca3cb-208b-42c4-9099-8f204781c059
+      /overview[1]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 86eb12da-3daf-4d04-a52a-24c9f3f5da2c
+        acumoscms:description: |-
+          <p>The Acumos on-boarding process generates everything needed to create an executable microservice for your model and add it to the catalog.&nbsp; Acumos uses Protobuf as a language-agnostic data format to provide a common description of the model data inputs and outputs.</p>
+
+          <p>The client library does the first step of the on-boarding process. This includes:&nbsp; (1) introspection to assess the toolkit library versions and determine file types, (2) creation of a json description of the system (3) creation of the protobuf file, (4) file push to the Acumos on-boarding server.</p>
+
+          <p>Once your model is on-boarded, it will available in the PRIVATE section of the Acumos Marketplace.&nbsp; Tools to manage and publish your model are available in the Acumos Portal.</p>
+        hippo:availability: []
+        hippostd:state: draft
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-27T18:29:16.459Z
+        hippostdpubwf:lastModificationDate: 2017-10-27T18:29:16.459Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 5a20a67b-c086-4513-8be5-b45f09dd9dc0
+        hippotranslation:locale: en
+      /overview[2]:
+        jcr:primaryType: acumoscms:solutionDescription
+        jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+        jcr:uuid: ea9901e5-06c2-4ab6-a658-e351397b20c1
+        acumoscms:description: |-
+          <p>The Acumos on-boarding process generates everything needed to create an executable microservice for your model and add it to the catalog.&nbsp; Acumos uses Protobuf as a language-agnostic data format to provide a common description of the model data inputs and outputs.</p>
+
+          <p>The client library does the first step of the on-boarding process. This includes:&nbsp; (1) introspection to assess the toolkit library versions and determine file types, (2) creation of a json description of the system (3) creation of the protobuf file, (4) file push to the Acumos on-boarding server.</p>
+
+          <p>Once your model is on-boarded, it will available in the PRIVATE section of the Acumos Marketplace.&nbsp; Tools to manage and publish your model are available in the Acumos Portal.</p>
+        hippo:availability: [preview]
+        hippostd:state: unpublished
+        hippostdpubwf:createdBy: admin
+        hippostdpubwf:creationDate: 2017-10-27T18:29:16.459Z
+        hippostdpubwf:lastModificationDate: 2017-10-27T18:29:42.145Z
+        hippostdpubwf:lastModifiedBy: admin
+        hippotranslation:id: 5a20a67b-c086-4513-8be5-b45f09dd9dc0
+        hippotranslation:locale: en
