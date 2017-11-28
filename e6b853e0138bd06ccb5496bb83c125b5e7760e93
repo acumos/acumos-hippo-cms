@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e19d492f_4b72dc3b",
+        "filename": "acumos-cms-docker/src/main/java/com/github/woonsanko/examples/hippoboot/springboot/Application.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-11-28T05:57:38Z",
+      "side": 1,
+      "message": "Chris, Please check that this is not our License Header.  It is a project supported by Hippo CMS and is licensed under Apache 2.0",
+      "parentUuid": "b1a3a9bf_7c80a7a1",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49e16ec7_b713712e",
         "filename": "acumos-cms-docker/test.bat",
         "patchSetId": 3
@@ -121,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "69a40b5b_257574ab",
+        "filename": "pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-11-28T05:57:38Z",
+      "side": 1,
+      "message": "We are not modifying pom files . This source code is generated using Hippo CMS acrhetype. We will include a LICENSE file (Apache 2.0) from Hippo CMS",
+      "parentUuid": "747386ec_4a4f620c",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "adb65bad_54cba874",
         "filename": "repository-data/pom.xml",
         "patchSetId": 3
@@ -132,6 +168,24 @@
       "writtenOn": "2017-11-27T15:24:49Z",
       "side": 1,
       "message": "Is this somebody else\u0027s code?  What is its license?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc8fdbe8_e79fe49e",
+        "filename": "repository-data/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-11-28T05:57:38Z",
+      "side": 1,
+      "message": "It comes as is from Hippo CMS.",
+      "parentUuid": "adb65bad_54cba874",
       "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
       "serverId": "655300a2-7a56-4504-9153-881edd907bea",
       "unresolved": false
@@ -200,6 +254,24 @@
       "writtenOn": "2017-11-27T15:24:49Z",
       "side": 1,
       "message": "Is this image copyrighted?",
+      "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "796c2b54_95cd492b",
+        "filename": "site/src/main/webapp/images/essentials/catalog-component-icons/banner.png",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-11-28T05:57:38Z",
+      "side": 1,
+      "message": "All assets comes as part of Hippo CMS.",
+      "parentUuid": "83a933c1_fabea3bf",
       "revId": "e6b853e0138bd06ccb5496bb83c125b5e7760e93",
       "serverId": "655300a2-7a56-4504-9153-881edd907bea",
       "unresolved": false
