@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f30d3b89_abf99c0c",
+        "filename": "LICENSE",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-28T14:27:04Z",
+      "side": 1,
+      "message": "Please rename to LICENSE.TXT",
+      "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e79bc2b7_92bf61a2",
+        "filename": "README.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-28T14:27:04Z",
+      "side": 1,
+      "message": "I\u0027d like to suggest renaming this to README-HippoCMS.txt ?",
+      "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
