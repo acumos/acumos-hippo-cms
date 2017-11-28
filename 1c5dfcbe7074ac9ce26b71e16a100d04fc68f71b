@@ -33,6 +33,57 @@
       "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
       "serverId": "655300a2-7a56-4504-9153-881edd907bea",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37f0343b_7aec32ba",
+        "filename": "docs/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-28T14:28:59Z",
+      "side": 1,
+      "message": "remove tutorials/index bcos that is actually empty",
+      "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "751859dd_b4b5517c",
+        "filename": "docs/release-notes.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-28T14:28:59Z",
+      "side": 1,
+      "message": "Please change to release-notes.rst and add some release notes",
+      "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4a14c11_8ad2e3c6",
+        "filename": "docs/tutorials/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-28T14:28:59Z",
+      "side": 1,
+      "message": "Lesson1, lesson2, lesson3 are missing.  Please remove this file entirely.",
+      "revId": "1c5dfcbe7074ac9ce26b71e16a100d04fc68f71b",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
     }
   ]
 }
