@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21a8ae70_5ebd4ec5",
+        "filename": "docs/acumos-hippo-cms.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-29T18:17:49Z",
+      "side": 1,
+      "message": "If you insist on using MD (MarkDown) markdown format commands, please address these errors emitted by the Sphinx tool:\n\n/Users/clott/git/acumos/acumos-hippo-cms/docs/acumos-hippo-cms.md:34: WARNING: Unexpected indentation.\n/Users/clott/git/acumos/acumos-hippo-cms/docs/acumos-hippo-cms.md:35: WARNING: Block quote ends without a blank line; unexpected unindent.\n/Users/clott/git/acumos/acumos-hippo-cms/docs/acumos-hippo-cms.md:44: WARNING: Inline emphasis start-string without end-string.",
+      "revId": "6e53bd8aa5a69b78fffb073805c258c874aaf184",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1683a129_b538be84",
+        "filename": "site/src/main/java/org/acumos/beans/EventsDocument.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2017-11-29T18:17:49Z",
+      "side": 1,
+      "message": "If this is code written by the Acumos team (and not generated), then it probably should have the license header.",
+      "revId": "6e53bd8aa5a69b78fffb073805c258c874aaf184",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
