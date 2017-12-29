@@ -17,7 +17,6 @@ import org.acumos.beans.Account;
 /**
  * @version "$Id$"
  */
-
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_FORM_URLENCODED})
 @Path("/Account/")
