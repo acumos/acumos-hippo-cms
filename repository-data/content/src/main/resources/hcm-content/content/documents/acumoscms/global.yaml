@@ -242,86 +242,143 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable']
         jcr:uuid: c43260d6-165b-432b-848e-47b6bc7d921b
-        acumoscms:description: |-
-          <h2>Scikit-learn</h2>
-
-          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
-
-          <h3>Getting Started</h3>
-
-          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
-
-          <h3>Get the Acumos scikit-learn Client Library</h3>
-
-          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
-
-          <h4>Steps to follow</h4>
-
-          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
-
-          <pre>
-          get clone
-          pip install ./acumos-python-client</pre>
-
-          <p>2 Where the acumos-python-client repo url has the form</p>
-
-          <pre>
-          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
-
-          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
-
-          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
-
-          <pre>
-          def push_skleran_model(model, dataset, extra_deps=None,
-          api="http://localhost:8888/v1/models"):
-          =
-          Pushes a model to the acumos server
-
-          Parameters
-          --------
-          model : sklearn estimator
-          An estimator which has already been fit.
-          dataset : numpy ndarray or pandas DataFrame
-          The features or X that 'model' was fit on.
-          extra_deps : sequence
-          A sequence of additional Python modules that the model
-          needs to run. Sequence items can either be a
-          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
-          api : string
-          Model upload URI
-          =</pre>
-
-          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
-
-          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
-
-          <p>6&nbsp;See your model in Acumos</p>
-
-          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
-
-          <h3>Example</h3>
-
-          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
-
-          <pre>
-          from sklearn.datasets import load_iris
-          from sklearn.ensemble import RandomForestClassifier
-
-          from acumos_client.push import push_sklearn_model
-
-          dataset = local_iris()
-          X = dataset.data
-          y = dataset.target
-          model = RandomForestClassifier(random_state=0)
-          model.fit(X,y)
-
-          push_sklearn_model(model, X)</pre>
+        acumoscms:description: "<h2>Scikit-learn</h2>\n\n<p>Scikit-learn (http://scikit-learn.org)\
+          \ is a popular machine learning toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\
+          \n<p>There are only a few simple steps to upload your model from your Scikitlearn\
+          \ toolkit. First get and install the scikit learn library. Once your model\
+          \ is developed, use the client library to on-board your model to Acumos.</p>\n\
+          \n<h3>Get the Acumos Python Library</h3>\n\n<p>The acumos client library\
+          \ is required for users who want to push their Python (including scikit-learn)&nbsp;models\
+          \ to the Acumos marketplace. You only need to do this step once. You will\
+          \ use the library for on-boarding all your models. The library creates meta-data\
+          \ by introspection, packages all the necessary information and uploads to\
+          \ Acumos onboading server to make your model available in the catalog.</p>\n\
+          \n<h2>Installation</h2>\n\n<p>You will need a Python 3.4+ environment in\
+          \ order to install&nbsp;acumos. You can use&nbsp;Anaconda(preferred) or&nbsp;pyenv&nbsp;to\
+          \ install and manage Python environments.</p>\n\n<p>If you're new to Python\
+          \ and need an IDE to start developing, we recommend using&nbsp;Spyder which\
+          \ can easily be installed with Anaconda.</p>\n\n<p>To install&nbsp;acumos-python-client&nbsp;just\
+          \ clone this repository and use pip:</p>\n\n<pre>\ngit clone &lt;acumos-python-client\
+          \ repo url&gt;\npip install ./acumos-python-client\n</pre>\n\n<p><strong>Note:</strong>&nbsp;This\
+          \ version of&nbsp;acumos&nbsp;uses protocol buffers and assumes you have\
+          \ the protobuf compiler&nbsp;protoc&nbsp;installed. Please visit the&nbsp;protobuf\
+          \ repository&nbsp;and install the appropriate&nbsp;protoc&nbsp;for your\
+          \ operating system. This is a temporary requirement that will be removed\
+          \ in a future version of&nbsp;acumos.</p>\n\n<h2>Tutorial</h2>\n\n<p>This\
+          \ tutorial provides a brief overview of&nbsp;acumos&nbsp;for creating Acumos\
+          \ models. The tutorial is meant to be followed linearly, and some code snippets\
+          \ depend on earlier imports and objects. Full examples are available in&nbsp;the\
+          \ examples directory within git.</p>\n\n<h3>Importing Acumos</h3>\n\n<p>First\
+          \ import the modeling and session packages:</p>\n\n<pre>\nfrom acumos.modeling\
+          \ import Model, List, Dict, create_namedtuple, create_dataframe\nfrom acumos.session\
+          \ import AcumosSession, Requirements\n</pre>\n\n<h3>Creating A Session</h3>\n\
+          \n<p>An&nbsp;AcumosSession&nbsp;allows you to export your models to Acumos.\
+          \ You can either dump a model to disk locally, so that you can upload it\
+          \ via the Acumos GUI, or push the model to Acumos directly.</p>\n\n<p>If\
+          \ you'd like to push to Acumos, create a session with the&nbsp;push_api&nbsp;and&nbsp;auth_apiarguments:</p>\n\
+          \n<pre>\n# replace these fake APIs with ones appropriate for your instance!\
+          \ \nsession = AcumosSession(push_api=\"https://my.acumos.instance.com/upload\"\
+          ,\n                        auth_api=\"https://my.acumos.instance.com/auth\"\
+          )\n</pre>\n\n<p>If you're only interested in dumping a model to disk, the\
+          \ API arguments aren't needed:</p>\n\n<pre>\nsession = AcumosSession()\n\
+          </pre>\n\n<h3>A Simple Model</h3>\n\n<p>Any Python function can be used\
+          \ to define an Acumos model using&nbsp;Python type hints.</p>\n\n<p>Let's\
+          \ first create a simple model that adds two integers together. Acumos needs\
+          \ to know what the inputs and outputs of your functions are. We can use\
+          \ the Python type annotation syntax to specify the function signature.</p>\n\
+          \n<p>Below we define a function&nbsp;add_numbers&nbsp;with&nbsp;int&nbsp;type\
+          \ parameters&nbsp;x&nbsp;and&nbsp;y, and an&nbsp;intreturn type. We then\
+          \ build an Acumos model with an&nbsp;add&nbsp;method.</p>\n\n<p><strong>Note:</strong>&nbsp;Function&nbsp;docstrings&nbsp;are\
+          \ included with your model and used for documentation, so be sure to include\
+          \ one!</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<h3>Exporting Models</h3>\n\n<p>We can now export our model using\
+          \ the&nbsp;AcumosSession&nbsp;object created earlier. The&nbsp;pushand&nbsp;dump&nbsp;APIs\
+          \ are shown below.</p>\n\n<p><strong>Note:</strong>&nbsp;Pushing a model\
+          \ to Acumos will prompt you for your username and password. You can also\
+          \ set the&nbsp;ACUMOS_USERNAME&nbsp;and&nbsp;ACUMOS_PASSWORD&nbsp;environment\
+          \ variables to avoid being prompted.</p>\n\n<pre>\nsession.push(model, 'my-model')\n\
+          session.dump(model, 'my-model', '~/')  # creates ~/my-model\n</pre>\n\n\
+          <h3>Defining Types</h3>\n\n<p>In this example, we make a model that can\
+          \ read binary images and output some metadata about them. This model makes\
+          \ use of a custom type&nbsp;ImageShape.</p>\n\n<p>We first create a&nbsp;NamedTuple&nbsp;type\
+          \ called&nbsp;ImageShape, which is like an ordinary&nbsp;tuple&nbsp;but\
+          \ with field accessors. We can then use&nbsp;ImageShape&nbsp;as the return\
+          \ type of&nbsp;get_shape. Note how&nbsp;ImageShape&nbsp;can be instantiated\
+          \ as a new object.</p>\n\n<pre>\nimport io\nimport PIL\n\nImageShape = create_namedtuple('ImageShape',\
+          \ [('width', int), ('height', int)])\n\ndef get_format(data: bytes) -&gt;\
+          \ str:\n    '''Returns the format of an image'''\n    buffer = io.BytesIO(data)\n\
+          \    img = PIL.Image.open(buffer)\n    return img.format\n\ndef get_shape(data:\
+          \ bytes) -&gt; ImageShape:\n    '''Returns the width and height of an image'''\n\
+          \    buffer = io.BytesIO(data)\n    img = PIL.Image.open(buffer)\n    shape\
+          \ = ImageShape(width=img.width, height=img.height)\n    return shape\n\n\
+          model = Model(get_format=get_format, get_shape=get_shape)\n</pre>\n\n<h3>Using\
+          \ DataFrames With scikit-learn</h3>\n\n<p>In this example, we train a&nbsp;RandomForestClassifier&nbsp;using&nbsp;scikit-learn&nbsp;and\
+          \ use it to create an Acumos model.</p>\n\n<p>When making machine learning\
+          \ models, it's common to use a dataframe data structure to represent data.\
+          \ To make things easier,&nbsp;acumos&nbsp;can create&nbsp;NamedTuple&nbsp;types\
+          \ directly from&nbsp;pandas.DataFrame&nbsp;objects.</p>\n\n<p>NamedTuple&nbsp;types\
+          \ created from&nbsp;pandas.DataFrame&nbsp;objects store columns as named\
+          \ attributes and preserve column order. Because&nbsp;NamedTuple&nbsp;types\
+          \ are like ordinary&nbsp;tupletypes, the resulting object can be iterated\
+          \ over. Thus, iterating over a&nbsp;NamedTupledataframe object is the same\
+          \ as iterating over the columns of a&nbsp;pandas.DataFrame. As a consequence,\
+          \ note how&nbsp;np.column_stack&nbsp;can be used to create a&nbsp;numpy.ndarray&nbsp;from\
+          \ the input&nbsp;df.</p>\n\n<p>Finally, the model returns a&nbsp;numpy.ndarray&nbsp;of&nbsp;int&nbsp;corresponding\
+          \ to predicted iris classes. The&nbsp;classify_iris&nbsp;function represents\
+          \ this as&nbsp;List[int]&nbsp;in the signature return.</p>\n\n<pre>\nimport\
+          \ numpy as np\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\
+          from sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\n\
+          X = iris.data\ny = iris.target\n\nclf = RandomForestClassifier(random_state=0)\n\
+          clf.fit(X, y)\n\ncolumns = ['sepal_length', 'sepal_width', 'petal_length',\
+          \ 'petal_width']\nX_df = pd.DataFrame(X, columns=columns)\n\nIrisDataFrame\
+          \ = create_dataframe('IrisDataFrame', X_df)\n\ndef classify_iris(df: IrisDataFrame)\
+          \ -&gt; List[int]:\n    '''Returns an array of iris classifications'''\n\
+          \    X = np.column_stack(df)\n    return clf.predict(X)\n\nmodel = Model(classify=classify_iris)\n\
+          </pre>\n\n<p>Check out the&nbsp;sklearn&nbsp;examples&nbsp;in the&nbsp;examples\
+          \ directory&nbsp;for full runnable scripts.</p>\n\n<h3>Declaring Requirements</h3>\n\
+          \n<p>If your model depends on another Python package that you wrote, you\
+          \ can declare the package via the&nbsp;Requirements&nbsp;class. Note that\
+          \ only pure Python packages are supported at this time.</p>\n\n<p>Assuming\
+          \ that the package&nbsp;~/repos/my_pkg&nbsp;contains:</p>\n\n<pre>\nmy_pkg/\n\
+          ├── __init__.py\n├── bar.py\n└── foo.py\n</pre>\n\n<p>then you can bundle&nbsp;my_pkg&nbsp;with\
+          \ your model like so:</p>\n\n<pre>\nfrom my_pkg.bar import do_thing\n\n\
+          def transform(x: int) -&gt; int:\n    '''Does the thing'''\n    return do_thing(x)\n\
+          \nmodel = Model(transform=transform)\n\nreqs = Requirements(packages=['~/repos/my_pkg'])\n\
+          \n# using the AcumosSession created earlier:\nsession.push(model, 'my-model',\
+          \ reqs)\nsession.dump(model, 'my-model', '~/', reqs)  # creates ~/my-model\n\
+          </pre>\n\n<h3>TensorFlow</h3>\n\n<p>Check out the&nbsp;TensorFlow example&nbsp;in\
+          \ the&nbsp;examples directory.</p>\n\n<h3>Testing Models</h3>\n\n<p>The&nbsp;acumos.modeling.Model&nbsp;class\
+          \ wraps your custom functions and produces corresponding input and output\
+          \ types. This section shows how to access those types for the purpose of\
+          \ testing. For simplicity, we'll create a model using the&nbsp;add_numbers&nbsp;function\
+          \ again:</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<p>The&nbsp;model&nbsp;object now has an&nbsp;add&nbsp;attribute,\
+          \ which acts as a wrapper around&nbsp;add_numbers. The&nbsp;add_numbers&nbsp;function\
+          \ can be invoked like so:</p>\n\n<pre>\nresult = model.add.inner(1, 2)\n\
+          result == 3  # True\n</pre>\n\n<p>The&nbsp;model.add&nbsp;object also has\
+          \ a corresponding&nbsp;<em>wrapped</em>&nbsp;function that is generated\
+          \ by&nbsp;acumos.modeling.Model. The wrapped function is the primary way\
+          \ your model will be used within Acumos.</p>\n\n<p>We can access the&nbsp;input_type&nbsp;and&nbsp;output_type&nbsp;attributes\
+          \ to test that the function works as expected:</p>\n\n<pre>\nAddIn = model.add.input_type\n\
+          AddOut = model.add.output_type\n\nadd_in = AddIn(1, 2)\nprint(add_in)  #\
+          \ AddIn(x=1, y=2)\n\nadd_out = AddOut(3)\nprint(add_out)  # AddOut(value=3)\n\
+          \nmodel.add.wrapped(add_in) == add_out  # True\n</pre>\n\n<h3>More Examples</h3>\n\
+          \n<p>Below are some additional function examples. Note how&nbsp;numpy&nbsp;types\
+          \ can even be used in type hints, as shown in the&nbsp;numpy_sum&nbsp;function.</p>\n\
+          \n<pre>\nfrom collections import Counter\nimport numpy as np\n\ndef list_sum(x:\
+          \ List[int]) -&gt; int:\n    '''Computes the sum of a sequence of integers'''\n\
+          \    return sum(x)\n\ndef numpy_sum(x: List[np.int32]) -&gt; np.int32:\n\
+          \    '''Uses numpy to compute a vectorized sum over x'''\n    return np.sum(x)\n\
+          \ndef count_strings(x: List[str]) -&gt; Dict[str, int]:\n    '''Returns\
+          \ a count mapping from a sequence of strings'''\n    return Counter(x)\n\
+          </pre>"
         hippo:availability: []
         hippostd:state: draft
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-26T14:54:38.911Z
+        hippostdpubwf:lastModificationDate: 2017-12-06T22:42:30.530Z
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: f2b89367-a772-4601-8a17-05985d308461
         hippotranslation:locale: en
@@ -329,86 +386,143 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
         jcr:uuid: 0c031432-c04d-4011-8925-3b8a6ae75ccd
-        acumoscms:description: |-
-          <h2>Scikit-learn</h2>
-
-          <p>Scikit-learn (http://scikit-learn.org) is a popular machine learning toolkit for Python.</p>
-
-          <h3>Getting Started</h3>
-
-          <p>There are only a few simple steps to upload your model from your Scikitlearn toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
-
-          <h3>Get the Acumos scikit-learn Client Library</h3>
-
-          <p>The acumos client library is required for users who want to push their scikit-learn models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server to make your model available in the catalog.</p>
-
-          <h4>Steps to follow</h4>
-
-          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
-
-          <pre>
-          get clone
-          pip install ./acumos-python-client</pre>
-
-          <p>2 Where the acumos-python-client repo url has the form</p>
-
-          <pre>
-          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
-
-          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
-
-          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
-
-          <pre>
-          def push_skleran_model(model, dataset, extra_deps=None,
-          api="http://localhost:8888/v1/models"):
-          =
-          Pushes a model to the acumos server
-
-          Parameters
-          --------
-          model : sklearn estimator
-          An estimator which has already been fit.
-          dataset : numpy ndarray or pandas DataFrame
-          The features or X that 'model' was fit on.
-          extra_deps : sequence
-          A sequence of additional Python modules that the model
-          needs to run. Sequence items can either be a
-          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
-          api : string
-          Model upload URI
-          =</pre>
-
-          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
-
-          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
-
-          <p>6&nbsp;See your model in Acumos</p>
-
-          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
-
-          <h3>Example</h3>
-
-          <p>Pass your scikit-learn model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
-
-          <pre>
-          from sklearn.datasets import load_iris
-          from sklearn.ensemble import RandomForestClassifier
-
-          from acumos_client.push import push_sklearn_model
-
-          dataset = local_iris()
-          X = dataset.data
-          y = dataset.target
-          model = RandomForestClassifier(random_state=0)
-          model.fit(X,y)
-
-          push_sklearn_model(model, X)</pre>
+        acumoscms:description: "<h2>Scikit-learn</h2>\n\n<p>Scikit-learn (http://scikit-learn.org)\
+          \ is a popular machine learning toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\
+          \n<p>There are only a few simple steps to upload your model from your Scikitlearn\
+          \ toolkit. First get and install the scikit learn library. Once your model\
+          \ is developed, use the client library to on-board your model to Acumos.</p>\n\
+          \n<h3>Get the Acumos Python Library</h3>\n\n<p>The acumos client library\
+          \ is required for users who want to push their Python (including scikit-learn)&nbsp;models\
+          \ to the Acumos marketplace. You only need to do this step once. You will\
+          \ use the library for on-boarding all your models. The library creates meta-data\
+          \ by introspection, packages all the necessary information and uploads to\
+          \ Acumos onboading server to make your model available in the catalog.</p>\n\
+          \n<h2>Installation</h2>\n\n<p>You will need a Python 3.4+ environment in\
+          \ order to install&nbsp;acumos. You can use&nbsp;Anaconda(preferred) or&nbsp;pyenv&nbsp;to\
+          \ install and manage Python environments.</p>\n\n<p>If you're new to Python\
+          \ and need an IDE to start developing, we recommend using&nbsp;Spyder which\
+          \ can easily be installed with Anaconda.</p>\n\n<p>To install&nbsp;acumos-python-client&nbsp;just\
+          \ clone this repository and use pip:</p>\n\n<pre>\ngit clone &lt;acumos-python-client\
+          \ repo url&gt;\npip install ./acumos-python-client\n</pre>\n\n<p><strong>Note:</strong>&nbsp;This\
+          \ version of&nbsp;acumos&nbsp;uses protocol buffers and assumes you have\
+          \ the protobuf compiler&nbsp;protoc&nbsp;installed. Please visit the&nbsp;protobuf\
+          \ repository&nbsp;and install the appropriate&nbsp;protoc&nbsp;for your\
+          \ operating system. This is a temporary requirement that will be removed\
+          \ in a future version of&nbsp;acumos.</p>\n\n<h2>Tutorial</h2>\n\n<p>This\
+          \ tutorial provides a brief overview of&nbsp;acumos&nbsp;for creating Acumos\
+          \ models. The tutorial is meant to be followed linearly, and some code snippets\
+          \ depend on earlier imports and objects. Full examples are available in&nbsp;the\
+          \ examples directory within git.</p>\n\n<h3>Importing Acumos</h3>\n\n<p>First\
+          \ import the modeling and session packages:</p>\n\n<pre>\nfrom acumos.modeling\
+          \ import Model, List, Dict, create_namedtuple, create_dataframe\nfrom acumos.session\
+          \ import AcumosSession, Requirements\n</pre>\n\n<h3>Creating A Session</h3>\n\
+          \n<p>An&nbsp;AcumosSession&nbsp;allows you to export your models to Acumos.\
+          \ You can either dump a model to disk locally, so that you can upload it\
+          \ via the Acumos GUI, or push the model to Acumos directly.</p>\n\n<p>If\
+          \ you'd like to push to Acumos, create a session with the&nbsp;push_api&nbsp;and&nbsp;auth_apiarguments:</p>\n\
+          \n<pre>\n# replace these fake APIs with ones appropriate for your instance!\
+          \ \nsession = AcumosSession(push_api=\"https://my.acumos.instance.com/upload\"\
+          ,\n                        auth_api=\"https://my.acumos.instance.com/auth\"\
+          )\n</pre>\n\n<p>If you're only interested in dumping a model to disk, the\
+          \ API arguments aren't needed:</p>\n\n<pre>\nsession = AcumosSession()\n\
+          </pre>\n\n<h3>A Simple Model</h3>\n\n<p>Any Python function can be used\
+          \ to define an Acumos model using&nbsp;Python type hints.</p>\n\n<p>Let's\
+          \ first create a simple model that adds two integers together. Acumos needs\
+          \ to know what the inputs and outputs of your functions are. We can use\
+          \ the Python type annotation syntax to specify the function signature.</p>\n\
+          \n<p>Below we define a function&nbsp;add_numbers&nbsp;with&nbsp;int&nbsp;type\
+          \ parameters&nbsp;x&nbsp;and&nbsp;y, and an&nbsp;intreturn type. We then\
+          \ build an Acumos model with an&nbsp;add&nbsp;method.</p>\n\n<p><strong>Note:</strong>&nbsp;Function&nbsp;docstrings&nbsp;are\
+          \ included with your model and used for documentation, so be sure to include\
+          \ one!</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<h3>Exporting Models</h3>\n\n<p>We can now export our model using\
+          \ the&nbsp;AcumosSession&nbsp;object created earlier. The&nbsp;pushand&nbsp;dump&nbsp;APIs\
+          \ are shown below.</p>\n\n<p><strong>Note:</strong>&nbsp;Pushing a model\
+          \ to Acumos will prompt you for your username and password. You can also\
+          \ set the&nbsp;ACUMOS_USERNAME&nbsp;and&nbsp;ACUMOS_PASSWORD&nbsp;environment\
+          \ variables to avoid being prompted.</p>\n\n<pre>\nsession.push(model, 'my-model')\n\
+          session.dump(model, 'my-model', '~/')  # creates ~/my-model\n</pre>\n\n\
+          <h3>Defining Types</h3>\n\n<p>In this example, we make a model that can\
+          \ read binary images and output some metadata about them. This model makes\
+          \ use of a custom type&nbsp;ImageShape.</p>\n\n<p>We first create a&nbsp;NamedTuple&nbsp;type\
+          \ called&nbsp;ImageShape, which is like an ordinary&nbsp;tuple&nbsp;but\
+          \ with field accessors. We can then use&nbsp;ImageShape&nbsp;as the return\
+          \ type of&nbsp;get_shape. Note how&nbsp;ImageShape&nbsp;can be instantiated\
+          \ as a new object.</p>\n\n<pre>\nimport io\nimport PIL\n\nImageShape = create_namedtuple('ImageShape',\
+          \ [('width', int), ('height', int)])\n\ndef get_format(data: bytes) -&gt;\
+          \ str:\n    '''Returns the format of an image'''\n    buffer = io.BytesIO(data)\n\
+          \    img = PIL.Image.open(buffer)\n    return img.format\n\ndef get_shape(data:\
+          \ bytes) -&gt; ImageShape:\n    '''Returns the width and height of an image'''\n\
+          \    buffer = io.BytesIO(data)\n    img = PIL.Image.open(buffer)\n    shape\
+          \ = ImageShape(width=img.width, height=img.height)\n    return shape\n\n\
+          model = Model(get_format=get_format, get_shape=get_shape)\n</pre>\n\n<h3>Using\
+          \ DataFrames With scikit-learn</h3>\n\n<p>In this example, we train a&nbsp;RandomForestClassifier&nbsp;using&nbsp;scikit-learn&nbsp;and\
+          \ use it to create an Acumos model.</p>\n\n<p>When making machine learning\
+          \ models, it's common to use a dataframe data structure to represent data.\
+          \ To make things easier,&nbsp;acumos&nbsp;can create&nbsp;NamedTuple&nbsp;types\
+          \ directly from&nbsp;pandas.DataFrame&nbsp;objects.</p>\n\n<p>NamedTuple&nbsp;types\
+          \ created from&nbsp;pandas.DataFrame&nbsp;objects store columns as named\
+          \ attributes and preserve column order. Because&nbsp;NamedTuple&nbsp;types\
+          \ are like ordinary&nbsp;tupletypes, the resulting object can be iterated\
+          \ over. Thus, iterating over a&nbsp;NamedTupledataframe object is the same\
+          \ as iterating over the columns of a&nbsp;pandas.DataFrame. As a consequence,\
+          \ note how&nbsp;np.column_stack&nbsp;can be used to create a&nbsp;numpy.ndarray&nbsp;from\
+          \ the input&nbsp;df.</p>\n\n<p>Finally, the model returns a&nbsp;numpy.ndarray&nbsp;of&nbsp;int&nbsp;corresponding\
+          \ to predicted iris classes. The&nbsp;classify_iris&nbsp;function represents\
+          \ this as&nbsp;List[int]&nbsp;in the signature return.</p>\n\n<pre>\nimport\
+          \ numpy as np\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\
+          from sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\n\
+          X = iris.data\ny = iris.target\n\nclf = RandomForestClassifier(random_state=0)\n\
+          clf.fit(X, y)\n\ncolumns = ['sepal_length', 'sepal_width', 'petal_length',\
+          \ 'petal_width']\nX_df = pd.DataFrame(X, columns=columns)\n\nIrisDataFrame\
+          \ = create_dataframe('IrisDataFrame', X_df)\n\ndef classify_iris(df: IrisDataFrame)\
+          \ -&gt; List[int]:\n    '''Returns an array of iris classifications'''\n\
+          \    X = np.column_stack(df)\n    return clf.predict(X)\n\nmodel = Model(classify=classify_iris)\n\
+          </pre>\n\n<p>Check out the&nbsp;sklearn&nbsp;examples&nbsp;in the&nbsp;examples\
+          \ directory&nbsp;for full runnable scripts.</p>\n\n<h3>Declaring Requirements</h3>\n\
+          \n<p>If your model depends on another Python package that you wrote, you\
+          \ can declare the package via the&nbsp;Requirements&nbsp;class. Note that\
+          \ only pure Python packages are supported at this time.</p>\n\n<p>Assuming\
+          \ that the package&nbsp;~/repos/my_pkg&nbsp;contains:</p>\n\n<pre>\nmy_pkg/\n\
+          ├── __init__.py\n├── bar.py\n└── foo.py\n</pre>\n\n<p>then you can bundle&nbsp;my_pkg&nbsp;with\
+          \ your model like so:</p>\n\n<pre>\nfrom my_pkg.bar import do_thing\n\n\
+          def transform(x: int) -&gt; int:\n    '''Does the thing'''\n    return do_thing(x)\n\
+          \nmodel = Model(transform=transform)\n\nreqs = Requirements(packages=['~/repos/my_pkg'])\n\
+          \n# using the AcumosSession created earlier:\nsession.push(model, 'my-model',\
+          \ reqs)\nsession.dump(model, 'my-model', '~/', reqs)  # creates ~/my-model\n\
+          </pre>\n\n<h3>TensorFlow</h3>\n\n<p>Check out the&nbsp;TensorFlow example&nbsp;in\
+          \ the&nbsp;examples directory.</p>\n\n<h3>Testing Models</h3>\n\n<p>The&nbsp;acumos.modeling.Model&nbsp;class\
+          \ wraps your custom functions and produces corresponding input and output\
+          \ types. This section shows how to access those types for the purpose of\
+          \ testing. For simplicity, we'll create a model using the&nbsp;add_numbers&nbsp;function\
+          \ again:</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<p>The&nbsp;model&nbsp;object now has an&nbsp;add&nbsp;attribute,\
+          \ which acts as a wrapper around&nbsp;add_numbers. The&nbsp;add_numbers&nbsp;function\
+          \ can be invoked like so:</p>\n\n<pre>\nresult = model.add.inner(1, 2)\n\
+          result == 3  # True\n</pre>\n\n<p>The&nbsp;model.add&nbsp;object also has\
+          \ a corresponding&nbsp;<em>wrapped</em>&nbsp;function that is generated\
+          \ by&nbsp;acumos.modeling.Model. The wrapped function is the primary way\
+          \ your model will be used within Acumos.</p>\n\n<p>We can access the&nbsp;input_type&nbsp;and&nbsp;output_type&nbsp;attributes\
+          \ to test that the function works as expected:</p>\n\n<pre>\nAddIn = model.add.input_type\n\
+          AddOut = model.add.output_type\n\nadd_in = AddIn(1, 2)\nprint(add_in)  #\
+          \ AddIn(x=1, y=2)\n\nadd_out = AddOut(3)\nprint(add_out)  # AddOut(value=3)\n\
+          \nmodel.add.wrapped(add_in) == add_out  # True\n</pre>\n\n<h3>More Examples</h3>\n\
+          \n<p>Below are some additional function examples. Note how&nbsp;numpy&nbsp;types\
+          \ can even be used in type hints, as shown in the&nbsp;numpy_sum&nbsp;function.</p>\n\
+          \n<pre>\nfrom collections import Counter\nimport numpy as np\n\ndef list_sum(x:\
+          \ List[int]) -&gt; int:\n    '''Computes the sum of a sequence of integers'''\n\
+          \    return sum(x)\n\ndef numpy_sum(x: List[np.int32]) -&gt; np.int32:\n\
+          \    '''Uses numpy to compute a vectorized sum over x'''\n    return np.sum(x)\n\
+          \ndef count_strings(x: List[str]) -&gt; Dict[str, int]:\n    '''Returns\
+          \ a count mapping from a sequence of strings'''\n    return Counter(x)\n\
+          </pre>"
         hippo:availability: [preview]
         hippostd:state: unpublished
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-16T23:01:42.876-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-26T14:54:44.934Z
+        hippostdpubwf:lastModificationDate: 2017-11-30T19:34:04.048Z
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: f2b89367-a772-4601-8a17-05985d308461
         hippotranslation:locale: en
@@ -420,86 +534,155 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable']
         jcr:uuid: c4552591-5a0b-4cc6-b8ec-47c5ecb0a229
-        acumoscms:description: |-
-          <h2>TensorFlow</h2>
-
-          <p>TensorFlow (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
-
-          <h3>Getting Started</h3>
-
-          <p>There are only a few simple steps to upload your model from your TensorFlow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
-
-          <h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>
-
-          <p>The Acumos client library is required for users who want to push their TensorFlow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
-
-          <h4>Steps to follow</h4>
-
-          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
-
-          <pre>
-          get clone
-          pip install ./acumos-python-client</pre>
-
-          <p>2 Where the acumos-python-client repo url has the form</p>
-
-          <pre>
-          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
-
-          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
-
-          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
-
-          <pre>
-          def push_skleran_model(model, dataset, extra_deps=None,
-          api="http://localhost:8888/v1/models"):
-          =
-          Pushes a model to the Acumos server
-
-          Parameters
-          --------
-          model : sklearn estimator
-          An estimator which has already been fit.
-          dataset : numpy ndarray or pandas DataFrame
-          The features or X that 'model' was fit on.
-          extra_deps : sequence
-          A sequence of additional Python modules that the model
-          needs to run. Sequence items can either be a
-          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
-          api : string
-          Model upload URI
-          =</pre>
-
-          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
-
-          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
-
-          <p>6&nbsp;See your model in Acumos</p>
-
-          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
-
-          <h3>Example</h3>
-
-          <p>Pass your TensorFlow model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
-
-          <pre>
-          from sklearn.datasets import load_iris
-          from sklearn.ensemble import RandomForestClassifier
-
-          from acumos_client.push import push_sklearn_model
-
-          dataset = local_iris()
-          X = dataset.data
-          y = dataset.target
-          model = RandomForestClassifier(random_state=0)
-          model.fit(X,y)
-
-          push_sklearn_model(model, X)</pre>
+        acumoscms:description: "<h2>TensorFlow</h2>\n\n<p>TensorFlow (https://tensorflow.org)\
+          \ is a popular machine learning toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\
+          \n<p>There are only a few simple steps to upload your model from your TensorFlow\
+          \ toolkit. First get and install the Tensorflow&nbsp;library. Once your\
+          \ model is developed, use the client library to on-board your model to Acumos.</p>\n\
+          \n<h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>\n\n<p>The Acumos\
+          \ client library is required for users who want to push their TensorFlow\
+          \ models to the Acumos marketplace. You only need to do this step once.\
+          \ You will use the library for on-boarding all your models. The library\
+          \ creates meta-data by introspection, packages all the necessary information\
+          \ and uploads to Acumos onboading server. &nbsp;This is the first step to\
+          \ make your model available in the catalog.</p>\n\n<h2>Scikit-learn</h2>\n\
+          \n<p>Scikit-learn (http://scikit-learn.org) is a popular machine learning\
+          \ toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\n<p>There are only\
+          \ a few simple steps to upload your model from your Scikitlearn toolkit.\
+          \ First get and install the scikit learn library. Once your model is developed,\
+          \ use the client library to on-board your model to Acumos.</p>\n\n<h3>Get\
+          \ the Acumos Python Library</h3>\n\n<p>The acumos client library is required\
+          \ for users who want to push their Python (including scikit-learn)&nbsp;models\
+          \ to the Acumos marketplace. You only need to do this step once. You will\
+          \ use the library for on-boarding all your models. The library creates meta-data\
+          \ by introspection, packages all the necessary information and uploads to\
+          \ Acumos onboading server to make your model available in the catalog.</p>\n\
+          \n<h2>Installation</h2>\n\n<p>You will need a Python 3.4+ environment in\
+          \ order to install&nbsp;acumos. You can use&nbsp;Anaconda(preferred) or&nbsp;pyenv&nbsp;to\
+          \ install and manage Python environments.</p>\n\n<p>If you're new to Python\
+          \ and need an IDE to start developing, we recommend using&nbsp;Spyder which\
+          \ can easily be installed with Anaconda.</p>\n\n<p>To install&nbsp;acumos-python-client&nbsp;just\
+          \ clone this repository and use pip:</p>\n\n<pre>\ngit clone &lt;acumos-python-client\
+          \ repo url&gt;\npip install ./acumos-python-client\n</pre>\n\n<p><strong>Note:</strong>&nbsp;This\
+          \ version of&nbsp;acumos&nbsp;uses protocol buffers and assumes you have\
+          \ the protobuf compiler&nbsp;protoc&nbsp;installed. Please visit the&nbsp;protobuf\
+          \ repository&nbsp;and install the appropriate&nbsp;protoc&nbsp;for your\
+          \ operating system. This is a temporary requirement that will be removed\
+          \ in a future version of&nbsp;acumos.</p>\n\n<h2>Tutorial</h2>\n\n<p>This\
+          \ tutorial provides a brief overview of&nbsp;acumos&nbsp;for creating Acumos\
+          \ models. The tutorial is meant to be followed linearly, and some code snippets\
+          \ depend on earlier imports and objects. Full examples are available in&nbsp;the\
+          \ examples directory within git.</p>\n\n<h3>Importing Acumos</h3>\n\n<p>First\
+          \ import the modeling and session packages:</p>\n\n<pre>\nfrom acumos.modeling\
+          \ import Model, List, Dict, create_namedtuple, create_dataframe\nfrom acumos.session\
+          \ import AcumosSession, Requirements\n</pre>\n\n<h3>Creating A Session</h3>\n\
+          \n<p>An&nbsp;AcumosSession&nbsp;allows you to export your models to Acumos.\
+          \ You can either dump a model to disk locally, so that you can upload it\
+          \ via the Acumos GUI, or push the model to Acumos directly.</p>\n\n<p>If\
+          \ you'd like to push to Acumos, create a session with the&nbsp;push_api&nbsp;and&nbsp;auth_apiarguments:</p>\n\
+          \n<pre>\n# replace these fake APIs with ones appropriate for your instance!\
+          \ \nsession = AcumosSession(push_api=\"https://my.acumos.instance.com/upload\"\
+          ,\n                        auth_api=\"https://my.acumos.instance.com/auth\"\
+          )\n</pre>\n\n<p>If you're only interested in dumping a model to disk, the\
+          \ API arguments aren't needed:</p>\n\n<pre>\nsession = AcumosSession()\n\
+          </pre>\n\n<h3>A Simple Model</h3>\n\n<p>Any Python function can be used\
+          \ to define an Acumos model using&nbsp;Python type hints.</p>\n\n<p>Let's\
+          \ first create a simple model that adds two integers together. Acumos needs\
+          \ to know what the inputs and outputs of your functions are. We can use\
+          \ the Python type annotation syntax to specify the function signature.</p>\n\
+          \n<p>Below we define a function&nbsp;add_numbers&nbsp;with&nbsp;int&nbsp;type\
+          \ parameters&nbsp;x&nbsp;and&nbsp;y, and an&nbsp;intreturn type. We then\
+          \ build an Acumos model with an&nbsp;add&nbsp;method.</p>\n\n<p><strong>Note:</strong>&nbsp;Function&nbsp;docstrings&nbsp;are\
+          \ included with your model and used for documentation, so be sure to include\
+          \ one!</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<h3>Exporting Models</h3>\n\n<p>We can now export our model using\
+          \ the&nbsp;AcumosSession&nbsp;object created earlier. The&nbsp;pushand&nbsp;dump&nbsp;APIs\
+          \ are shown below.</p>\n\n<p><strong>Note:</strong>&nbsp;Pushing a model\
+          \ to Acumos will prompt you for your username and password. You can also\
+          \ set the&nbsp;ACUMOS_USERNAME&nbsp;and&nbsp;ACUMOS_PASSWORD&nbsp;environment\
+          \ variables to avoid being prompted.</p>\n\n<pre>\nsession.push(model, 'my-model')\n\
+          session.dump(model, 'my-model', '~/')  # creates ~/my-model\n</pre>\n\n\
+          <h3>Defining Types</h3>\n\n<p>In this example, we make a model that can\
+          \ read binary images and output some metadata about them. This model makes\
+          \ use of a custom type&nbsp;ImageShape.</p>\n\n<p>We first create a&nbsp;NamedTuple&nbsp;type\
+          \ called&nbsp;ImageShape, which is like an ordinary&nbsp;tuple&nbsp;but\
+          \ with field accessors. We can then use&nbsp;ImageShape&nbsp;as the return\
+          \ type of&nbsp;get_shape. Note how&nbsp;ImageShape&nbsp;can be instantiated\
+          \ as a new object.</p>\n\n<pre>\nimport io\nimport PIL\n\nImageShape = create_namedtuple('ImageShape',\
+          \ [('width', int), ('height', int)])\n\ndef get_format(data: bytes) -&gt;\
+          \ str:\n    '''Returns the format of an image'''\n    buffer = io.BytesIO(data)\n\
+          \    img = PIL.Image.open(buffer)\n    return img.format\n\ndef get_shape(data:\
+          \ bytes) -&gt; ImageShape:\n    '''Returns the width and height of an image'''\n\
+          \    buffer = io.BytesIO(data)\n    img = PIL.Image.open(buffer)\n    shape\
+          \ = ImageShape(width=img.width, height=img.height)\n    return shape\n\n\
+          model = Model(get_format=get_format, get_shape=get_shape)\n</pre>\n\n<h3>Using\
+          \ DataFrames With scikit-learn</h3>\n\n<p>In this example, we train a&nbsp;RandomForestClassifier&nbsp;using&nbsp;scikit-learn&nbsp;and\
+          \ use it to create an Acumos model.</p>\n\n<p>When making machine learning\
+          \ models, it's common to use a dataframe data structure to represent data.\
+          \ To make things easier,&nbsp;acumos&nbsp;can create&nbsp;NamedTuple&nbsp;types\
+          \ directly from&nbsp;pandas.DataFrame&nbsp;objects.</p>\n\n<p>NamedTuple&nbsp;types\
+          \ created from&nbsp;pandas.DataFrame&nbsp;objects store columns as named\
+          \ attributes and preserve column order. Because&nbsp;NamedTuple&nbsp;types\
+          \ are like ordinary&nbsp;tupletypes, the resulting object can be iterated\
+          \ over. Thus, iterating over a&nbsp;NamedTupledataframe object is the same\
+          \ as iterating over the columns of a&nbsp;pandas.DataFrame. As a consequence,\
+          \ note how&nbsp;np.column_stack&nbsp;can be used to create a&nbsp;numpy.ndarray&nbsp;from\
+          \ the input&nbsp;df.</p>\n\n<p>Finally, the model returns a&nbsp;numpy.ndarray&nbsp;of&nbsp;int&nbsp;corresponding\
+          \ to predicted iris classes. The&nbsp;classify_iris&nbsp;function represents\
+          \ this as&nbsp;List[int]&nbsp;in the signature return.</p>\n\n<pre>\nimport\
+          \ numpy as np\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\
+          from sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\n\
+          X = iris.data\ny = iris.target\n\nclf = RandomForestClassifier(random_state=0)\n\
+          clf.fit(X, y)\n\ncolumns = ['sepal_length', 'sepal_width', 'petal_length',\
+          \ 'petal_width']\nX_df = pd.DataFrame(X, columns=columns)\n\nIrisDataFrame\
+          \ = create_dataframe('IrisDataFrame', X_df)\n\ndef classify_iris(df: IrisDataFrame)\
+          \ -&gt; List[int]:\n    '''Returns an array of iris classifications'''\n\
+          \    X = np.column_stack(df)\n    return clf.predict(X)\n\nmodel = Model(classify=classify_iris)\n\
+          </pre>\n\n<p>Check out the&nbsp;sklearn&nbsp;examples&nbsp;in the&nbsp;examples\
+          \ directory&nbsp;for full runnable scripts.</p>\n\n<h3>Declaring Requirements</h3>\n\
+          \n<p>If your model depends on another Python package that you wrote, you\
+          \ can declare the package via the&nbsp;Requirements&nbsp;class. Note that\
+          \ only pure Python packages are supported at this time.</p>\n\n<p>Assuming\
+          \ that the package&nbsp;~/repos/my_pkg&nbsp;contains:</p>\n\n<pre>\nmy_pkg/\n\
+          ├── __init__.py\n├── bar.py\n└── foo.py\n</pre>\n\n<p>then you can bundle&nbsp;my_pkg&nbsp;with\
+          \ your model like so:</p>\n\n<pre>\nfrom my_pkg.bar import do_thing\n\n\
+          def transform(x: int) -&gt; int:\n    '''Does the thing'''\n    return do_thing(x)\n\
+          \nmodel = Model(transform=transform)\n\nreqs = Requirements(packages=['~/repos/my_pkg'])\n\
+          \n# using the AcumosSession created earlier:\nsession.push(model, 'my-model',\
+          \ reqs)\nsession.dump(model, 'my-model', '~/', reqs)  # creates ~/my-model\n\
+          </pre>\n\n<h3>TensorFlow</h3>\n\n<p>Check out the&nbsp;TensorFlow example&nbsp;in\
+          \ the&nbsp;examples directory.</p>\n\n<h3>Testing Models</h3>\n\n<p>The&nbsp;acumos.modeling.Model&nbsp;class\
+          \ wraps your custom functions and produces corresponding input and output\
+          \ types. This section shows how to access those types for the purpose of\
+          \ testing. For simplicity, we'll create a model using the&nbsp;add_numbers&nbsp;function\
+          \ again:</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<p>The&nbsp;model&nbsp;object now has an&nbsp;add&nbsp;attribute,\
+          \ which acts as a wrapper around&nbsp;add_numbers. The&nbsp;add_numbers&nbsp;function\
+          \ can be invoked like so:</p>\n\n<pre>\nresult = model.add.inner(1, 2)\n\
+          result == 3  # True\n</pre>\n\n<p>The&nbsp;model.add&nbsp;object also has\
+          \ a corresponding&nbsp;<em>wrapped</em>&nbsp;function that is generated\
+          \ by&nbsp;acumos.modeling.Model. The wrapped function is the primary way\
+          \ your model will be used within Acumos.</p>\n\n<p>We can access the&nbsp;input_type&nbsp;and&nbsp;output_type&nbsp;attributes\
+          \ to test that the function works as expected:</p>\n\n<pre>\nAddIn = model.add.input_type\n\
+          AddOut = model.add.output_type\n\nadd_in = AddIn(1, 2)\nprint(add_in)  #\
+          \ AddIn(x=1, y=2)\n\nadd_out = AddOut(3)\nprint(add_out)  # AddOut(value=3)\n\
+          \nmodel.add.wrapped(add_in) == add_out  # True\n</pre>\n\n<h3>More Examples</h3>\n\
+          \n<p>Below are some additional function examples. Note how&nbsp;numpy&nbsp;types\
+          \ can even be used in type hints, as shown in the&nbsp;numpy_sum&nbsp;function.</p>\n\
+          \n<pre>\nfrom collections import Counter\nimport numpy as np\n\ndef list_sum(x:\
+          \ List[int]) -&gt; int:\n    '''Computes the sum of a sequence of integers'''\n\
+          \    return sum(x)\n\ndef numpy_sum(x: List[np.int32]) -&gt; np.int32:\n\
+          \    '''Uses numpy to compute a vectorized sum over x'''\n    return np.sum(x)\n\
+          \ndef count_strings(x: List[str]) -&gt; Dict[str, int]:\n    '''Returns\
+          \ a count mapping from a sequence of strings'''\n    return Counter(x)\n\
+          </pre>"
         hippo:availability: []
         hippostd:state: draft
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-29T01:34:15.119Z
+        hippostdpubwf:lastModificationDate: 2017-11-30T19:34:31.762Z
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 95a4682b-43c9-4826-ac7c-1c677a1b5a5e
         hippotranslation:locale: en
@@ -507,86 +690,155 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
         jcr:uuid: dea9d80e-27c3-4b0c-9696-84d6ad55ae9e
-        acumoscms:description: |-
-          <h2>TensorFlow</h2>
-
-          <p>TensorFlow (https://tensorflow.org) is a popular machine learning toolkit for Python.</p>
-
-          <h3>Getting Started</h3>
-
-          <p>There are only a few simple steps to upload your model from your TensorFlow toolkit. First get and install the scikit learn library. Once your model is developed, use the client library to on-board your model to Acumos.</p>
-
-          <h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>
-
-          <p>The Acumos client library is required for users who want to push their TensorFlow models to the Acumos marketplace. You only need to do this step once. You will use the library for on-boarding all your models. The library creates meta-data by introspection, packages all the necessary information and uploads to Acumos onboading server. &nbsp;This is the first step to make your model available in the catalog.</p>
-
-          <h4>Steps to follow</h4>
-
-          <p>1 To install "acumos-python-client", just clone this repository and user pip:</p>
-
-          <pre>
-          get clone
-          pip install ./acumos-python-client</pre>
-
-          <p>2 Where the acumos-python-client repo url has the form</p>
-
-          <pre>
-          https:// @bitbucket.org/acumos_dev/acumos-python-client.git</pre>
-
-          <p>3&nbsp;Run the on-boarding Function from the Client Library</p>
-
-          <p>4&nbsp;Once the library is installed, on-board your model using the push_sklearn_model command in scikit-learn. Make sure to pass the correct URI to the api parameter.</p>
-
-          <pre>
-          def push_skleran_model(model, dataset, extra_deps=None,
-          api="http://localhost:8888/v1/models"):
-          =
-          Pushes a model to the Acumos server
-
-          Parameters
-          --------
-          model : sklearn estimator
-          An estimator which has already been fit.
-          dataset : numpy ndarray or pandas DataFrame
-          The features or X that 'model' was fit on.
-          extra_deps : sequence
-          A sequence of additional Python modules that the model
-          needs to run. Sequence items can either be a
-          string (e.g. 'scikit-learn') or the module itself (e.g. skilearn).
-          api : string
-          Model upload URI
-          =</pre>
-
-          <p>5&nbsp;At the end of this step, your model will be up-loaded.</p>
-
-          <p>Note: because Acumos makes a runable docker image by the end of this step, it can take a few moments for this step to complete.</p>
-
-          <p>6&nbsp;See your model in Acumos</p>
-
-          <p>Once your model is successfully on-boarded, it resides in your private catalog. From there you can create the documentation, description and tags and other information that will describe your model in the Acumos Marketplace. When you are ready, your model can be published either to your local instance or the PUBLIC catalog.</p>
-
-          <h3>Example</h3>
-
-          <p>Pass your TensorFlow model and training dataset (either numpy ndarray or Pandas DataFrame) to the push function.</p>
-
-          <pre>
-          from sklearn.datasets import load_iris
-          from sklearn.ensemble import RandomForestClassifier
-
-          from acumos_client.push import push_sklearn_model
-
-          dataset = local_iris()
-          X = dataset.data
-          y = dataset.target
-          model = RandomForestClassifier(random_state=0)
-          model.fit(X,y)
-
-          push_sklearn_model(model, X)</pre>
+        acumoscms:description: "<h2>TensorFlow</h2>\n\n<p>TensorFlow (https://tensorflow.org)\
+          \ is a popular machine learning toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\
+          \n<p>There are only a few simple steps to upload your model from your TensorFlow\
+          \ toolkit. First get and install the Tensorflow&nbsp;library. Once your\
+          \ model is developed, use the client library to on-board your model to Acumos.</p>\n\
+          \n<h3>Get the Acumos&nbsp;TensorFlow Client Library</h3>\n\n<p>The Acumos\
+          \ client library is required for users who want to push their TensorFlow\
+          \ models to the Acumos marketplace. You only need to do this step once.\
+          \ You will use the library for on-boarding all your models. The library\
+          \ creates meta-data by introspection, packages all the necessary information\
+          \ and uploads to Acumos onboading server. &nbsp;This is the first step to\
+          \ make your model available in the catalog.</p>\n\n<h2>Scikit-learn</h2>\n\
+          \n<p>Scikit-learn (http://scikit-learn.org) is a popular machine learning\
+          \ toolkit for Python.</p>\n\n<h3>Getting Started</h3>\n\n<p>There are only\
+          \ a few simple steps to upload your model from your Scikitlearn toolkit.\
+          \ First get and install the scikit learn library. Once your model is developed,\
+          \ use the client library to on-board your model to Acumos.</p>\n\n<h3>Get\
+          \ the Acumos Python Library</h3>\n\n<p>The acumos client library is required\
+          \ for users who want to push their Python (including scikit-learn)&nbsp;models\
+          \ to the Acumos marketplace. You only need to do this step once. You will\
+          \ use the library for on-boarding all your models. The library creates meta-data\
+          \ by introspection, packages all the necessary information and uploads to\
+          \ Acumos onboading server to make your model available in the catalog.</p>\n\
+          \n<h2>Installation</h2>\n\n<p>You will need a Python 3.4+ environment in\
+          \ order to install&nbsp;acumos. You can use&nbsp;Anaconda(preferred) or&nbsp;pyenv&nbsp;to\
+          \ install and manage Python environments.</p>\n\n<p>If you're new to Python\
+          \ and need an IDE to start developing, we recommend using&nbsp;Spyder which\
+          \ can easily be installed with Anaconda.</p>\n\n<p>To install&nbsp;acumos-python-client&nbsp;just\
+          \ clone this repository and use pip:</p>\n\n<pre>\ngit clone &lt;acumos-python-client\
+          \ repo url&gt;\npip install ./acumos-python-client\n</pre>\n\n<p><strong>Note:</strong>&nbsp;This\
+          \ version of&nbsp;acumos&nbsp;uses protocol buffers and assumes you have\
+          \ the protobuf compiler&nbsp;protoc&nbsp;installed. Please visit the&nbsp;protobuf\
+          \ repository&nbsp;and install the appropriate&nbsp;protoc&nbsp;for your\
+          \ operating system. This is a temporary requirement that will be removed\
+          \ in a future version of&nbsp;acumos.</p>\n\n<h2>Tutorial</h2>\n\n<p>This\
+          \ tutorial provides a brief overview of&nbsp;acumos&nbsp;for creating Acumos\
+          \ models. The tutorial is meant to be followed linearly, and some code snippets\
+          \ depend on earlier imports and objects. Full examples are available in&nbsp;the\
+          \ examples directory within git.</p>\n\n<h3>Importing Acumos</h3>\n\n<p>First\
+          \ import the modeling and session packages:</p>\n\n<pre>\nfrom acumos.modeling\
+          \ import Model, List, Dict, create_namedtuple, create_dataframe\nfrom acumos.session\
+          \ import AcumosSession, Requirements\n</pre>\n\n<h3>Creating A Session</h3>\n\
+          \n<p>An&nbsp;AcumosSession&nbsp;allows you to export your models to Acumos.\
+          \ You can either dump a model to disk locally, so that you can upload it\
+          \ via the Acumos GUI, or push the model to Acumos directly.</p>\n\n<p>If\
+          \ you'd like to push to Acumos, create a session with the&nbsp;push_api&nbsp;and&nbsp;auth_apiarguments:</p>\n\
+          \n<pre>\n# replace these fake APIs with ones appropriate for your instance!\
+          \ \nsession = AcumosSession(push_api=\"https://my.acumos.instance.com/upload\"\
+          ,\n                        auth_api=\"https://my.acumos.instance.com/auth\"\
+          )\n</pre>\n\n<p>If you're only interested in dumping a model to disk, the\
+          \ API arguments aren't needed:</p>\n\n<pre>\nsession = AcumosSession()\n\
+          </pre>\n\n<h3>A Simple Model</h3>\n\n<p>Any Python function can be used\
+          \ to define an Acumos model using&nbsp;Python type hints.</p>\n\n<p>Let's\
+          \ first create a simple model that adds two integers together. Acumos needs\
+          \ to know what the inputs and outputs of your functions are. We can use\
+          \ the Python type annotation syntax to specify the function signature.</p>\n\
+          \n<p>Below we define a function&nbsp;add_numbers&nbsp;with&nbsp;int&nbsp;type\
+          \ parameters&nbsp;x&nbsp;and&nbsp;y, and an&nbsp;intreturn type. We then\
+          \ build an Acumos model with an&nbsp;add&nbsp;method.</p>\n\n<p><strong>Note:</strong>&nbsp;Function&nbsp;docstrings&nbsp;are\
+          \ included with your model and used for documentation, so be sure to include\
+          \ one!</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<h3>Exporting Models</h3>\n\n<p>We can now export our model using\
+          \ the&nbsp;AcumosSession&nbsp;object created earlier. The&nbsp;pushand&nbsp;dump&nbsp;APIs\
+          \ are shown below.</p>\n\n<p><strong>Note:</strong>&nbsp;Pushing a model\
+          \ to Acumos will prompt you for your username and password. You can also\
+          \ set the&nbsp;ACUMOS_USERNAME&nbsp;and&nbsp;ACUMOS_PASSWORD&nbsp;environment\
+          \ variables to avoid being prompted.</p>\n\n<pre>\nsession.push(model, 'my-model')\n\
+          session.dump(model, 'my-model', '~/')  # creates ~/my-model\n</pre>\n\n\
+          <h3>Defining Types</h3>\n\n<p>In this example, we make a model that can\
+          \ read binary images and output some metadata about them. This model makes\
+          \ use of a custom type&nbsp;ImageShape.</p>\n\n<p>We first create a&nbsp;NamedTuple&nbsp;type\
+          \ called&nbsp;ImageShape, which is like an ordinary&nbsp;tuple&nbsp;but\
+          \ with field accessors. We can then use&nbsp;ImageShape&nbsp;as the return\
+          \ type of&nbsp;get_shape. Note how&nbsp;ImageShape&nbsp;can be instantiated\
+          \ as a new object.</p>\n\n<pre>\nimport io\nimport PIL\n\nImageShape = create_namedtuple('ImageShape',\
+          \ [('width', int), ('height', int)])\n\ndef get_format(data: bytes) -&gt;\
+          \ str:\n    '''Returns the format of an image'''\n    buffer = io.BytesIO(data)\n\
+          \    img = PIL.Image.open(buffer)\n    return img.format\n\ndef get_shape(data:\
+          \ bytes) -&gt; ImageShape:\n    '''Returns the width and height of an image'''\n\
+          \    buffer = io.BytesIO(data)\n    img = PIL.Image.open(buffer)\n    shape\
+          \ = ImageShape(width=img.width, height=img.height)\n    return shape\n\n\
+          model = Model(get_format=get_format, get_shape=get_shape)\n</pre>\n\n<h3>Using\
+          \ DataFrames With scikit-learn</h3>\n\n<p>In this example, we train a&nbsp;RandomForestClassifier&nbsp;using&nbsp;scikit-learn&nbsp;and\
+          \ use it to create an Acumos model.</p>\n\n<p>When making machine learning\
+          \ models, it's common to use a dataframe data structure to represent data.\
+          \ To make things easier,&nbsp;acumos&nbsp;can create&nbsp;NamedTuple&nbsp;types\
+          \ directly from&nbsp;pandas.DataFrame&nbsp;objects.</p>\n\n<p>NamedTuple&nbsp;types\
+          \ created from&nbsp;pandas.DataFrame&nbsp;objects store columns as named\
+          \ attributes and preserve column order. Because&nbsp;NamedTuple&nbsp;types\
+          \ are like ordinary&nbsp;tupletypes, the resulting object can be iterated\
+          \ over. Thus, iterating over a&nbsp;NamedTupledataframe object is the same\
+          \ as iterating over the columns of a&nbsp;pandas.DataFrame. As a consequence,\
+          \ note how&nbsp;np.column_stack&nbsp;can be used to create a&nbsp;numpy.ndarray&nbsp;from\
+          \ the input&nbsp;df.</p>\n\n<p>Finally, the model returns a&nbsp;numpy.ndarray&nbsp;of&nbsp;int&nbsp;corresponding\
+          \ to predicted iris classes. The&nbsp;classify_iris&nbsp;function represents\
+          \ this as&nbsp;List[int]&nbsp;in the signature return.</p>\n\n<pre>\nimport\
+          \ numpy as np\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\
+          from sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\n\
+          X = iris.data\ny = iris.target\n\nclf = RandomForestClassifier(random_state=0)\n\
+          clf.fit(X, y)\n\ncolumns = ['sepal_length', 'sepal_width', 'petal_length',\
+          \ 'petal_width']\nX_df = pd.DataFrame(X, columns=columns)\n\nIrisDataFrame\
+          \ = create_dataframe('IrisDataFrame', X_df)\n\ndef classify_iris(df: IrisDataFrame)\
+          \ -&gt; List[int]:\n    '''Returns an array of iris classifications'''\n\
+          \    X = np.column_stack(df)\n    return clf.predict(X)\n\nmodel = Model(classify=classify_iris)\n\
+          </pre>\n\n<p>Check out the&nbsp;sklearn&nbsp;examples&nbsp;in the&nbsp;examples\
+          \ directory&nbsp;for full runnable scripts.</p>\n\n<h3>Declaring Requirements</h3>\n\
+          \n<p>If your model depends on another Python package that you wrote, you\
+          \ can declare the package via the&nbsp;Requirements&nbsp;class. Note that\
+          \ only pure Python packages are supported at this time.</p>\n\n<p>Assuming\
+          \ that the package&nbsp;~/repos/my_pkg&nbsp;contains:</p>\n\n<pre>\nmy_pkg/\n\
+          ├── __init__.py\n├── bar.py\n└── foo.py\n</pre>\n\n<p>then you can bundle&nbsp;my_pkg&nbsp;with\
+          \ your model like so:</p>\n\n<pre>\nfrom my_pkg.bar import do_thing\n\n\
+          def transform(x: int) -&gt; int:\n    '''Does the thing'''\n    return do_thing(x)\n\
+          \nmodel = Model(transform=transform)\n\nreqs = Requirements(packages=['~/repos/my_pkg'])\n\
+          \n# using the AcumosSession created earlier:\nsession.push(model, 'my-model',\
+          \ reqs)\nsession.dump(model, 'my-model', '~/', reqs)  # creates ~/my-model\n\
+          </pre>\n\n<h3>TensorFlow</h3>\n\n<p>Check out the&nbsp;TensorFlow example&nbsp;in\
+          \ the&nbsp;examples directory.</p>\n\n<h3>Testing Models</h3>\n\n<p>The&nbsp;acumos.modeling.Model&nbsp;class\
+          \ wraps your custom functions and produces corresponding input and output\
+          \ types. This section shows how to access those types for the purpose of\
+          \ testing. For simplicity, we'll create a model using the&nbsp;add_numbers&nbsp;function\
+          \ again:</p>\n\n<pre>\ndef add_numbers(x: int, y: int) -&gt; int:\n    '''Returns\
+          \ the sum of x and y'''\n    return x + y\n\nmodel = Model(add=add_numbers)\n\
+          </pre>\n\n<p>The&nbsp;model&nbsp;object now has an&nbsp;add&nbsp;attribute,\
+          \ which acts as a wrapper around&nbsp;add_numbers. The&nbsp;add_numbers&nbsp;function\
+          \ can be invoked like so:</p>\n\n<pre>\nresult = model.add.inner(1, 2)\n\
+          result == 3  # True\n</pre>\n\n<p>The&nbsp;model.add&nbsp;object also has\
+          \ a corresponding&nbsp;<em>wrapped</em>&nbsp;function that is generated\
+          \ by&nbsp;acumos.modeling.Model. The wrapped function is the primary way\
+          \ your model will be used within Acumos.</p>\n\n<p>We can access the&nbsp;input_type&nbsp;and&nbsp;output_type&nbsp;attributes\
+          \ to test that the function works as expected:</p>\n\n<pre>\nAddIn = model.add.input_type\n\
+          AddOut = model.add.output_type\n\nadd_in = AddIn(1, 2)\nprint(add_in)  #\
+          \ AddIn(x=1, y=2)\n\nadd_out = AddOut(3)\nprint(add_out)  # AddOut(value=3)\n\
+          \nmodel.add.wrapped(add_in) == add_out  # True\n</pre>\n\n<h3>More Examples</h3>\n\
+          \n<p>Below are some additional function examples. Note how&nbsp;numpy&nbsp;types\
+          \ can even be used in type hints, as shown in the&nbsp;numpy_sum&nbsp;function.</p>\n\
+          \n<pre>\nfrom collections import Counter\nimport numpy as np\n\ndef list_sum(x:\
+          \ List[int]) -&gt; int:\n    '''Computes the sum of a sequence of integers'''\n\
+          \    return sum(x)\n\ndef numpy_sum(x: List[np.int32]) -&gt; np.int32:\n\
+          \    '''Uses numpy to compute a vectorized sum over x'''\n    return np.sum(x)\n\
+          \ndef count_strings(x: List[str]) -&gt; Dict[str, int]:\n    '''Returns\
+          \ a count mapping from a sequence of strings'''\n    return Counter(x)\n\
+          </pre>"
         hippo:availability: [preview]
         hippostd:state: unpublished
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:37:23.344-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-29T01:34:15.073Z
+        hippostdpubwf:lastModificationDate: 2017-11-30T19:35:50.887Z
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 95a4682b-43c9-4826-ac7c-1c677a1b5a5e
         hippotranslation:locale: en
@@ -859,28 +1111,28 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable']
         jcr:uuid: b12d2c74-9f4a-4f34-a0b2-0003a0e74eb9
-        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
-          \ programming that is a popular choice for machine learning applications.\
-          \ It provides a wide variety of data analytic tools and models. Due to its\
-          \ vectorized nature, it is also very efficient at dealing with moderately\
-          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
-          \ must have protobuf 3 installed. Please visit the protobuf repository for\
-          \ more information on how to install protoc. Install version 3 (version\
-          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
-          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical programming\
+          \ that is a popular choice for machine learning applications. It provides\
+          \ a wide variety of data analytic tools and models. Due to its vectorized\
+          \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
+          \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
+          \ 3 installed. Please visit the protobuf repository for more information\
+          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
+          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
+          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
           \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
           \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
           acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
           ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
           \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
-          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
-          \ deployment component, use acumos::compose() with the functions to expose.\
-          \ If type specs are not defined, they default to c(x=\"character\").<br\
-          \ />\nThe component consists of component.json defining the component and\
-          \ its metadata, component.bin the binary payload and component.proto with\
-          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
-          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
+          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
+          \ component, use acumos::compose() with the functions to expose. If type\
+          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
+          \ component consists of component.json defining the component and its metadata,\
+          \ component.bin the binary payload and component.proto with the protobuf\
+          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
+          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
           \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
           \ have to create a runtime.json file with at least {\"input_port\":8100}\
           \ or similar to define which port the component should listen to. If there\
@@ -890,10 +1142,10 @@
           &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
           \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
-          \ configured to set the component directory and/or locations of the component\
-          \ files if needed. If you don't want to create a file, the runtime parameter\
-          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
+          \ to set the component directory and/or locations of the component files\
+          \ if needed. If you don't want to create a file, the runtime parameter also\
+          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
           \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
           http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
           \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
@@ -909,28 +1161,28 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
         jcr:uuid: 6a0af2cc-94d5-423e-beb1-f8f77afeadf3
-        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
-          \ programming that is a popular choice for machine learning applications.\
-          \ It provides a wide variety of data analytic tools and models. Due to its\
-          \ vectorized nature, it is also very efficient at dealing with moderately\
-          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
-          \ must have protobuf 3 installed. Please visit the protobuf repository for\
-          \ more information on how to install protoc. Install version 3 (version\
-          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
-          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical programming\
+          \ that is a popular choice for machine learning applications. It provides\
+          \ a wide variety of data analytic tools and models. Due to its vectorized\
+          \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
+          \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
+          \ 3 installed. Please visit the protobuf repository for more information\
+          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
+          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
+          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
           \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
           \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
           acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
           ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
           \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
-          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
-          \ deployment component, use acumos::compose() with the functions to expose.\
-          \ If type specs are not defined, they default to c(x=\"character\").<br\
-          \ />\nThe component consists of component.json defining the component and\
-          \ its metadata, component.bin the binary payload and component.proto with\
-          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
-          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
+          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
+          \ component, use acumos::compose() with the functions to expose. If type\
+          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
+          \ component consists of component.json defining the component and its metadata,\
+          \ component.bin the binary payload and component.proto with the protobuf\
+          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
+          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
           \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
           \ have to create a runtime.json file with at least {\"input_port\":8100}\
           \ or similar to define which port the component should listen to. If there\
@@ -940,10 +1192,10 @@
           &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
           \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
-          \ configured to set the component directory and/or locations of the component\
-          \ files if needed. If you don't want to create a file, the runtime parameter\
-          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
+          \ to set the component directory and/or locations of the component files\
+          \ if needed. If you don't want to create a file, the runtime parameter also\
+          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
           \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
           http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
           \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
@@ -1199,7 +1451,6 @@
 
             <p>Share, experiment &amp; collaborate in an open source ecosystem of people, solutions and ideas.</p>
           hippo:availability: []
-          hippostd:holder: admin
           hippostd:state: draft
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2017-10-20T12:06:35.849-05:00
@@ -1236,7 +1487,6 @@
 
             <p>Acumos is the go-to site for data-powered decision making. With an intuitive easy-to-use Marketplace and Design Studio, Acumos brings Al into the mainstream.</p>
           hippo:availability: []
-          hippostd:holder: admin
           hippostd:state: draft
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2017-10-20T12:15:57.737-05:00
@@ -1485,7 +1735,6 @@
 
             <p>AT&amp;T Entertainment Executive</p>
           hippo:availability: []
-          hippostd:holder: admin
           hippostd:state: draft
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2017-10-24T05:52:49.928Z
@@ -2195,28 +2444,28 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:versionable']
         jcr:uuid: 98a53e1d-4f76-4d66-bbf9-d80480297b39
-        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
-          \ programming that is a popular choice for machine learning applications.\
-          \ It provides a wide variety of data analytic tools and models. Due to its\
-          \ vectorized nature, it is also very efficient at dealing with moderately\
-          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
-          \ must have protobuf 3 installed. Please visit the protobuf repository for\
-          \ more information on how to install protoc. Install version 3 (version\
-          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
-          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical programming\
+          \ that is a popular choice for machine learning applications. It provides\
+          \ a wide variety of data analytic tools and models. Due to its vectorized\
+          \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
+          \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
+          \ 3 installed. Please visit the protobuf repository for more information\
+          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
+          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
+          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
           \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
           \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
           acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
           ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
           \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
-          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
-          \ deployment component, use acumos::compose() with the functions to expose.\
-          \ If type specs are not defined, they default to c(x=\"character\").<br\
-          \ />\nThe component consists of component.json defining the component and\
-          \ its metadata, component.bin the binary payload and component.proto with\
-          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
-          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
+          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
+          \ component, use acumos::compose() with the functions to expose. If type\
+          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
+          \ component consists of component.json defining the component and its metadata,\
+          \ component.bin the binary payload and component.proto with the protobuf\
+          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
+          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
           \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
           \ have to create a runtime.json file with at least {\"input_port\":8100}\
           \ or similar to define which port the component should listen to. If there\
@@ -2226,10 +2475,10 @@
           &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
           \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
-          \ configured to set the component directory and/or locations of the component\
-          \ files if needed. If you don't want to create a file, the runtime parameter\
-          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
+          \ to set the component directory and/or locations of the component files\
+          \ if needed. If you don't want to create a file, the runtime parameter also\
+          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
           \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
           http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
           \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
@@ -2245,28 +2494,28 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable']
         jcr:uuid: 5878e3e8-7d07-43d2-b697-7e50da073ab2
-        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical\
-          \ programming that is a popular choice for machine learning applications.\
-          \ It provides a wide variety of data analytic tools and models. Due to its\
-          \ vectorized nature, it is also very efficient at dealing with moderately\
-          \ sized data.</p>\n\n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You\
-          \ must have protobuf 3 installed. Please visit the protobuf repository for\
-          \ more information on how to install protoc. Install version 3 (version\
-          \ 2 will not work).<br />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is:\
-          \ &nbsp; XYZ . &nbsp;Use this url in place of the default url: api='http://localhost:8887/v2/models',\
+        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical programming\
+          \ that is a popular choice for machine learning applications. It provides\
+          \ a wide variety of data analytic tools and models. Due to its vectorized\
+          \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
+          \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
+          \ 3 installed. Please visit the protobuf repository for more information\
+          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
+          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
+          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
           \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
           \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
           acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
           ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
           \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\
-          \n<h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a\
-          \ deployment component, use acumos::compose() with the functions to expose.\
-          \ If type specs are not defined, they default to c(x=\"character\").<br\
-          \ />\nThe component consists of component.json defining the component and\
-          \ its metadata, component.bin the binary payload and component.proto with\
-          \ the protobuf specs.<br />\nPlease consult R documentation page for details,\
-          \ i.e., use ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
+          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
+          \ component, use acumos::compose() with the functions to expose. If type\
+          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
+          \ component consists of component.json defining the component and its metadata,\
+          \ component.bin the binary payload and component.proto with the protobuf\
+          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
+          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
           \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
           \ have to create a runtime.json file with at least {\"input_port\":8100}\
           \ or similar to define which port the component should listen to. If there\
@@ -2276,10 +2525,10 @@
           &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
           \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be\
-          \ configured to set the component directory and/or locations of the component\
-          \ files if needed. If you don't want to create a file, the runtime parameter\
-          \ also accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
+          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
+          \ to set the component directory and/or locations of the component files\
+          \ if needed. If you don't want to create a file, the runtime parameter also\
+          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
           \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
           http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
           \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
