@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.acumos</groupId>
+    <groupId>org.acumos.acumos-hippo-cms</groupId>
     <artifactId>acumos-cms</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
