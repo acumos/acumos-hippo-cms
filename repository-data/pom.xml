@@ -3,15 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.acumos</groupId>
+    <groupId>org.acumos.acumos-hippo-cms</groupId>
     <artifactId>acumos-cms</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <name>acumos-cms Repository Data</name>
-  <description>acumos-cms Repository Data</description>
   <artifactId>acumos-cms-repository-data</artifactId>
   <packaging>pom</packaging>
+  <name>acumos-cms Repository Data</name>
 
   <modules>
     <module>config</module>
