@@ -1,177 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.acumos</groupId>
-    <artifactId>acumos-cms</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<groupId>org.acumos</groupId>
+		<artifactId>acumos-cms</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>acumos-cms-docker</artifactId>
-  <packaging>jar</packaging>
-  <name>Acumos Hippo CMS on Springboot and Docker</name>
-  <description>Acumos Hippo CMS on Springboot and Docker</description>
+	<artifactId>acumos-cms-docker</artifactId>
+	<name>Acumos Hippo CMS on Springboot and Docker</name>
 
-  <properties>
-    <java.version>1.8</java.version>
-    <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
-    <tomcat.version>8.5.12</tomcat.version>
-  </properties>
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+		<tomcat.version>8.5.12</tomcat.version>
+		<!-- Port 10001 is a proxy for external images -->
+		<docker.pull.registry>nexus3.acumos.org:10001</docker.pull.registry>
+		<!-- Port 10003 is the LF snapshot repository -->
+		<docker.push.registry>nexus3.acumos.org:10003</docker.push.registry>
+	</properties>
 
-  <dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Import dependency management from Spring Boot -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<!-- <version>3.1.0</version> -->
+			<scope>provided</scope>
+		</dependency>
+		<!-- Let this application be a spring boot web application simply. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- To provide commons-logging API implementation as Spring depends on 
+			commons-logging API. -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- To enable Tomcat DBCP2 DataSource JNDI Resource. -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<version>${tomcat.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JDBC Driver for JNDI DataSource -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<!-- Spring specifies a version here -->
+		</dependency>
+		<!-- To use Spring Boot Extension components provided by hipshoot-spring-boot-support. -->
+		<dependency>
+			<groupId>org.onehippo.forge.hipshoot</groupId>
+			<artifactId>hipshoot-spring-boot-support</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- For JSP/JSTL Support in the embedded tomcat. -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-el</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
-      <!-- Import dependency management from Spring Boot -->
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-    </dependencies>
-
-  </dependencyManagement>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.1.0</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- Let this application be a spring boot web application simply. -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <!-- To provide commons-logging API implementation as Spring depends on commons-logging API. -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- To enable Tomcat DBCP2 DataSource JNDI Resource. -->
-    <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat-dbcp</artifactId>
-      <version>${tomcat.version}</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- JDBC Driver for JNDI DataSource -->
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <scope>provided</scope>
-      
-    </dependency>
-    
-    <dependency>
-		<groupId>org.mariadb.jdbc</groupId>
-		<artifactId>mariadb-java-client</artifactId>
-		<!-- Spring specifies a version here -->
-	</dependency>
-
-    <!-- To use Spring Boot Extension components provided by hipshoot-spring-boot-support. -->
-    <dependency>
-      <groupId>org.onehippo.forge.hipshoot</groupId>
-      <artifactId>hipshoot-spring-boot-support</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- For JSP/JSTL Support in the embedded tomcat. -->
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-el</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-jasper</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-
-  <build>
-
-    <plugins>
-
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-resources</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/target/classes/META-INF/hipshoot/embedded-catalina/webapps</outputDirectory>
-              <resources>
-                <resource>
-                  <filtering>false</filtering>
-                  <directory>${basedir}/../cms/target</directory>
-                  <includes>
-                    <include>*.war</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <filtering>false</filtering>
-                  <directory>${basedir}/../site/target</directory>
-                  <includes>
-                    <include>*.war</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <layout>ZIP</layout>
-          <executable>true</executable>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes/META-INF/hipshoot/embedded-catalina/webapps</outputDirectory>
+							<resources>
+								<resource>
+									<filtering>false</filtering>
+									<directory>${basedir}/../cms/target</directory>
+									<includes>
+										<include>*.war</include>
+									</includes>
+								</resource>
+								<resource>
+									<filtering>false</filtering>
+									<directory>${basedir}/../site/target</directory>
+									<includes>
+										<include>*.war</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+				<configuration>
+					<layout>ZIP</layout>
+					<executable>true</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.21.0</version>
+				<version>0.23.0</version>
 				<configuration>
 					<verbose>true</verbose>
-					<dockerHost>${docker.host.url}</dockerHost>
-					<registry>${docker.registry.url}</registry>
-					<authConfig>
-						<username>${docker.registry.login}</username>
-						<password>${docker.registry.password}</password>
-					</authConfig>
+					<!-- docker runs on the LF build minion so the default value is ok -->
+					<!-- LF <dockerHost>unix:///var/run/docker.sock</dockerHost> LF -->
+					<pullRegistry>${docker.pull.registry}</pullRegistry>
+					<pushRegistry>${docker.push.registry}</pushRegistry>
+					<!-- LF credentials are not supplied here -->
 					<images>
 						<image>
-							<name>acumos-cms-docker:${project.version}</name>
+							<!-- Specify a tag to avoid default tag "latest" -->
+							<name>${project.artifactId}:${project.version}</name>
 							<build>
-								<!-- This is the same FROM used in a Dockerfile -->
 								<from>frolvlad/alpine-oraclejdk8:slim</from>
+								<tags>
+									<!-- Add tag with build number -->
+									<tag>${project.version}-b${build.number}</tag>
+								</tags>
 								<assembly>
 									<inline>
 										<files>
@@ -187,18 +178,25 @@
 										</files>
 									</inline>
 								</assembly>
-								<!-- This is the same CMD used in a Dockerfile -->
 								<cmd>
-									<shell>cd /maven; java -Djava.security.egd=file:/dev/./urandom -jar ${project.artifactId}-${project.version}.${project.packaging}</shell>
+									<!-- CDATA prevents Eclipse formatter from breaking line -->
+									<shell><![CDATA[cd /maven; java -Djava.security.egd=file:/dev/./urandom -jar ${project.artifactId}-${project.version}.${project.packaging}]]></shell>
 								</cmd>
 							</build>
 						</image>
 					</images>
 				</configuration>
+				<!-- build Docker images in install phase, push in deploy phase -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-
-    </plugins>
-
-  </build>
+		</plugins>
+	</build>
 
 </project>
