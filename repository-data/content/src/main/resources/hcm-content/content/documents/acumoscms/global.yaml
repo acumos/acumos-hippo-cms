@@ -1116,44 +1116,59 @@
           \ a wide variety of data analytic tools and models. Due to its vectorized\
           \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
           \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
-          \ 3 installed. Please visit the protobuf repository for more information\
-          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
-          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
-          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
-          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
-          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
-          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
-          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
-          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
-          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
-          \ component, use acumos::compose() with the functions to expose. If type\
-          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
-          \ component consists of component.json defining the component and its metadata,\
-          \ component.bin the binary payload and component.proto with the protobuf\
-          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
-          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
-          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
-          \ have to create a runtime.json file with at least {\"input_port\":8100}\
-          \ or similar to define which port the component should listen to. If there\
-          \ are output components there should also be a \"output_url\" entry to specify\
-          \ where to send the result to. It can be either a single entry or a list\
-          \ if the results are to be sent to multiple components. Example:<br />\n\
-          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          \ 3 installed. Please visit the protobuf repository for more information on\
+          \ how to install protoc. Install version 3 (version 2 will not work).<br />\n\
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use this url\
+          \ in place of the default url: api='http://localhost:8887/v2/models', name='(undefined)'</p>\n\
+          \n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;The &nbsp;install\
+          \ package is available here:<br />\ninstall.packages(\"acumos\",,c(\"http://r.research.att.com\"\
+          ,\"http://rcloud.research.att.com\"))<br />\nYou need to install all dependent\
+          \ packages from CRAN first. &nbsp;Then do the following:&nbsp;</p>\n\n<pre>\n\
+          \ \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git acumos\n\
+          R CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n<h3>Usage</h3>\n\
+          \n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment component,\
+          \ use acumos::compose() with the functions to expose. If type specs are not\
+          \ defined, they default to c(x=\"character\").<br />\nThe component consists\
+          \ of component.json defining the component and its metadata, component.bin\
+          \ the binary payload and component.proto with the protobuf specs.<br />\n\
+          Please consult R documentation page for details, i.e., use ?compose in R or\
+          \ see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deployment Pre-requisite:</h4>\n\n<p>Replace the proxy\
+          \ mentioned in below statement from the dockerfile, as per the current environment</p>\n\
+          \n<p>â€œENV http_proxy http://10.1.0.6:3128â€�</p>\n\n<p>Execute below command\
+          \ to build base docker image for R</p>\n\n<p>docker build -t &lt;imageName&gt;</p>\n\
+          \n<p>Create a dockerfile with below commands with name base-r and Run</p>\n\
+          \n<p>FROM ubuntu:latest</p>\n\n<p>WORKDIR /app<br />\nADD . /app</p>\n\n<p>ENV\
+          \ http_proxy http://10.1.0.6:3128<br />\nRUN echo $http_proxy<br />\nRUN echo\
+          \ \"nameserver 8.8.8.8\" | tee /etc/resolv.conf &gt; /dev/null</p>\n\n<p>RUN\
+          \ apt-get update<br />\nRUN apt-get -y install r-base<br />\nRUN apt-get -y\
+          \ install libprotobuf-dev<br />\nRUN apt-get -y install libcurl4-gnutls-dev<br\
+          \ />\nRUN apt-get -y install libxml2-dev<br />\nRUN apt-get -y install libprotoc-dev<br\
+          \ />\nRUN apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev\
+          \ libssl-dev<br />\nRUN apt-get -y install libpq-dev</p>\n\n<p>Once build\
+          \ is successful, you can follow normal onboarding process for R model upload</p>\n\
+          \n<p>This is one time process only. For subsequent R model uploads this will\
+          \ not be required as the base-r image will be available in the environment.</p>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run\
+          \ the component you have to create a runtime.json file with at least {\"input_port\"\
+          :8100} or similar to define which port the component should listen to. If\
+          \ there are output components there should also be a \"output_url\" entry\
+          \ to specify where to send the result to. It can be either a single entry\
+          \ or a list if the results are to be sent to multiple components. Example:<br\
+          \ />\n&nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
-          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
-          \ to set the component directory and/or locations of the component files\
-          \ if needed. If you don't want to create a file, the runtime parameter also\
-          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
-          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
-          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
-          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run()'</pre>\n\
+          \n<p>&nbsp;<br />\nThe run() function can be configured to set the component\
+          \ directory and/or locations of the component files if needed. If you don't\
+          \ want to create a file, the runtime parameter also accepts the runtime structure,\
+          \ so you can also use<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100,\
+          \ output_url=\"http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\n\
+          See also ?run in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
         hippo:availability: []
         hippostd:state: draft
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
-        hippostdpubwf:lastModificationDate: 2018-01-02T16:13:48.775-06:00
+        hippostdpubwf:lastModificationDate: 2018-02-28T00:33:46.246-06:00
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 2128e907-741f-4a82-ad9f-cad462146be2
         hippotranslation:locale: en
@@ -1166,44 +1181,59 @@
           \ a wide variety of data analytic tools and models. Due to its vectorized\
           \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
           \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
-          \ 3 installed. Please visit the protobuf repository for more information\
-          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
-          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
-          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
-          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
-          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
-          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
-          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
-          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
-          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
-          \ component, use acumos::compose() with the functions to expose. If type\
-          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
-          \ component consists of component.json defining the component and its metadata,\
-          \ component.bin the binary payload and component.proto with the protobuf\
-          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
-          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
-          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
-          \ have to create a runtime.json file with at least {\"input_port\":8100}\
-          \ or similar to define which port the component should listen to. If there\
-          \ are output components there should also be a \"output_url\" entry to specify\
-          \ where to send the result to. It can be either a single entry or a list\
-          \ if the results are to be sent to multiple components. Example:<br />\n\
-          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          \ 3 installed. Please visit the protobuf repository for more information on\
+          \ how to install protoc. Install version 3 (version 2 will not work).<br />\n\
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use this url\
+          \ in place of the default url: api='http://localhost:8887/v2/models', name='(undefined)'</p>\n\
+          \n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;The &nbsp;install\
+          \ package is available here:<br />\ninstall.packages(\"acumos\",,c(\"http://r.research.att.com\"\
+          ,\"http://rcloud.research.att.com\"))<br />\nYou need to install all dependent\
+          \ packages from CRAN first. &nbsp;Then do the following:&nbsp;</p>\n\n<pre>\n\
+          \ \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git acumos\n\
+          R CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n<h3>Usage</h3>\n\
+          \n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment component,\
+          \ use acumos::compose() with the functions to expose. If type specs are not\
+          \ defined, they default to c(x=\"character\").<br />\nThe component consists\
+          \ of component.json defining the component and its metadata, component.bin\
+          \ the binary payload and component.proto with the protobuf specs.<br />\n\
+          Please consult R documentation page for details, i.e., use ?compose in R or\
+          \ see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deployment Pre-requisite:</h4>\n\n<p>Replace the proxy\
+          \ mentioned in below statement from the dockerfile, as per the current environment</p>\n\
+          \n<p>â€œENV http_proxy http://10.1.0.6:3128â€�</p>\n\n<p>Execute below command\
+          \ to build base docker image for R</p>\n\n<p>docker build -t &lt;imageName&gt;</p>\n\
+          \n<p>Create a dockerfile with below commands with name base-r and Run</p>\n\
+          \n<p>FROM ubuntu:latest</p>\n\n<p>WORKDIR /app<br />\nADD . /app</p>\n\n<p>ENV\
+          \ http_proxy http://10.1.0.6:3128<br />\nRUN echo $http_proxy<br />\nRUN echo\
+          \ \"nameserver 8.8.8.8\" | tee /etc/resolv.conf &gt; /dev/null</p>\n\n<p>RUN\
+          \ apt-get update<br />\nRUN apt-get -y install r-base<br />\nRUN apt-get -y\
+          \ install libprotobuf-dev<br />\nRUN apt-get -y install libcurl4-gnutls-dev<br\
+          \ />\nRUN apt-get -y install libxml2-dev<br />\nRUN apt-get -y install libprotoc-dev<br\
+          \ />\nRUN apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev\
+          \ libssl-dev<br />\nRUN apt-get -y install libpq-dev</p>\n\n<p>Once build\
+          \ is successful, you can follow normal onboarding process for R model upload</p>\n\
+          \n<p>This is one time process only. For subsequent R model uploads this will\
+          \ not be required as the base-r image will be available in the environment.</p>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run\
+          \ the component you have to create a runtime.json file with at least {\"input_port\"\
+          :8100} or similar to define which port the component should listen to. If\
+          \ there are output components there should also be a \"output_url\" entry\
+          \ to specify where to send the result to. It can be either a single entry\
+          \ or a list if the results are to be sent to multiple components. Example:<br\
+          \ />\n&nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
-          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
-          \ to set the component directory and/or locations of the component files\
-          \ if needed. If you don't want to create a file, the runtime parameter also\
-          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
-          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
-          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
-          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run()'</pre>\n\
+          \n<p>&nbsp;<br />\nThe run() function can be configured to set the component\
+          \ directory and/or locations of the component files if needed. If you don't\
+          \ want to create a file, the runtime parameter also accepts the runtime structure,\
+          \ so you can also use<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100,\
+          \ output_url=\"http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\n\
+          See also ?run in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
         hippo:availability: [preview]
         hippostd:state: unpublished
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-19T14:45:52.133Z
+        hippostdpubwf:lastModificationDate: 2018-02-28T00:19:09.735-06:00
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 2128e907-741f-4a82-ad9f-cad462146be2
         hippotranslation:locale: en
@@ -2475,44 +2505,59 @@
           \ a wide variety of data analytic tools and models. Due to its vectorized\
           \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
           \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
-          \ 3 installed. Please visit the protobuf repository for more information\
-          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
-          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
-          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
-          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
-          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
-          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
-          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
-          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
-          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
-          \ component, use acumos::compose() with the functions to expose. If type\
-          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
-          \ component consists of component.json defining the component and its metadata,\
-          \ component.bin the binary payload and component.proto with the protobuf\
-          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
-          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
-          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
-          \ have to create a runtime.json file with at least {\"input_port\":8100}\
-          \ or similar to define which port the component should listen to. If there\
-          \ are output components there should also be a \"output_url\" entry to specify\
-          \ where to send the result to. It can be either a single entry or a list\
-          \ if the results are to be sent to multiple components. Example:<br />\n\
-          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          \ 3 installed. Please visit the protobuf repository for more information on\
+          \ how to install protoc. Install version 3 (version 2 will not work).<br />\n\
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use this url\
+          \ in place of the default url: api='http://localhost:8887/v2/models', name='(undefined)'</p>\n\
+          \n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;The &nbsp;install\
+          \ package is available here:<br />\ninstall.packages(\"acumos\",,c(\"http://r.research.att.com\"\
+          ,\"http://rcloud.research.att.com\"))<br />\nYou need to install all dependent\
+          \ packages from CRAN first. &nbsp;Then do the following:&nbsp;</p>\n\n<pre>\n\
+          \ \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git acumos\n\
+          R CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n<h3>Usage</h3>\n\
+          \n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment component,\
+          \ use acumos::compose() with the functions to expose. If type specs are not\
+          \ defined, they default to c(x=\"character\").<br />\nThe component consists\
+          \ of component.json defining the component and its metadata, component.bin\
+          \ the binary payload and component.proto with the protobuf specs.<br />\n\
+          Please consult R documentation page for details, i.e., use ?compose in R or\
+          \ see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deployment Pre-requisite:</h4>\n\n<p>Replace the proxy\
+          \ mentioned in below statement from the dockerfile, as per the current environment</p>\n\
+          \n<p>â€œENV http_proxy http://10.1.0.6:3128â€�</p>\n\n<p>Execute below command\
+          \ to build base docker image for R</p>\n\n<p>docker build -t &lt;imageName&gt;</p>\n\
+          \n<p>Create a dockerfile with below commands with name base-r and Run</p>\n\
+          \n<p>FROM ubuntu:latest</p>\n\n<p>WORKDIR /app<br />\nADD . /app</p>\n\n<p>ENV\
+          \ http_proxy http://10.1.0.6:3128<br />\nRUN echo $http_proxy<br />\nRUN echo\
+          \ \"nameserver 8.8.8.8\" | tee /etc/resolv.conf &gt; /dev/null</p>\n\n<p>RUN\
+          \ apt-get update<br />\nRUN apt-get -y install r-base<br />\nRUN apt-get -y\
+          \ install libprotobuf-dev<br />\nRUN apt-get -y install libcurl4-gnutls-dev<br\
+          \ />\nRUN apt-get -y install libxml2-dev<br />\nRUN apt-get -y install libprotoc-dev<br\
+          \ />\nRUN apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev\
+          \ libssl-dev<br />\nRUN apt-get -y install libpq-dev</p>\n\n<p>Once build\
+          \ is successful, you can follow normal onboarding process for R model upload</p>\n\
+          \n<p>This is one time process only. For subsequent R model uploads this will\
+          \ not be required as the base-r image will be available in the environment.</p>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run\
+          \ the component you have to create a runtime.json file with at least {\"input_port\"\
+          :8100} or similar to define which port the component should listen to. If\
+          \ there are output components there should also be a \"output_url\" entry\
+          \ to specify where to send the result to. It can be either a single entry\
+          \ or a list if the results are to be sent to multiple components. Example:<br\
+          \ />\n&nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
-          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
-          \ to set the component directory and/or locations of the component files\
-          \ if needed. If you don't want to create a file, the runtime parameter also\
-          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
-          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
-          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
-          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run()'</pre>\n\
+          \n<p>&nbsp;<br />\nThe run() function can be configured to set the component\
+          \ directory and/or locations of the component files if needed. If you don't\
+          \ want to create a file, the runtime parameter also accepts the runtime structure,\
+          \ so you can also use<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100,\
+          \ output_url=\"http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\n\
+          See also ?run in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
         hippo:availability: [preview]
         hippostd:state: unpublished
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:55.648-05:00
+        hippostdpubwf:lastModificationDate: 2018-02-28T00:34:57.383-06:00
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 40c1484c-3427-4476-a0d9-4fc05e38a574
         hippotranslation:locale: en
@@ -2525,44 +2570,59 @@
           \ a wide variety of data analytic tools and models. Due to its vectorized\
           \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
           \n<h3>Before you begin</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;You must have protobuf\
-          \ 3 installed. Please visit the protobuf repository for more information\
-          \ on how to install protoc. Install version 3 (version 2 will not work).<br\
-          \ />\n-&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use\
-          \ this url in place of the default url: api='http://localhost:8887/v2/models',\
-          \ name='(undefined)'</p>\n\n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp;\
-          \ &nbsp;The &nbsp;install package is available here:<br />\ninstall.packages(\"\
-          acumos\",,c(\"http://r.research.att.com\",\"http://rcloud.research.att.com\"\
-          ))<br />\nYou need to install all dependent packages from CRAN first. &nbsp;Then\
-          \ do the following:&nbsp;</p>\n\n<pre>\n \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git\
-          \ acumos\nR CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n\
-          <h3>Usage</h3>\n\n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment\
-          \ component, use acumos::compose() with the functions to expose. If type\
-          \ specs are not defined, they default to c(x=\"character\").<br />\nThe\
-          \ component consists of component.json defining the component and its metadata,\
-          \ component.bin the binary payload and component.proto with the protobuf\
-          \ specs.<br />\nPlease consult R documentation page for details, i.e., use\
-          \ ?compose in R or see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
-          \n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run the component you\
-          \ have to create a runtime.json file with at least {\"input_port\":8100}\
-          \ or similar to define which port the component should listen to. If there\
-          \ are output components there should also be a \"output_url\" entry to specify\
-          \ where to send the result to. It can be either a single entry or a list\
-          \ if the results are to be sent to multiple components. Example:<br />\n\
-          &nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
+          \ 3 installed. Please visit the protobuf repository for more information on\
+          \ how to install protoc. Install version 3 (version 2 will not work).<br />\n\
+          -&nbsp;&nbsp; &nbsp;Your on-boarding url is: &nbsp; XYZ . &nbsp;Use this url\
+          \ in place of the default url: api='http://localhost:8887/v2/models', name='(undefined)'</p>\n\
+          \n<h3><br />\nInstallation</h3>\n\n<p>-&nbsp;&nbsp; &nbsp;The &nbsp;install\
+          \ package is available here:<br />\ninstall.packages(\"acumos\",,c(\"http://r.research.att.com\"\
+          ,\"http://rcloud.research.att.com\"))<br />\nYou need to install all dependent\
+          \ packages from CRAN first. &nbsp;Then do the following:&nbsp;</p>\n\n<pre>\n\
+          \ \ngit clone git@gitlab.research.att.com:acumos/acumos-r-client.git acumos\n\
+          R CMD build acumos\nR CMD INSTALL acumos_0.1-0.tar.gz</pre>\n\n<h3>Usage</h3>\n\
+          \n<h4>Create a component</h4>\n\n<p>&nbsp;To create a deployment component,\
+          \ use acumos::compose() with the functions to expose. If type specs are not\
+          \ defined, they default to c(x=\"character\").<br />\nThe component consists\
+          \ of component.json defining the component and its metadata, component.bin\
+          \ the binary payload and component.proto with the protobuf specs.<br />\n\
+          Please consult R documentation page for details, i.e., use ?compose in R or\
+          \ see<br />\n&nbsp;</p>\n\n<pre>\nhttps://rcloud.research.att.com/help.R/library/acumos/html/compose.html</pre>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deployment Pre-requisite:</h4>\n\n<p>Replace the proxy\
+          \ mentioned in below statement from the dockerfile, as per the current environment</p>\n\
+          \n<p>â€œENV http_proxy http://10.1.0.6:3128â€�</p>\n\n<p>Execute below command\
+          \ to build base docker image for R</p>\n\n<p>docker build -t &lt;imageName&gt;</p>\n\
+          \n<p>Create a dockerfile with below commands with name base-r and Run</p>\n\
+          \n<p>FROM ubuntu:latest</p>\n\n<p>WORKDIR /app<br />\nADD . /app</p>\n\n<p>ENV\
+          \ http_proxy http://10.1.0.6:3128<br />\nRUN echo $http_proxy<br />\nRUN echo\
+          \ \"nameserver 8.8.8.8\" | tee /etc/resolv.conf &gt; /dev/null</p>\n\n<p>RUN\
+          \ apt-get update<br />\nRUN apt-get -y install r-base<br />\nRUN apt-get -y\
+          \ install libprotobuf-dev<br />\nRUN apt-get -y install libcurl4-gnutls-dev<br\
+          \ />\nRUN apt-get -y install libxml2-dev<br />\nRUN apt-get -y install libprotoc-dev<br\
+          \ />\nRUN apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev\
+          \ libssl-dev<br />\nRUN apt-get -y install libpq-dev</p>\n\n<p>Once build\
+          \ is successful, you can follow normal onboarding process for R model upload</p>\n\
+          \n<p>This is one time process only. For subsequent R model uploads this will\
+          \ not be required as the base-r image will be available in the environment.</p>\n\
+          \n<p>&nbsp;</p>\n\n<h4>Deploy a component</h4>\n\n<p>&nbsp;<br />\nTo run\
+          \ the component you have to create a runtime.json file with at least {\"input_port\"\
+          :8100} or similar to define which port the component should listen to. If\
+          \ there are output components there should also be a \"output_url\" entry\
+          \ to specify where to send the result to. It can be either a single entry\
+          \ or a list if the results are to be sent to multiple components. Example:<br\
+          \ />\n&nbsp;</p>\n\n<pre>\n{\"input_port\":8100, \"output_url\":\"http://127.0.0.1:8101/predict\"\
           }</pre>\n\n<p>&nbsp;<br />\nWith the component files plus runtime.json in\
-          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e\
-          \ 'acumos:::run()'</pre>\n\n<p>&nbsp;<br />\nThe run() function can be configured\
-          \ to set the component directory and/or locations of the component files\
-          \ if needed. If you don't want to create a file, the runtime parameter also\
-          \ accepts the runtime structure, so you can also use<br />\n&nbsp;</p>\n\
-          \n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100, output_url=\"\
-          http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\nSee also ?run\
-          \ in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
+          \ place, the component can be run using<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run()'</pre>\n\
+          \n<p>&nbsp;<br />\nThe run() function can be configured to set the component\
+          \ directory and/or locations of the component files if needed. If you don't\
+          \ want to create a file, the runtime parameter also accepts the runtime structure,\
+          \ so you can also use<br />\n&nbsp;</p>\n\n<pre>\nR -e 'acumos:::run(runtime=list(input_port=8100,\
+          \ output_url=\"http://127.0.0.1:8101/predict\"))'</pre>\n\n<p>&nbsp;<br />\n\
+          See also ?run in R or https://rcloud.research.att.com/help.R/library/acumos/html/run.html</p>"
         hippo:availability: []
         hippostd:state: draft
         hippostdpubwf:createdBy: admin
         hippostdpubwf:creationDate: 2017-10-17T00:54:55.382-05:00
-        hippostdpubwf:lastModificationDate: 2017-10-27T11:05:49.961-05:00
+        hippostdpubwf:lastModificationDate: 2018-02-28T00:34:24.807-06:00
         hippostdpubwf:lastModifiedBy: admin
         hippotranslation:id: 40c1484c-3427-4476-a0d9-4fc05e38a574
         hippotranslation:locale: en
