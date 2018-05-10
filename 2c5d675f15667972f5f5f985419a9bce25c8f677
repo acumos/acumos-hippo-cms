@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be028bcc_6120e129",
+        "filename": "site/src/test/java/org/acumos/rest/JsonResponseTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-05-10T20:22:14Z",
+      "side": 1,
+      "message": "Vacuous assertion - it\u0027s always not null if you reach it\n\nNeed to add comparison of constants against getters",
+      "revId": "2c5d675f15667972f5f5f985419a9bce25c8f677",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0c8aebc_f45b83ee",
+        "filename": "site/src/test/java/org/acumos/rest/JsonResponseTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-05-10T20:22:14Z",
+      "side": 1,
+      "message": "Don\u0027t catch",
+      "revId": "2c5d675f15667972f5f5f985419a9bce25c8f677",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
