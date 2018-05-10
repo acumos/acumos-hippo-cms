@@ -10,7 +10,7 @@
 
   <groupId>org.acumos.acumos-hippo-cms</groupId>
   <artifactId>acumos-cms</artifactId>
-  <version>1.3.2-SNAPSHOT</version>
+  <version>1.3.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Acumos CMS</name>
   <description>Hippo CMS for Acumos</description>
