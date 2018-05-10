@@ -831,7 +831,7 @@
         jcr:primaryType: acumoscms:solutionDescription
         jcr:mixinTypes: ['mix:referenceable']
         jcr:uuid: b12d2c74-9f4a-4f34-a0b2-0003a0e74eb9
-        acumoscms:description: "<h2>R</h2>\n\n<p>R is a language for statistical programming\
+        acumoscms:description: "R is a language for statistical programming\
           \ that is a popular choice for machine learning applications. It provides\
           \ a wide variety of data analytic tools and models. Due to its vectorized\
           \ nature, it is also very efficient at dealing with moderately sized data.</p>\n\
