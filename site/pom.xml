@@ -137,12 +137,12 @@
       <artifactId>hippo-plugin-taxonomy-hstclient</artifactId>
       <scope>compile</scope>
     </dependency>
-	<dependency>
-		<groupId>org.apache.cxf</groupId>
-		<artifactId>cxf-rt-rs-security-cors</artifactId>
-		<version>${cxf.version}</version>
-		<scope>compile</scope>
-	</dependency>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-rs-security-cors</artifactId>
+        <version>${cxf.version}</version>
+        <scope>compile</scope>
+    </dependency>
   </dependencies>
   <build>
     <resources>
@@ -172,6 +172,26 @@
           </container>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.7.9</version>
+        <executions>
+            <execution>
+                <id>default-prepare-agent</id>
+                <goals>
+                    <goal>prepare-agent</goal>
+                </goals>
+            </execution>
+            <execution>
+                <id>default-report</id>
+                <phase>prepare-package</phase>
+                <goals>
+                    <goal>report</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
     </plugins>
   </build>
 </project>
