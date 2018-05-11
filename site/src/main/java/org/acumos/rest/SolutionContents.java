@@ -466,29 +466,9 @@ public class SolutionContents extends BaseRestResource {
 		return jsonResponse;
 	}
 
-	@Persistable
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/solutionImages/{solutionId}")
-	public JsonResponse<List<String>> getSolutionImageName(@Context HttpServletRequest request,
-			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId)
-			throws PathNotFoundException, LoginException, RepositoryException, IOException {
-
+	protected JsonResponse<List<String>> getSolutionImageName(HstRequestContext requestContext, String solutionId,
+			Node rootImagePath, HttpServletResponse response) throws RepositoryException {
 		List<String> solImageNameList = new ArrayList<String>();
-
-		if (StringUtils.isEmpty(solutionId)) {
-			JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
-			jsonResponse.setResponseBody(solImageNameList);
-			jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
-			jsonResponse.setResponseDetail("Illegal parameter. Solution Id Missing");
-			response.setStatus(500);
-			return jsonResponse;
-		}
-
-		HstRequestContext requestContext = getRequestContext(request);
-		String siteCanonicalBasePath = requestContext.getResolvedMount().getMount().getCanonicalContentPath();
-		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/gallery/acumoscms");
-		log.debug("-- getSolutionImageName() : Path : " + rootImagePath.getName());
 
 		Node solutionImages;
 		if (!rootImagePath.hasNode("solution")) {
@@ -540,7 +520,34 @@ public class SolutionContents extends BaseRestResource {
 		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
 		jsonResponse.setResponseDetail("Solutions Image fetched Successfully");
 		response.setStatus(HttpServletResponse.SC_OK);
+		return jsonResponse;
+	}
 
+	@Persistable
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/solutionImages/{solutionId}")
+	public JsonResponse<List<String>> getSolutionImageName(@Context HttpServletRequest request,
+			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId)
+			throws PathNotFoundException, LoginException, RepositoryException, IOException {
+
+		List<String> solImageNameList = new ArrayList<String>();
+
+		if (StringUtils.isEmpty(solutionId)) {
+			JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
+			jsonResponse.setResponseBody(solImageNameList);
+			jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_FAILURE);
+			jsonResponse.setResponseDetail("Illegal parameter. Solution Id Missing");
+			response.setStatus(500);
+			return jsonResponse;
+		}
+
+		HstRequestContext requestContext = getRequestContext(request);
+		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/gallery/acumoscms");
+		log.debug("-- getSolutionImageName() : Path : " + rootImagePath.getName());
+
+		JsonResponse<List<String>> jsonResponse = getSolutionImageName(requestContext, solutionId, rootImagePath,
+				response);
 		return jsonResponse;
 	}
 
@@ -689,7 +696,6 @@ public class SolutionContents extends BaseRestResource {
 			galleryAsset.setProperty("jcr:data", galleryAsset.getSession().getValueFactory().createBinary(is));
 
 		}
-		// String imageUUID = imgHandle.getIdentifier();
 
 		String output = "Image File uploaded successfully";
 		return name;
@@ -722,33 +728,9 @@ public class SolutionContents extends BaseRestResource {
 		return jsonResponse;
 	}
 
-	@Persistable
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/solutionAssets/{solutionId}/{revisionId}")
-	public JsonResponse<List<String>> getSolutionDocumentName(@Context HttpServletRequest request,
-			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId,
-			@PathParam("revisionId") String revisionId, @QueryParam("path") String path)
-			throws PathNotFoundException, LoginException, RepositoryException, IOException {
-
-		log.debug("-- getSolutionDocumentName() {} ");
-		if (StringUtils.isEmpty(solutionId)) {
-			String output = "Cannot Find solution documents";
-			// return Response.status(500).entity(output).build();
-		}
-
-		log.debug("-- saveAssets() {}  Upload path : " + path);
-		if (StringUtils.isEmpty(path) && !(orgWorkspacePath.equals(path) || publicWorkspacePath.equals(path))) {
-			String output = "Upload path not valid";
-			// return Response.status(500).entity(output).build();
-		}
-
-		HstRequestContext requestContext = getRequestContext(request);
-		String siteCanonicalBasePath = requestContext.getResolvedMount().getMount().getCanonicalContentPath();
-
-		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/assets");
-		log.debug("-- getSolutionDocumentName() {} Base Path : " + rootImagePath.getName());
-
+	protected JsonResponse<List<String>> getSolutionDocumentName(HstRequestContext requestContext,
+			HttpServletResponse response, String solutionId, String revisionId, String path, Node rootImagePath)
+			throws RepositoryException {
 		Node solutionDocs = null;
 		if (!rootImagePath.hasNode("solutiondocs")) {
 			String output = "No Documents Available";
@@ -801,11 +783,6 @@ public class SolutionContents extends BaseRestResource {
 
 		}
 
-		if (solDocumentNameList.size() == 0) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		}
-
 		JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
 		jsonResponse.setResponseBody(solDocumentNameList);
 		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
@@ -816,16 +793,15 @@ public class SolutionContents extends BaseRestResource {
 	}
 
 	@Persistable
-	@DELETE
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/solutionAssets/{solutionId}/{revisionId}/{assetName}")
-	public JsonResponse<List<String>> remoceSolutionDocument(@Context HttpServletRequest request,
+	@Path("/solutionAssets/{solutionId}/{revisionId}")
+	public JsonResponse<List<String>> getSolutionDocumentName(@Context HttpServletRequest request,
 			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId,
-			@PathParam("revisionId") String revisionId, @PathParam("assetName") String assetName,
-			@QueryParam("path") String path)
+			@PathParam("revisionId") String revisionId, @QueryParam("path") String path)
 			throws PathNotFoundException, LoginException, RepositoryException, IOException {
 
-		log.debug("-- remoceSolutionDocument() {} ");
+		log.debug("-- getSolutionDocumentName() {} ");
 		if (StringUtils.isEmpty(solutionId)) {
 			String output = "Cannot Find solution documents";
 			// return Response.status(500).entity(output).build();
@@ -838,10 +814,19 @@ public class SolutionContents extends BaseRestResource {
 		}
 
 		HstRequestContext requestContext = getRequestContext(request);
-		String siteCanonicalBasePath = requestContext.getResolvedMount().getMount().getCanonicalContentPath();
 
 		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/assets");
 		log.debug("-- getSolutionDocumentName() {} Base Path : " + rootImagePath.getName());
+
+		JsonResponse<List<String>> jsonResponse = getSolutionDocumentName(requestContext, response, solutionId,
+				revisionId, path, rootImagePath);
+
+		return jsonResponse;
+	}
+
+	protected JsonResponse<List<String>> removeSolutionDocument(HttpServletResponse response, String solutionId,
+			String revisionId, String assetName, String path, Node rootImagePath)
+			throws PathNotFoundException, RepositoryException {
 
 		Node solutionDocs = null;
 		if (!rootImagePath.hasNode("solutiondocs")) {
@@ -895,8 +880,9 @@ public class SolutionContents extends BaseRestResource {
 			}
 
 		}
-		requestContext.getSession().save();
 
+		
+		
 		JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
 		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
 		jsonResponse.setResponseDetail("Document Removed Successfully");
@@ -906,33 +892,33 @@ public class SolutionContents extends BaseRestResource {
 	}
 
 	@Persistable
-	@GET
+	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/solutionAssets/cp/{solutionId}/{revisionId}/{fromRevisionId}")
-	public JsonResponse<List<String>> copySolutionDocuments(@Context HttpServletRequest request,
+	@Path("/solutionAssets/{solutionId}/{revisionId}/{assetName}")
+	public JsonResponse<List<String>> removeSolutionDocument(@Context HttpServletRequest request,
 			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId,
-			@PathParam("revisionId") String revisionId, @PathParam("fromRevisionId") String fromRevisionId,
+			@PathParam("revisionId") String revisionId, @PathParam("assetName") String assetName,
 			@QueryParam("path") String path)
 			throws PathNotFoundException, LoginException, RepositoryException, IOException {
 
-		log.debug("-- getSolutionDocumentName() {} ");
-		if (StringUtils.isEmpty(solutionId)) {
-			String output = "Cannot Find solution documents";
-			// return Response.status(500).entity(output).build();
-		}
-
-		log.debug("-- saveAssets() {}  Upload path : " + path);
-		if (StringUtils.isEmpty(path) && !(orgWorkspacePath.equals(path) || publicWorkspacePath.equals(path))) {
-			String output = "Upload path not valid";
-			// return Response.status(500).entity(output).build();
-		}
-
 		HstRequestContext requestContext = getRequestContext(request);
-		Session session = requestContext.getSession();
+		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/assets");
+		log.debug("-- getSolutionDocumentName() {} Base Path : " + rootImagePath.getName());
+
+		JsonResponse<List<String>> jsonResponse = removeSolutionDocument(response, solutionId, revisionId, assetName,
+				path, rootImagePath);
+		
+		requestContext.getSession().save();
+
+		return jsonResponse;
+	}
+
+	protected JsonResponse<List<String>> copySolutionDocuments(HttpServletResponse response, String solutionId,
+			String revisionId, String fromRevisionId, String path, Node rootAssetNode) throws RepositoryException {
 		List<String> solDocumentNameList = new ArrayList<String>();
 
-		Node sourcePathNode = getPathNodeForAsset(session, solutionId, fromRevisionId, path);
-		Node destinationPathnode = getOrCreatePathNodeForAsset(session, solutionId, revisionId, path);
+		Node sourcePathNode = getPathNodeForAsset(rootAssetNode, solutionId, fromRevisionId, path);
+		Node destinationPathnode = getOrCreatePathNodeForAsset(rootAssetNode, solutionId, revisionId, path);
 
 		if (sourcePathNode == null) {
 			JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
@@ -978,8 +964,6 @@ public class SolutionContents extends BaseRestResource {
 			}
 		}
 
-		session.save();
-
 		JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
 		jsonResponse.setResponseBody(solDocumentNameList);
 		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
@@ -989,7 +973,41 @@ public class SolutionContents extends BaseRestResource {
 		return jsonResponse;
 	}
 
-	private Node getPathNodeForAsset(Session session, String solutionId, String revisionId, String path) {
+	@Persistable
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/solutionAssets/cp/{solutionId}/{revisionId}/{fromRevisionId}")
+	public JsonResponse<List<String>> copySolutionDocuments(@Context HttpServletRequest request,
+			@Context HttpServletResponse response, @PathParam("solutionId") String solutionId,
+			@PathParam("revisionId") String revisionId, @PathParam("fromRevisionId") String fromRevisionId,
+			@QueryParam("path") String path)
+			throws PathNotFoundException, LoginException, RepositoryException, IOException {
+
+		log.debug("-- getSolutionDocumentName() {} ");
+		if (StringUtils.isEmpty(solutionId)) {
+			String output = "Cannot Find solution documents";
+			// return Response.status(500).entity(output).build();
+		}
+
+		log.debug("-- saveAssets() {}  Upload path : " + path);
+		if (StringUtils.isEmpty(path) && !(orgWorkspacePath.equals(path) || publicWorkspacePath.equals(path))) {
+			String output = "Upload path not valid";
+			// return Response.status(500).entity(output).build();
+		}
+
+		HstRequestContext requestContext = getRequestContext(request);
+		Session session = requestContext.getSession();
+		Node rootAssetNode = session.getRootNode().getNode("content/assets");
+
+		JsonResponse<List<String>> jsonResponse = copySolutionDocuments(response, solutionId, revisionId,
+				fromRevisionId, path, rootAssetNode);
+
+		session.save();
+
+		return jsonResponse;
+	}
+
+	private Node getPathNodeForAsset(Node rootAssetNode, String solutionId, String revisionId, String path) {
 
 		Node pathNode = null;
 
@@ -997,10 +1015,7 @@ public class SolutionContents extends BaseRestResource {
 			return pathNode;
 		}
 
-		Node rootAssetNode;
-
 		try {
-			rootAssetNode = session.getRootNode().getNode("content/assets");
 
 			Node solutionDocs = null;
 			if (!rootAssetNode.hasNode("solutiondocs")) {
@@ -1142,13 +1157,6 @@ public class SolutionContents extends BaseRestResource {
 			imgOrig.setProperty("hippogallery:height", 768L);
 			imgOrig.setProperty("hippogallery:width", 1024L);
 
-			/*
-			 * BufferedImage imageFile = new BufferedImage(300, 50,
-			 * BufferedImage.TYPE_INT_RGB); Graphics2D g2d = imageFile.createGraphics();
-			 * g2d.setPaint(Color.blue); g2d.setFont(new Font("Serif", Font.BOLD, 32));
-			 * g2d.drawString(name, 5, 35); g2d.dispose();
-			 */
-
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			byte[] buf = new byte[1024];
 			int n = 0;
@@ -1166,7 +1174,6 @@ public class SolutionContents extends BaseRestResource {
 
 		requestContext.getSession().save();
 
-		String output = "Image File uploaded successfully";
 		log.debug("-- saveImage() : Image File uploaded successfully");
 		// return Response.status(200).entity(output).build();
 		JsonResponse<String> jsonResponse = new JsonResponse<String>();
@@ -1257,7 +1264,7 @@ public class SolutionContents extends BaseRestResource {
 		return jsonResponse;
 	}
 
-	private Node getOrCreatePathNodeForAsset(Session session, String solutionId, String revisionId, String path) {
+	private Node getOrCreatePathNodeForAsset(Node rootAssetPath, String solutionId, String revisionId, String path) {
 
 		Node pathNode = null;
 
@@ -1266,7 +1273,6 @@ public class SolutionContents extends BaseRestResource {
 		}
 
 		try {
-			Node rootAssetPath = session.getRootNode().getNode("content/assets");
 			Node solutiondocs;
 			if (!rootAssetPath.hasNode("solutiondocs")) {
 				solutiondocs = rootAssetPath.addNode("solutiondocs", "hippogallery:stdAssetGallery");
