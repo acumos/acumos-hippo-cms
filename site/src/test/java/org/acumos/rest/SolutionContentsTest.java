@@ -24,7 +24,11 @@ import javax.activation.DataHandler;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.servlet.http.HttpServletResponse;
+
 import org.acumos.beans.SolutionDescription;
+import org.acumos.common.JSONTags;
+import org.acumos.common.JsonResponse;
 import org.acumos.model.SolutionDescriptionContent;
 import org.acumos.rest.SolutionContents;
 import org.apache.cxf.jaxrs.ext.multipart.ContentDisposition;
@@ -60,6 +64,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import static org.easymock.EasyMock.*;
 
 /**
  * Tests ProtoRecordGenerator
@@ -613,6 +619,108 @@ public class SolutionContentsTest {
 
 		String assetName = solutionContents.saveAssets("1234", "56987", "content", att, rootNode);
 		assert ("my_company.png".equals(assetName));
+	}
+
+	@Test
+	public void testGetSolutionImageName() throws Exception {
+
+		SolutionContents solutionContents = new SolutionContents();
+		ClassLoader classLoader = getClass().getClassLoader();
+		File f = new File(classLoader.getResource("my_company.png").getFile());
+		InputStream inputStream = new FileInputStream(f);
+
+		Attachment att = new AttachmentBuilder()
+				.contentDisposition(new ContentDisposition("form-data; name=\"file\"; filename=\"my_company.png\""))
+				.mediaType("image/png")
+				.dataHandler(new DataHandler(new ByteDataSource(IOUtils.toByteArray(inputStream)), "multipart/mixed"))
+				.build();
+		MetadataMap<String, String> map = new MetadataMap<String, String>();
+		map.add("Content-Disposition", "attachment;filename=image.jpg");
+		MockNode rootNode = MockNode.root();
+
+		solutionContents.saveimage(att, "12345", rootNode);
+		HttpServletResponse response = createMock(HttpServletResponse.class);
+
+		JsonResponse<List<String>> jsonResponse = solutionContents.getSolutionImageName(requestContext, "12345",
+				rootNode, response);
+		String name = jsonResponse.getResponseBody().get(0);
+		assert ("my_company.png".equals(name));
+	}
+
+	@Test
+	public void testGetSolutionDocumentName() throws Exception {
+
+		SolutionContents solutionContents = new SolutionContents();
+		ClassLoader classLoader = getClass().getClassLoader();
+		File f = new File(classLoader.getResource("my_company.png").getFile());
+		InputStream inputStream = new FileInputStream(f);
+
+		Attachment att = new AttachmentBuilder()
+				.contentDisposition(new ContentDisposition("form-data; name=\"file\"; filename=\"my_company.png\""))
+				.mediaType("image/png")
+				.dataHandler(new DataHandler(new ByteDataSource(IOUtils.toByteArray(inputStream)), "multipart/mixed"))
+				.build();
+		MetadataMap<String, String> map = new MetadataMap<String, String>();
+		map.add("Content-Disposition", "attachment;filename=image.jpg");
+		MockNode rootNode = MockNode.root();
+		HttpServletResponse response = createMock(HttpServletResponse.class);
+
+		solutionContents.saveAssets("1234", "56987", "content", att, rootNode);
+
+		JsonResponse<List<String>> jsonResponse = solutionContents.getSolutionDocumentName(requestContext, response,
+				"1234", "56987", "content", rootNode);
+		String name = jsonResponse.getResponseBody().get(0);
+		assert ("my_company.png".equals(name));
+	}
+
+	@Test
+	public void testRemoveSolutionDocument() throws Exception {
+
+		SolutionContents solutionContents = new SolutionContents();
+		ClassLoader classLoader = getClass().getClassLoader();
+		File f = new File(classLoader.getResource("my_company.png").getFile());
+		InputStream inputStream = new FileInputStream(f);
+
+		Attachment att = new AttachmentBuilder()
+				.contentDisposition(new ContentDisposition("form-data; name=\"file\"; filename=\"my_company.png\""))
+				.mediaType("image/png")
+				.dataHandler(new DataHandler(new ByteDataSource(IOUtils.toByteArray(inputStream)), "multipart/mixed"))
+				.build();
+		MetadataMap<String, String> map = new MetadataMap<String, String>();
+		map.add("Content-Disposition", "attachment;filename=image.jpg");
+		MockNode rootNode = MockNode.root();
+		HttpServletResponse response = createMock(HttpServletResponse.class);
+
+		solutionContents.saveAssets("1234", "56987", "content", att, rootNode);
+		JsonResponse<List<String>> jsonResponse = solutionContents.removeSolutionDocument(response, "1234", "56987",
+				"my_company.png", "content", rootNode);
+
+		assert (JSONTags.TAG_ERROR_CODE_SUCCESS.equals(jsonResponse.getErrorCode()));
+	}
+
+	@Test
+	public void testCopySolutionDocuments() throws Exception {
+
+		SolutionContents solutionContents = new SolutionContents();
+		ClassLoader classLoader = getClass().getClassLoader();
+		File f = new File(classLoader.getResource("my_company.png").getFile());
+		InputStream inputStream = new FileInputStream(f);
+
+		Attachment att = new AttachmentBuilder()
+				.contentDisposition(new ContentDisposition("form-data; name=\"file\"; filename=\"my_company.png\""))
+				.mediaType("image/png")
+				.dataHandler(new DataHandler(new ByteDataSource(IOUtils.toByteArray(inputStream)), "multipart/mixed"))
+				.build();
+		MetadataMap<String, String> map = new MetadataMap<String, String>();
+		map.add("Content-Disposition", "attachment;filename=image.jpg");
+		MockNode rootNode = MockNode.root();
+		HttpServletResponse response = createMock(HttpServletResponse.class);
+
+		solutionContents.saveAssets("1234", "56987", "content", att, rootNode);
+		JsonResponse<List<String>> jsonResponse = solutionContents.copySolutionDocuments(response, "1234", "56987",
+				"865423", "public", rootNode);
+
+		assert (JSONTags.TAG_ERROR_CODE_SUCCESS.equals(jsonResponse.getErrorCode()));
 	}
 
 }
