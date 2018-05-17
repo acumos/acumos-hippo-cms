@@ -729,66 +729,67 @@ public class SolutionContents extends BaseRestResource {
 	}
 
 	protected JsonResponse<List<String>> getSolutionDocumentName(HstRequestContext requestContext,
-			HttpServletResponse response, String solutionId, String revisionId, String path, Node rootImagePath)
-			throws RepositoryException {
+			HttpServletResponse response, String solutionId, String revisionId, String path, Node rootImagePath) {
 		Node solutionDocs = null;
-		if (!rootImagePath.hasNode("solutiondocs")) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		} else {
-			solutionDocs = rootImagePath.getNode("solutiondocs");
-		}
-
-		Node solution = null;
-		if (!solutionDocs.hasNode("solution")) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		} else {
-			solution = solutionDocs.getNode("solution");
-		}
-
-		// Create Folder with solution Id
-		Node solutionIdFolder = null;
-		if (!solution.hasNode(solutionId)) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		} else {
-			solutionIdFolder = solution.getNode(solutionId);
-		}
-
-		Node revisionIdFolder = null;
-		if (!solutionIdFolder.hasNode(revisionId)) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		} else {
-			revisionIdFolder = solutionIdFolder.getNode(revisionId);
-		}
-
-		Node pathNode = null;
-		if (!revisionIdFolder.hasNode(path)) {
-			String output = "No Documents Available";
-			// return Response.status(404).entity(output).build();
-		} else {
-			pathNode = revisionIdFolder.getNode(path);
-		}
-		// Create thumbnail image
-		NodeIterator it = pathNode.getNodes();
+		
 		List<String> solDocumentNameList = new ArrayList<String>();
-
-		while (it.hasNext()) {
-			Node handlenode = it.nextNode();
-			if ("hippo:handle".equals(handlenode.getPrimaryNodeType().getName()))
-				log.debug("-- getSolutionDocumentName() {} Document Found with Name :" + handlenode.getName());
-			solDocumentNameList.add(handlenode.getName());
-
-		}
-
 		JsonResponse<List<String>> jsonResponse = new JsonResponse<List<String>>();
-		jsonResponse.setResponseBody(solDocumentNameList);
 		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
 		jsonResponse.setResponseDetail("Solutions fetched Successfully");
+		jsonResponse.setResponseBody(solDocumentNameList);
 		response.setStatus(HttpServletResponse.SC_OK);
+		
+		try {
+			if (!rootImagePath.hasNode("solutiondocs")) {
+				return jsonResponse;
+			} else {
+				solutionDocs = rootImagePath.getNode("solutiondocs");
+			}
+	
+			Node solution = null;
+			if (!solutionDocs.hasNode("solution")) {
+				return jsonResponse;
+			} else {
+				solution = solutionDocs.getNode("solution");
+			}
+	
+			Node solutionIdFolder = null;
+			if (!solution.hasNode(solutionId)) {
+				return jsonResponse;
+			} else {
+				solutionIdFolder = solution.getNode(solutionId);
+			}
+	
+			Node revisionIdFolder = null;
+			if (!solutionIdFolder.hasNode(revisionId)) {
+				return jsonResponse;
+			} else {
+				revisionIdFolder = solutionIdFolder.getNode(revisionId);
+			}
+	
+			Node pathNode = null;
+			if (!revisionIdFolder.hasNode(path)) {
+				return jsonResponse;
+			} else {
+				pathNode = revisionIdFolder.getNode(path);
+			}
+			NodeIterator it = pathNode.getNodes();
+	
+			while (it.hasNext()) {
+				Node handlenode = it.nextNode();
+				if ("hippo:handle".equals(handlenode.getPrimaryNodeType().getName()))
+					log.debug("-- getSolutionDocumentName() {} Document Found with Name :" + handlenode.getName());
+				solDocumentNameList.add(handlenode.getName());
+	
+			}
+		}catch (Exception e) {
+			//Log the exception and return the success with the empty list
+			log.error("Exception occured while fetching the assets : {}",  e.getMessage());
+			jsonResponse.setResponseBody(solDocumentNameList);
+			return jsonResponse;
+		}
 
+		jsonResponse.setResponseBody(solDocumentNameList);
 		return jsonResponse;
 	}
 
