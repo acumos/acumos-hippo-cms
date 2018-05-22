@@ -20,6 +20,7 @@
 
 package org.acumos.rest;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -31,6 +32,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.jcr.ItemExistsException;
 import javax.jcr.ItemNotFoundException;
 import javax.jcr.LoginException;
@@ -1340,6 +1342,137 @@ public class SolutionContents extends BaseRestResource {
 		}
 
 		return pathNode;
+	}
+	
+	@Persistable
+	@POST
+	@Consumes({ MediaType.MULTIPART_FORM_DATA, MediaType.WILDCARD })
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/carouselImages/{path}")
+	public JsonResponse<String> storeImages(@Context HttpServletRequest request,
+			@Context HttpServletResponse response, @PathParam("path") String path,
+			@Multipart("file") Attachment attachment)
+			throws PathNotFoundException, LoginException, RepositoryException, IOException {
+
+		log.debug("-- saveImage() --");
+		if (StringUtils.isEmpty(path)) {
+			String output = "Cannot Upload image";
+			// return Response.status(500).entity(output).build();
+		}
+
+		// String name = image.getOriginalFilename();
+		String name = attachment.getContentDisposition().getParameter("filename");
+		log.debug("-- saveImage() --" + name);
+
+		String imgExt = name.substring(name.lastIndexOf('.') + 1);
+		if (!VALID_IMAGE_EXTENSIONS.contains(imgExt)) {
+			String output = "Image File Extension not Valid";
+			// return Response.status(500).entity(output).build();
+		}
+
+		HstRequestContext requestContext = getRequestContext(request);
+		String siteCanonicalBasePath = requestContext.getResolvedMount().getMount().getCanonicalContentPath();
+		Node rootImagePath = requestContext.getSession().getRootNode().getNode("content/gallery/acumoscms");
+		log.debug("-- saveImage() --" + rootImagePath.getName());
+
+		Node globalImages;
+		if (!rootImagePath.hasNode("global")) {
+			globalImages = rootImagePath.addNode("global", "hippogallery:stdImageGallery");
+			globalImages.addMixin("mix:referenceable");
+			String[] foldertype = { "new-image-folder" };
+			globalImages.setProperty("hippostd:foldertype", foldertype);
+			String[] gallerytype = { "hippogallery:imageset" };
+			globalImages.setProperty("hippostd:gallerytype", gallerytype);
+		} else {
+			globalImages = rootImagePath.getNode("global");
+		}
+
+		// Create Folder with solution Id
+		Node pathFolder;
+		if (!globalImages.hasNode(path)) {
+			pathFolder = globalImages.addNode(path, "hippogallery:stdImageGallery");
+			pathFolder.addMixin("mix:referenceable");
+			String[] foldertype = { "new-image-folder" };
+			pathFolder.setProperty("hippostd:foldertype", foldertype);
+			String[] gallerytype = { "hippogallery:imageset" };
+			pathFolder.setProperty("hippostd:gallerytype", gallerytype);
+		} else {
+			pathFolder = globalImages.getNode(path);
+		}
+
+		NodeIterator it = pathFolder.getNodes();
+		while (it.hasNext()) {
+			Node handlenode = it.nextNode();
+			log.debug("-- saveImage() : Removing Node  --" + handlenode.getName());
+			//Remove if image already exist with same name
+			if(name.equals(handlenode.getName()))
+				handlenode.remove();
+		}
+
+		// Create thumbnail image
+		Node imgHandle;
+		if (pathFolder.hasNode(name)) {
+			imgHandle = pathFolder.getNode(name);
+		} else {
+			imgHandle = pathFolder.addNode(name, "hippo:handle");
+			imgHandle.addMixin("mix:referenceable");
+		}
+
+		if (!imgHandle.hasNode(name)) {
+			Node imgDoc = imgHandle.addNode(name, "hippogallery:imageset");
+			imgDoc.addMixin("mix:referenceable");
+			String[] availability = { "live", "preview" };
+			imgDoc.setProperty("hippo:availability", availability);
+			imgDoc.setProperty("hippogallery:filename", name);
+
+			// Thumbnail node might already exist
+			Node imgThumb;
+			if (imgDoc.hasNode("hippogallery:thumbnail")) {
+				imgThumb = imgDoc.getNode("hippogallery:thumbnail");
+			} else {
+				imgThumb = imgDoc.addNode("hippogallery:thumbnail", "hippogallery:image");
+			}
+
+			imgThumb.setProperty("jcr:lastModified", Calendar.getInstance());
+			imgThumb.setProperty("jcr:mimeType", "image/" + imgExt);
+			imgThumb.setProperty("hippogallery:height", 50L);
+			imgThumb.setProperty("hippogallery:width", 300L);
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			byte[] buf = new byte[1024];
+			int n = 0;
+			while ((n = attachment.getObject(InputStream.class).read(buf)) >= 0)
+				baos.write(buf, 0, n);
+			byte[] content = baos.toByteArray();
+			InputStream is = new ByteArrayInputStream(content);
+			BufferedImage bImageFromConvert = ImageIO.read(is);
+			int height = bImageFromConvert.getHeight();
+			int width = bImageFromConvert.getWidth();
+			
+			Node imgOrig = imgDoc.addNode("hippogallery:original", "hippogallery:image");
+			imgOrig.setProperty("jcr:lastModified", Calendar.getInstance());
+			imgOrig.setProperty("jcr:mimeType", "image/" + imgExt);
+			imgOrig.setProperty("hippogallery:height", height);
+			imgOrig.setProperty("hippogallery:width", width);
+
+			imgThumb.setProperty("jcr:data", imgThumb.getSession().getValueFactory().createBinary(is));
+			is = new ByteArrayInputStream(content);
+			imgOrig.setProperty("jcr:data", imgThumb.getSession().getValueFactory().createBinary(is));
+
+		}
+		// String imageUUID = imgHandle.getIdentifier();
+
+		requestContext.getSession().save();
+
+		log.debug("-- saveImage() : Image File uploaded successfully");
+		// return Response.status(200).entity(output).build();
+		JsonResponse<String> jsonResponse = new JsonResponse<String>();
+		jsonResponse.setResponseBody(name);
+		jsonResponse.setErrorCode(JSONTags.TAG_ERROR_CODE_SUCCESS);
+		jsonResponse.setResponseDetail("Image File uploaded successfully");
+		response.setStatus(HttpServletResponse.SC_OK);
+
+		return jsonResponse;
 	}
 
 	private Node copyNodes(Node source, Node parent, String name) throws RepositoryException {
