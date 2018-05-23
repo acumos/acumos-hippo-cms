@@ -1,0 +1,42 @@
+/content/documents/acumoscms/global/footer:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 0cc52d5e-d262-4a6a-b9af-2db6ee048c0c
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: 782af7b2-7167-4fa1-832c-eac5656b2dc6
+  hippotranslation:locale: en
+  /contactinfo:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: d66ad6d1-06e1-4119-9774-8247c0fe2a76
+    hippo:name: contactInfo
+    /contactinfo[1]:
+      jcr:primaryType: acumoscms:solutionDescription
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 933a3148-f0b6-492f-a00b-1ca85bf80d3a
+      acumoscms:description: |-
+        <p>1 Letterman Drive, Building D, Suite D4700, San Francisco, CA 94129<br />
+        &nbsp;phone : +1 415 723 9709</p>
+      hippo:availability: []
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-05-23T12:11:22.522-05:00
+      hippostdpubwf:lastModificationDate: 2018-05-23T13:18:22.167-05:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 203218e5-c8ee-4d41-84a0-a8894cfbe166
+      hippotranslation:locale: en
+    /contactinfo[2]:
+      jcr:primaryType: acumoscms:solutionDescription
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 5613f145-4e2e-4302-b32a-ef7f313e36e1
+      acumoscms:description: |-
+        <p>1 Letterman Drive, Building D, Suite D4700, San Francisco, CA 94129<br />
+        &nbsp;phone : +1 415 723 9709</p>
+      hippo:availability: [preview]
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2018-05-23T12:11:22.522-05:00
+      hippostdpubwf:lastModificationDate: 2018-05-23T12:47:10.562-05:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: 203218e5-c8ee-4d41-84a0-a8894cfbe166
+      hippotranslation:locale: en
