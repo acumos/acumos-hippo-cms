@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a498d6f7_55a78171",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-22T22:10:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "847dbcb3_2ed0ba4a",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "4e1fb334541300a347375ae5738b2e1e7519ac9d",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e290946_4eaf4f7c",
         "filename": "INFO.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-22T17:43:00Z",
       "side": 1,
       "message": "#acumos would be a better channel to list here",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 22
+      },
+      "revId": "4e1fb334541300a347375ae5738b2e1e7519ac9d",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6d339e52_76dda4c4",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2018-06-22T22:10:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e290946_4eaf4f7c",
       "range": {
         "startLine": 24,
         "startChar": 4,
