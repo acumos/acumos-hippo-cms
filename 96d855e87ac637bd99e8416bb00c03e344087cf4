@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55fb6b75_a26b2194",
+        "filename": "INFO.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-06-25T17:37:58Z",
+      "side": 1,
+      "message": "Timezone is India/Pune -- not entirely certain if that\u0027s valid tho",
+      "range": {
+        "startLine": 55,
+        "startChar": 16,
+        "endLine": 55,
+        "endChar": 18
+      },
+      "revId": "96d855e87ac637bd99e8416bb00c03e344087cf4",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
