@@ -25,3 +25,4 @@ Acumos Hippo CMS
 
        release-notes.rst
        developer-guide.rst
+       api.rst
