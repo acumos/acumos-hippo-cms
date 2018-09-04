@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b65d2fde_9649042e",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2018-09-04T12:52:52Z",
+      "side": 1,
+      "message": "The license header for markdown files is here: https://wiki.acumos.org/display/AC/License+Templates#LicenseTemplates-Markdown",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "eda76fbcf4f098e50e765f35f7763360e1432ee7",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "152b8576_4127241c",
+        "filename": "cms/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2018-09-04T12:52:52Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be here - it\u0027s only for documentation files.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "eda76fbcf4f098e50e765f35f7763360e1432ee7",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "867a1c00_4e7d01a0",
+        "filename": "cms/src/main/webapp/WEB-INF/web.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2018-09-04T12:52:52Z",
+      "side": 1,
+      "message": "this doesn\u0027t need to be here. Please see the license header templates here: https://wiki.acumos.org/display/AC/License+Templates#LicenseTemplates-XML,SVG,HTML",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "eda76fbcf4f098e50e765f35f7763360e1432ee7",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
