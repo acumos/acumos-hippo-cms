@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d25528ad_0f8cf3cf",
+        "filename": "README-HippoCMS.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:33:11Z",
+      "side": 1,
+      "message": "You have added the Acumos/CC licenses to a third-party file that the Acumos project did NOT create.  Please PLEASE revert.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 16
+      },
+      "revId": "d81b53d0d9b484a6eb20f82cc4a0a32dfae74642",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
