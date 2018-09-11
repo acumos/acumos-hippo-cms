@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f61953e7_a512c19c",
+        "filename": "acumos-cms-docker/manifest.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06c8bd26_1379b24e",
+        "filename": "cms/src/main/webapp/WEB-INF/error.jsp",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c0096ff_de98d2c4",
+        "filename": "conf/log4j2-dev.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b807a86_19242a62",
+        "filename": "essentials/src/main/resources/imageComponentPlugin.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79535638_7d0f33ab",
+        "filename": "repository-data/config/src/main/resources/hcm-config/security/configuser-read-everywhere.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eedc2121_8b5802fb",
+        "filename": "repository-data/webfiles/src/main/resources/site/freemarker/hstdefault/blog/blog-list/variant.ftl",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6ae601_6398515b",
+        "filename": "site/src/main/resources/META-INF/hst-assembly/overrides/cors-support.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "494503fe_ff10707b",
+        "filename": "src/main/assembly/distribution.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-09-11T12:59:57Z",
+      "side": 1,
+      "message": "Did an Acumos project member add this file, or was it originally part of the Hippo-CMS distribution?",
+      "revId": "998dd8e8ce15a2254309e8620d34918b22e3b97c",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
