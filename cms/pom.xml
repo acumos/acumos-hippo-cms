@@ -26,6 +26,12 @@
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-package-cms-dependencies</artifactId>
       <type>pom</type>
+      <!-- <exclusions>
+          <exclusion>
+              <groupId>org.wicketstuff</groupId>
+              <artifactId>wicket-extjs</artifactId>
+          </exclusion>
+      </exclusions> -->
     </dependency>
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
