@@ -27,6 +27,6 @@
             timeBetweenEvictionRunsMillis="10000"
             minEvictableIdleTimeMillis="60000"
             username="CCDS_USER" password="CCDS_PASS"
-            driverClassName="com.mysql.jdbc.Driver"
+            driverClassName="org.mariadb.jdbc.Driver"
             url="jdbc:mysql://127.0.0.1:3306/acumos_cms?characterEncoding=utf8"/>
 </Context>
