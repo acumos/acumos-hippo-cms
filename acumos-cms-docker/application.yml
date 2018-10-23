@@ -23,7 +23,7 @@ parameters:
         directory: 'repository'
         config: '/org/hippoecm/repository/repository.xml'
         dataSource:
-            driverClassName: 'com.mysql.jdbc.Driver'
+            driverClassName: 'org.mariadb.jdbc.Driver'
             url: 'jdbc:mysql://localhost:3306/cds131?characterEncoding=utf8'
             username: 'cms_user'
             password: 'cms_pass'
