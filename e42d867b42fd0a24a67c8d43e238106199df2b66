@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "797b9721_e591e0b0",
+        "filename": "cms/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2018-10-29T18:43:27Z",
+      "side": 1,
+      "message": "Whoa, now you have the same version on Athena as on master.  They will collide at Nexus.  What are you doing here!?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 37
+      },
+      "revId": "e42d867b42fd0a24a67c8d43e238106199df2b66",
+      "serverId": "655300a2-7a56-4504-9153-881edd907bea",
+      "unresolved": false
+    }
+  ]
+}
