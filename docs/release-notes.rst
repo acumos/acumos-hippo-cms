@@ -22,6 +22,11 @@ Acumos Hippo CMS Release Notes
 
 Hippo CMS is derived from https://www.onehippo.org/. This version will be deployed as Acumos Hippo CMS as dockerized version. 
 
+Version 1.3.5,  29 November 2018
+-------------------------------
+
+* GPL issue fix for CMS for Maria DB 
+
 Version 1.0.0,  16 November 2017
 -------------------------------
 
